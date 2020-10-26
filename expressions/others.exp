@@ -1,0 +1,206 @@
+# bar
+(div (ceil (x)) (bwperlin (y) (constant 0 0.18654678212909848 -0.40227794451952614 -0.8064698713334388)))
+
+# bar1
+(bwperlin (x) (div (sin (y)) (abs (x))))
+
+# bar10
+(add (mul (constant 0 -0.88180015074188 -0.06419578578533147 -0.3218218768439871) (x)) (y))
+
+# bar11
+(bwperlin (add (mul (constant 0 -0.88180015074188 -0.06419578578533147 -0.3218218768439871) (x)) (y)) (add (add (mul (constant 0 -0.88180015074188 -0.06419578578533147 -0.3218218768439871) (x)) (y)) (add (mul (constant 0 -0.88180015074188 -0.06419578578533147 -0.3218218768439871) (x)) (y))))
+
+# bar12
+(bwperlin (x) (add (mul (add (y) (x)) (add (y) (x))) (add (y) (x))))
+
+# bar13
+(mul (atan (add (x) (sub (constant 0 -0.5011472199339384 0.8731150511258101 0.5328331926474619) (y)))) (mul (add (abs (x)) (div (constant 0 -0.4643945241546583 0.32379127318126666 -0.6979441538981976) (y))) (x)))
+
+# bar14
+(floor (bwperlin (x) (ycrcbrgb (wrap (y)))))
+
+# bar2
+(sin (add (colorperlin (y) (y)) (colorperlin (div (exp (y)) (atan (x))) (y))))
+
+# bar3
+(sin (div (sin (y)) (abs (x))))
+
+# bar4
+(colorperlin (add (colorperlin (abs (cos (y))) (y)) (colorperlin (div (exp (y)) (x)) (y))) (ycrcbrgb (add (clip (add (colorperlin (y) (y)) (colorperlin (div (exp (y)) (atan (x))) (y)))) (y))))
+
+# bar5
+(div (sin (div (sin (y)) (add (sub (constant 0 0.8656813591473826 -0.05849364771362864 -0.2783018039048657) (add (constant 0 0.5915107461096698 -0.4936386300739162 0.5722532075111306) (y))) (x)))) (div (sin (y)) (abs (x))))
+
+# bar6
+(bwperlin (x) (div (sin (colorperlin (bwperlin (x) (x)) (wrap (bwperlin (y) (y))))) (atan (constant 0 0.756485450874911 0.0472426545005733 -0.6183685886132633))))
+
+# bar7
+(sin (exp (div (y) (x))))
+
+# bar8
+(sin (bwperlin (div (add (cos (y)) (bwperlin (y) (x))) (x)) (constant 0 0.07145748564618204 0.30588814429298017 -0.9031459348088384)))
+
+# bar9
+(div (y) (sub (x) (constant 0 -0.6039235227317621 0.8794657446333789 0.19678835010847395)))
+
+# cool0
+(add (atan (bwperlin (add (y) (x)) (y))) (add (bwperlin (add (y) (x)) (y)) (colorperlin (bwperlin (add (y) (x)) (y)) (floor (bwperlin (add (y) (x)) (y))))))
+
+# cool1
+(div (colorperlin (wrap (x)) (div (y) (x))) (constant 0 -0.2536914335910738 -0.8780670803335253 0.16834630934021155))
+
+# cool10
+(colorperlin (div (mul (y) (log (constant 0 -0.5984337494508591 -0.891036368492848 -0.5160504243757824))) (colorperlin (constant 0 0.18869493648043068 0.1553494568015017 -0.7383815244112657) (mul (constant 0 0.7532621749741806 0.8938997133303277 0.00953862621409396) (x)))) (wrap (x)))
+
+# cool11
+(add (div (bwperlin (add (y) (x)) (y)) (wrap (x))) (bwperlin (add (y) (x)) (y)))
+
+# cool12
+(add (clip (bwperlin (add (y) (x)) (y))) (add (log (y)) (colorperlin (add (y) (x)) (floor (bwperlin (add (rgbycrcb (constant 0 0.1866677724666186 -0.8333966209663752 0.3909592498429022)) (x)) (y))))))
+
+# cool13
+(div (colorperlin (add (log (constant 0 0.7926624418594532 -0.037566679823297644 0.2490067035900292)) (y)) (cos (x))) (mul (x) (colorperlin (constant 0 -0.9026774444599188 -0.896387569867759 0.4333145975013637) (mul (y) (x)))))
+
+# cool14
+(mul (add (sub (y) (atan (clip (constant 0 0.9591365329174661 -0.8078808308117211 -0.9502998517521799)))) (x)) (div (add (y) (ycrcbrgb (x))) (x)))
+
+# cool15
+(sub (sub (div (constant 0 0.11268211888178081 0.6868124976712311 -0.6940346716206136) (div (y) (mul (x) (constant 0 -0.8414197278348736 0.7001892716206124 -0.2788379187815504)))) (sin (mul (constant 0 0.15283877537418178 0.16101425309002138 -0.1300517270093151) (y)))) (sub (colorperlin (cos (div (y) (y))) (y)) (rgbycrcb (floor (y)))))
+
+# cool16
+(div (div (x) (sub (exp (y)) (x))) (add (bwperlin (y) (exp (x))) (colorperlin (constant 0 -0.18637879991226125 0.3515443560386866 -0.6610548204307825) (x))))
+
+# cool17
+(bwperlin (negate (x)) (add (bwperlin (mul (y) (x)) (add (ceil (constant 0 0.39703574233979944 0.2643117877656056 -0.9987027514115572)) (constant 0 0.10535083234630904 0.6376911582937601 -0.660490047315418))) (x)))
+
+# cool18
+(bwperlin (div (bwperlin (y) (constant 0 0.9744087409850846 -0.46397668544999204 -0.7280396364847979)) (x)) (colorperlin (add (constant 0 0.13883960990042388 -0.20216576091272787 0.2566271292572817) (x)) (x)))
+
+# cool19
+(mul (log (bwperlin (constant 0 -0.43411832164477904 0.9385707692107468 0.36443798830665464) (y))) (add (x) (constant 0 -0.38016489570429 0.7740769446628939 0.9247751701499769)))
+
+# cool2
+(colorperlin (div (colorperlin (add (wrap (x)) (div (x) (x))) (colorperlin (clip (y)) (add (constant 0 -0.3553100500118924 0.4899298890766546 -0.6153791796537831) (x)))) (mul (rgbycrcb (rgbycrcb (constant 0 -0.15454092513832252 -0.6854608128161015 -0.8434987289260343))) (constant 0 0.31542843757126837 -0.2499662049822553 -0.5236637464735612))) (div (colorperlin (add (wrap (x)) (div (x) (x))) (colorperlin (clip (y)) (add (constant 0 -0.3553100500118924 0.4899298890766546 -0.6153791796537831) (x)))) (mul (rgbycrcb (rgbycrcb (constant 0 -0.15454092513832252 -0.6854608128161015 -0.8434987289260343))) (constant 0 0.31542843757126837 -0.2499662049822553 -0.5236637464735612))))
+
+# cool20
+(add (bwperlin (floor (x)) (div (mul (bwperlin (x) (y)) (y)) (abs (y)))) (colorperlin (abs (x)) (add (wrap (x)) (add (x) (constant 0 -0.9464436639198823 0.9346272763681358 0.779586938807131)))))
+
+# cool21
+(colorperlin (floor (ycrcbrgb (rgbycrcb (y)))) (mul (bwperlin (cos (y)) (log (negate (x)))) (y)))
+
+# cool22
+(sub (div (div (x) (add (constant 0 0.32132583561651007 -0.1933416449302532 -0.37877208280580144) (wrap (y)))) (add (constant 0 0.18269514071212511 -0.01302066536086377 -0.6559023470981147) (x))) (colorperlin (colorperlin (exp (constant 0 -0.41340259595993745 -0.6663845854250439 -0.13266467736813303)) (negate (y))) (constant 0 0.27177242724632555 -0.454002253245096 -0.6555348148796383)))
+
+# cool23
+(div (bwperlin (y) (div (y) (constant 0 -0.6461123840084952 0.6204138353915214 0.5552606661887278))) (x))
+
+# cool24
+(div (bwperlin (colorperlin (x) (y)) (div (colorperlin (x) (y)) (colorperlin (x) (y)))) (colorperlin (x) (y)))
+
+# cool25
+(mul (div (bwperlin (x) (sin (y))) (sub (y) (div (y) (cos (x))))) (colorperlin (x) (constant 0 -0.3024084420820161 0.08307955589380667 0.4265860829972772)))
+
+# cool3
+(div (ycrcbrgb (colorperlin (clip (colorperlin (clip (y)) (add (constant 0 -0.3553100500118924 0.4899298890766546 -0.6153791796537831) (x)))) (add (colorperlin (clip (y)) (add (constant 0 -0.3553100500118924 0.4899298890766546 -0.6153791796537831) (x))) (colorperlin (clip (y)) (add (constant 0 -0.3553100500118924 0.4899298890766546 -0.6153791796537831) (x)))))) (colorperlin (colorperlin (add (constant 0 0.018710045476174164 -0.9066908581497384 -0.3152068069887519) (colorperlin (clip (y)) (add (constant 0 -0.3553100500118924 0.4899298890766546 -0.6153791796537831) (x)))) (constant 0 -0.6926475431850152 0.6006096450110643 -0.9774122070747562)) (colorperlin (clip (div (colorperlin (add (colorperlin (clip (y)) (add (constant 0 -0.3553100500118924 0.4899298890766546 -0.6153791796537831) (x))) (div (colorperlin (clip (y)) (add (constant 0 -0.3553100500118924 0.4899298890766546 -0.6153791796537831) (x))) (colorperlin (clip (y)) (add (constant 0 -0.3553100500118924 0.4899298890766546 -0.6153791796537831) (x))))) (colorperlin (clip (colorperlin (clip (y)) (add (constant 0 -0.3553100500118924 0.4899298890766546 -0.6153791796537831) (x)))) (add (colorperlin (clip (y)) (add (constant 0 -0.3553100500118924 0.4899298890766546 -0.6153791796537831) (x))) (colorperlin (clip (y)) (add (constant 0 -0.3553100500118924 0.4899298890766546 -0.6153791796537831) (x)))))) (colorperlin (div (colorperlin (add (colorperlin (clip (y)) (add (constant 0 -0.3553100500118924 0.4899298890766546 -0.6153791796537831) (x))) (div (colorperlin (clip (y)) (add (constant 0 -0.3553100500118924 0.4899298890766546 -0.6153791796537831) (x))) (colorperlin (clip (y)) (add (constant 0 -0.3553100500118924 0.4899298890766546 -0.6153791796537831) (x))))) (colorperlin (clip (colorperlin (clip (y)) (add (constant 0 -0.3553100500118924 0.4899298890766546 -0.6153791796537831) (x)))) (add (colorperlin (clip (y)) (add (constant 0 -0.3553100500118924 0.4899298890766546 -0.6153791796537831) (x))) (colorperlin (clip (y)) (add (constant 0 -0.3553100500118924 0.4899298890766546 -0.6153791796537831) (x)))))) (colorperlin (add (colorperlin (clip (y)) (add (constant 0 -0.3553100500118924 0.4899298890766546 -0.6153791796537831) (x))) (div (colorperlin (clip (y)) (add (constant 0 -0.3553100500118924 0.4899298890766546 -0.6153791796537831) (x))) (colorperlin (clip (y)) (add (constant 0 -0.3553100500118924 0.4899298890766546 -0.6153791796537831) (x))))) (colorperlin (clip (colorperlin (clip (y)) (add (constant 0 -0.3553100500118924 0.4899298890766546 -0.6153791796537831) (x)))) (add (colorperlin (clip (y)) (add (constant 0 -0.3553100500118924 0.4899298890766546 -0.6153791796537831) (x))) (colorperlin (clip (y)) (add (constant 0 -0.3553100500118924 0.4899298890766546 -0.6153791796537831) (x))))))) (colorperlin (add (colorperlin (clip (y)) (add (constant 0 -0.3553100500118924 0.4899298890766546 -0.6153791796537831) (x))) (div (colorperlin (clip (y)) (add (constant 0 -0.3553100500118924 0.4899298890766546 -0.6153791796537831) (x))) (colorperlin (clip (y)) (add (constant 0 -0.3553100500118924 0.4899298890766546 -0.6153791796537831) (x))))) (colorperlin (clip (colorperlin (clip (y)) (add (constant 0 -0.3553100500118924 0.4899298890766546 -0.6153791796537831) (x)))) (add (colorperlin (clip (y)) (add (constant 0 -0.3553100500118924 0.4899298890766546 -0.6153791796537831) (x))) (colorperlin (clip (y)) (add (constant 0 -0.3553100500118924 0.4899298890766546 -0.6153791796537831) (x))))))))) (add (div (colorperlin (add (colorperlin (clip (y)) (add (constant 0 -0.3553100500118924 0.4899298890766546 -0.6153791796537831) (x))) (div (colorperlin (clip (y)) (add (constant 0 -0.3553100500118924 0.4899298890766546 -0.6153791796537831) (x))) (colorperlin (clip (y)) (add (constant 0 -0.3553100500118924 0.4899298890766546 -0.6153791796537831) (x))))) (colorperlin (clip (colorperlin (clip (y)) (add (constant 0 -0.3553100500118924 0.4899298890766546 -0.6153791796537831) (x)))) (add (colorperlin (clip (y)) (add (constant 0 -0.3553100500118924 0.4899298890766546 -0.6153791796537831) (x))) (colorperlin (clip (y)) (add (constant 0 -0.3553100500118924 0.4899298890766546 -0.6153791796537831) (x)))))) (colorperlin (div (colorperlin (add (colorperlin (clip (y)) (add (constant 0 -0.3553100500118924 0.4899298890766546 -0.6153791796537831) (x))) (div (colorperlin (clip (y)) (add (constant 0 -0.3553100500118924 0.4899298890766546 -0.6153791796537831) (x))) (colorperlin (clip (y)) (add (constant 0 -0.3553100500118924 0.4899298890766546 -0.6153791796537831) (x))))) (colorperlin (clip (colorperlin (clip (y)) (add (constant 0 -0.3553100500118924 0.4899298890766546 -0.6153791796537831) (x)))) (add (colorperlin (clip (y)) (add (constant 0 -0.3553100500118924 0.4899298890766546 -0.6153791796537831) (x))) (colorperlin (clip (y)) (add (constant 0 -0.3553100500118924 0.4899298890766546 -0.6153791796537831) (x)))))) (colorperlin (add (colorperlin (clip (y)) (add (constant 0 -0.3553100500118924 0.4899298890766546 -0.6153791796537831) (x))) (div (colorperlin (clip (y)) (add (constant 0 -0.3553100500118924 0.4899298890766546 -0.6153791796537831) (x))) (colorperlin (clip (y)) (add (constant 0 -0.3553100500118924 0.4899298890766546 -0.6153791796537831) (x))))) (colorperlin (clip (colorperlin (clip (y)) (add (constant 0 -0.3553100500118924 0.4899298890766546 -0.6153791796537831) (x)))) (add (colorperlin (clip (y)) (add (constant 0 -0.3553100500118924 0.4899298890766546 -0.6153791796537831) (x))) (colorperlin (clip (y)) (add (constant 0 -0.3553100500118924 0.4899298890766546 -0.6153791796537831) (x))))))) (colorperlin (add (colorperlin (clip (y)) (add (constant 0 -0.3553100500118924 0.4899298890766546 -0.6153791796537831) (x))) (div (colorperlin (clip (y)) (add (constant 0 -0.3553100500118924 0.4899298890766546 -0.6153791796537831) (x))) (colorperlin (clip (y)) (add (constant 0 -0.3553100500118924 0.4899298890766546 -0.6153791796537831) (x))))) (colorperlin (clip (colorperlin (clip (y)) (add (constant 0 -0.3553100500118924 0.4899298890766546 -0.6153791796537831) (x)))) (add (colorperlin (clip (y)) (add (constant 0 -0.3553100500118924 0.4899298890766546 -0.6153791796537831) (x))) (colorperlin (clip (y)) (add (constant 0 -0.3553100500118924 0.4899298890766546 -0.6153791796537831) (x)))))))) (div (colorperlin (add (colorperlin (clip (y)) (add (constant 0 -0.3553100500118924 0.4899298890766546 -0.6153791796537831) (x))) (div (colorperlin (clip (y)) (add (constant 0 -0.3553100500118924 0.4899298890766546 -0.6153791796537831) (x))) (colorperlin (clip (y)) (add (constant 0 -0.3553100500118924 0.4899298890766546 -0.6153791796537831) (x))))) (colorperlin (clip (colorperlin (clip (y)) (add (constant 0 -0.3553100500118924 0.4899298890766546 -0.6153791796537831) (x)))) (add (colorperlin (clip (y)) (add (constant 0 -0.3553100500118924 0.4899298890766546 -0.6153791796537831) (x))) (colorperlin (clip (y)) (add (constant 0 -0.3553100500118924 0.4899298890766546 -0.6153791796537831) (x)))))) (colorperlin (div (colorperlin (add (colorperlin (clip (y)) (add (constant 0 -0.3553100500118924 0.4899298890766546 -0.6153791796537831) (x))) (div (colorperlin (clip (y)) (add (constant 0 -0.3553100500118924 0.4899298890766546 -0.6153791796537831) (x))) (colorperlin (clip (y)) (add (constant 0 -0.3553100500118924 0.4899298890766546 -0.6153791796537831) (x))))) (colorperlin (clip (colorperlin (clip (y)) (add (constant 0 -0.3553100500118924 0.4899298890766546 -0.6153791796537831) (x)))) (add (colorperlin (clip (y)) (add (constant 0 -0.3553100500118924 0.4899298890766546 -0.6153791796537831) (x))) (colorperlin (clip (y)) (add (constant 0 -0.3553100500118924 0.4899298890766546 -0.6153791796537831) (x)))))) (colorperlin (add (colorperlin (clip (y)) (add (constant 0 -0.3553100500118924 0.4899298890766546 -0.6153791796537831) (x))) (div (colorperlin (clip (y)) (add (constant 0 -0.3553100500118924 0.4899298890766546 -0.6153791796537831) (x))) (colorperlin (clip (y)) (add (constant 0 -0.3553100500118924 0.4899298890766546 -0.6153791796537831) (x))))) (colorperlin (clip (colorperlin (clip (y)) (add (constant 0 -0.3553100500118924 0.4899298890766546 -0.6153791796537831) (x)))) (add (colorperlin (clip (y)) (add (constant 0 -0.3553100500118924 0.4899298890766546 -0.6153791796537831) (x))) (colorperlin (clip (y)) (add (constant 0 -0.3553100500118924 0.4899298890766546 -0.6153791796537831) (x))))))) (colorperlin (add (colorperlin (clip (y)) (add (constant 0 -0.3553100500118924 0.4899298890766546 -0.6153791796537831) (x))) (div (colorperlin (clip (y)) (add (constant 0 -0.3553100500118924 0.4899298890766546 -0.6153791796537831) (x))) (colorperlin (clip (y)) (add (constant 0 -0.3553100500118924 0.4899298890766546 -0.6153791796537831) (x))))) (colorperlin (clip (colorperlin (clip (y)) (add (constant 0 -0.3553100500118924 0.4899298890766546 -0.6153791796537831) (x)))) (add (colorperlin (clip (y)) (add (constant 0 -0.3553100500118924 0.4899298890766546 -0.6153791796537831) (x))) (colorperlin (clip (y)) (add (constant 0 -0.3553100500118924 0.4899298890766546 -0.6153791796537831) (x))))))))))))
+
+# cool4
+(sin (add (add (colorperlin (clip (y)) (add (constant 0 -0.3553100500118924 0.4899298890766546 -0.6153791796537831) (x))) (colorperlin (clip (y)) (add (constant 0 -0.3553100500118924 0.4899298890766546 -0.6153791796537831) (x)))) (div (colorperlin (bwperlin (y) (y)) (add (constant 0 -0.3553100500118924 0.4899298890766546 -0.6153791796537831) (x))) (colorperlin (clip (y)) (add (constant 0 -0.3553100500118924 0.4899298890766546 -0.6153791796537831) (x))))))
+
+# cool5
+(div (rgbycrcb (mul (wrap (y)) (mul (y) (constant 0 0.807246936340217 -0.9721076173634562 -0.4931793482530733)))) (bwperlin (x) (x)))
+
+# cool6
+(div (add (mul (add (y) (abs (add (constant 0 -0.7246236677001698 -0.8368004768192845 0.765116946440271) (constant 0 0.1231401617254424 0.17037121633743046 0.7174733129572337)))) (x)) (colorperlin (x) (add (rgbycrcb (y)) (ceil (rgbycrcb (constant 0 -0.7466448789409408 -0.055558596450790976 -0.11401941154449213)))))) (mul (mul (x) (x)) (add (log (mul (add (mul (y) (y)) (ycrcbrgb (y))) (x))) (mul (add (mul (y) (y)) (ycrcbrgb (constant 0 -0.6047946520963867 -0.7097390606796858 0.8702576165880773))) (x)))))
+
+# cool7
+(div (colorperlin (y) (y)) (x))
+
+# cool8
+(div (mul (add (constant 0 0.2864800125969307 0.536876764064121 0.6169274562758318) (bwperlin (y) (constant 0 -0.19128760858664529 0.2615672411286243 -0.03700157068869592))) (colorperlin (constant 0 0.45307808272457883 0.7194363066354863 0.11864565331306776) (constant 0 -0.497172700078502 0.31933699324807674 -0.39347332748011055))) (mul (y) (add (x) (y))))
+
+# cool9
+(div (bwperlin (mul (constant 0 0.4406123673022664 -0.9089368494793637 -0.843667732479032) (x)) (y)) (x))
+
+# simple0
+(add (y) (div (x) (y)))
+
+# simple1
+(mul (add (mul (y) (x)) (ycrcbrgb (y))) (x))
+
+# simple10
+(sub (constant 0 0.5285804278097819 -0.26834093625333777 0.1787240759624138) (add (y) (x)))
+
+# simple11
+(add (y) (div (x) (wrap (sin (constant 0 -0.6433245145435764 0.8409279922034776 0.9045686113337821)))))
+
+# simple12
+(cos (div (x) (add (y) (x))))
+
+# simple13
+(div (ycrcbrgb (y)) (add (x) (x)))
+
+# simple14
+(div (rgbycrcb (y)) (add (y) (sub (constant 0 -0.7926541709261419 0.3325403390005486 0.6867011967638432) (x))))
+
+# simple15
+(mul (y) (div (y) (add (y) (x))))
+
+# simple16
+(add (y) (clip (div (add (log (constant 0 -0.21721288674646777 -0.8459867859417058 0.005252879803172572)) (x)) (div (y) (constant 0 0.9834448886939757 -0.11785757606664515 -0.6970656989244219)))))
+
+# simple17
+(add (div (sin (constant 0 0.9027918967738715 0.09448919810359069 -0.18834537143571284)) (y)) (mul (y) (div (ycrcbrgb (x)) (sin (y)))))
+
+# simple18
+(add (sub (div (constant 0 0.3209351853723694 0.6896966027379918 -0.011780440130322978) (x)) (ycrcbrgb (y))) (div (constant 0 0.907775390739546 0.8241384890924908 0.2500280171964755) (x)))
+
+# simple19
+(mul (x) (sin (div (cos (y)) (y))))
+
+# simple2
+(div (add (constant 0 -0.4827008858517239 0.889539456170747 0.24563052848253286) (y)) (log (x)))
+
+# simple20
+(sub (mul (x) (sin (div (cos (y)) (y)))) (colorperlin (atan (cos (abs (mul (x) (sin (div (cos (y)) (y))))))) (add (add (mul (x) (sin (div (cos (y)) (y)))) (mul (x) (sin (div (cos (y)) (y))))) (sin (ycrcbrgb (mul (x) (sin (div (cos (y)) (y)))))))))
+
+# simple21
+(div (div (y) (exp (constant 0 0.22499991461708468 0.9196312808012892 0.32349400830660047))) (mul (abs (x)) (exp (y))))
+
+# simple22
+(sub (x) (div (x) (y)))
+
+# simple3
+(div (add (mul (constant 0 0.4260614710345245 0.13438539539541838 0.5279682178862648) (constant 0 0.21161351669383954 -0.2544400981956707 0.08359481705649086)) (x)) (y))
+
+# simple4
+(sin (log (div (mul (add (mul (add (wrap (x)) (log (x))) (constant 0 -0.6198976726069494 -0.5852781111080017 0.428748466664457)) (ycrcbrgb (y))) (x)) (mul (add (y) (ycrcbrgb (y))) (x)))))
+
+# simple5
+(cos (div (mul (add (mul (add (wrap (x)) (log (x))) (constant 0 -0.6198976726069494 -0.5852781111080017 0.428748466664457)) (ycrcbrgb (y))) (x)) (mul (add (y) (ycrcbrgb (y))) (x))))
+
+# simple6
+(div (add (constant 0 -0.27659000091099406 0.9311095229606432 0.2856505332928665) (x)) (y))
+
+# simple7
+(div (x) (add (sin (y)) (abs (y))))
+
+# simple8
+(clip (add (add (constant 0 -0.053158657179378066 -0.412004742863046 0.42598115764220656) (x)) (y)))
+
+# simple9
+(add (x) (mul (y) (x)))
+
+# smile
+(ceil (colorperlin (wrap (abs (x))) (y)))
+
+# wow1
+(bwperlin (div (bwperlin (colorperlin (x) (y)) (y)) (colorperlin (bwperlin (constant 0 -0.046068885313694574 -0.47085602768994406 0.6094708274201721) (x)) (x))) (mul (div (bwperlin (colorperlin (x) (y)) (y)) (colorperlin (bwperlin (constant 0 -0.046068885313694574 -0.47085602768994406 0.6094708274201721) (x)) (x))) (colorperlin (div (bwperlin (colorperlin (x) (y)) (y)) (colorperlin (bwperlin (constant 0 -0.046068885313694574 -0.47085602768994406 0.6094708274201721) (x)) (x))) (div (bwperlin (colorperlin (x) (y)) (y)) (colorperlin (bwperlin (constant 0 -0.046068885313694574 -0.47085602768994406 0.6094708274201721) (x)) (x))))))
+
+# wow2
+(div (atan (div (colorperlin (log (constant 0 0.2246059106818088 -0.9405484517059943 -0.3664850588408193)) (y)) (sub (constant 0 -0.0248979119314241 -0.7652275774979884 -0.7270932605327416) (negate (constant 0 0.9192854633653225 0.9914530244932249 0.633194382074036))))) (sub (add (x) (x)) (div (floor (colorperlin (x) (y))) (constant 0 -0.49947382511797866 -0.717724511685901 -0.5397198102126641))))
+
+# wow3
+(add (div (bwperlin (bwperlin (y) (x)) (constant 0 -0.6580210151331822 0.4827967597460776 -0.8424350621384158)) (colorperlin (constant 0 -0.02020138439626651 -0.19634215038665315 -0.7681590899423634) (y))) (x))
+
+# wow4
+(add (colorperlin (add (div (constant 0 -0.2509500544057346 -0.3826185914565774 0.8068196539458439) (x)) (bwperlin (add (sub (abs (constant 0 -0.7301492060243258 0.7882458396737355 0.7819011738187269)) (div (sub (x) (constant 0 0.6111419887975129 0.030734252467877976 0.0680845446923739)) (mul (x) (log (y))))) (y)) (colorperlin (wrap (mul (mul (wrap (x)) (clip (constant 0 0.7812695684626212 -0.1252282594403915 0.07852422655263847))) (x))) (wrap (x))))) (mul (constant 0 0.5376067289139737 0.8806805968411033 -0.8060621754306285) (add (constant 0 -0.1700129015264189 -0.7367180441641239 0.5368313221361931) (floor (wrap (x)))))) (bwperlin (x) (colorperlin (y) (add (x) (constant 0 -0.30052269353710215 -0.7795460379753896 0.2100276581391134)))))
