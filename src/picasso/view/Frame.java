@@ -24,7 +24,7 @@ public class Frame extends JFrame {
 		// create GUI components
 		Canvas canvas = new Canvas(this);
 		canvas.setSize(size);
-		expressionField = new JTextField("Write your expressino here");
+		expressionField = new JTextField("Write your expression here");
 		expressionField.setPreferredSize(new Dimension(100, 30));
 
 		// add commands to test here
