@@ -40,6 +40,7 @@ public class TokenFactory {
 				if (t == null) {
 					return new IdentifierToken(tokenizer.sval);
 				}
+				
 				return t;
 			default:
 				Token ct = CharTokenFactory.getToken(result);
@@ -139,7 +140,7 @@ public class TokenFactory {
 					+ "Token";
 			Class tokenClass = null;
 			Token t = null;
-			// System.out.println(tokenName);
+			//System.out.println(tokenName);
 			try {
 				tokenClass = Class.forName(tokenName);
 				t = (Token) tokenClass.newInstance();

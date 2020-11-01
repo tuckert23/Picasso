@@ -195,4 +195,10 @@ public class ExpressionTreeGenerator {
 		else
 			return CONSTANT;
 	}
+	
+	public static void main(String[] args) {
+		ExpressionTreeGenerator x = new ExpressionTreeGenerator();
+		String str = "sin(x+y)";
+		System.out.println(x.infixToPostfix(str));
+	}
 }

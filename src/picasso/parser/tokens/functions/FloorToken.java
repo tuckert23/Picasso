@@ -9,5 +9,4 @@ public class FloorToken extends FunctionToken {
 	public FloorToken() {
 		super("Floor Function Token");
 	}
-
 }

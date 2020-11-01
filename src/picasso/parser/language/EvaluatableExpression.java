@@ -10,5 +10,5 @@ import picasso.parser.language.expressions.RGBColor;
  */
 public interface EvaluatableExpression {
 	public RGBColor evaluate(double x, double y);
-
+	
 }

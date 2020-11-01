@@ -123,8 +123,7 @@ public class Tokenizer {
 	 * @param args
 	 */
 	public static void main(String[] args) {
-		String expression = "sin(floor(x + y))";
-
+		String expression = "sin(x)";
 		Tokenizer tokenizer = new Tokenizer();
 		System.out.println("Tokens" + tokenizer.parseTokens(expression));
 	}
