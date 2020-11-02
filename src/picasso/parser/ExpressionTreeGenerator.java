@@ -19,17 +19,11 @@ import picasso.parser.tokens.operations.*;
  */
 public class ExpressionTreeGenerator {
 
-	// TODO: Do these belong here?
-	private static final int CONSTANT = 0;
-	private static final int GROUPING = 1; // parens
-	private static final int ADD_OR_SUBTRACT = 2;
-	private static final int MULTIPLY_OR_DIVIDE = 3;
 
 	/**
 	 * Converts the given string into expression tree for easier manipulation.
 	 * 
-	 * @param infix
-	 *            - a non-empty expression to parse.
+	 * @param infix - a non-empty expression to parse.
 	 * 
 	 * @return ExpressionTreeNode representing the root node of the given infix
 	 *         formula
@@ -48,15 +42,14 @@ public class ExpressionTreeGenerator {
 
 		// Is this the best place to put this check?
 		if (!postfix.isEmpty()) {
-			throw new ParseException(
-					"Extra operands without operators or functions");
+			throw new ParseException("Extra operands without operators or functions");
 		}
 		return root;
 	}
 
 	/**
-	 * This method converts the String infix expression to a Stack of tokens,
-	 * which are in postfix.
+	 * This method converts the String infix expression to a Stack of tokens, which
+	 * are in postfix.
 	 * 
 	 * @param infix
 	 * @return a stack of tokens, in postfix order
@@ -93,20 +86,17 @@ public class ExpressionTreeGenerator {
 			} else if (token instanceof OperationInterface) {
 
 				/*
-				 * while there is an operator, o2, at the top of the stack (this
-				 * excludes left parenthesis), and either
+				 * while there is an operator, o2, at the top of the stack (this excludes left
+				 * parenthesis), and either
 				 * 
-				 * o1 is left-associative and its precedence is less than (lower
-				 * precedence) or equal to that of o2, or o1 is
-				 * right-associative and its precedence is less than (lower
-				 * precedence) that of o2 (SS: second case is not applicable),
+				 * o1 is left-associative and its precedence is less than (lower precedence) or
+				 * equal to that of o2, or o1 is right-associative and its precedence is less
+				 * than (lower precedence) that of o2 (SS: second case is not applicable),
 				 * 
 				 * pop o2 off the stack, onto the output queue;
 				 */
-				while (!operators.isEmpty()
-						&& !(operators.peek() instanceof LeftParenToken)
-						&& orderOfOperation(token) <= orderOfOperation(operators
-								.peek())) {
+				while (!operators.isEmpty() && !(operators.peek() instanceof LeftParenToken)
+						&& orderOfOperation(token) <= orderOfOperation(operators.peek())) {
 					postfixResult.push(operators.pop());
 				}
 
@@ -117,15 +107,13 @@ public class ExpressionTreeGenerator {
 				// parenthesis, pop operators off the stack onto the output
 				// queue.
 
-				while (!operators.isEmpty()
-						&& !(operators.peek() instanceof LeftParenToken)) {
+				while (!operators.isEmpty() && !(operators.peek() instanceof LeftParenToken)) {
 					postfixResult.push(operators.pop());
 				}
 
 				// If no left parentheses are encountered, either the
 				// separator was misplaced or parentheses were mismatched.
-				if (operators.isEmpty()
-						|| !(operators.peek() instanceof LeftParenToken)) {
+				if (operators.isEmpty() || !(operators.peek() instanceof LeftParenToken)) {
 					throw new ParseException("Parentheses were mismatched.");
 				}
 
@@ -135,8 +123,7 @@ public class ExpressionTreeGenerator {
 				// Until the token at the top of the stack is a left
 				// parenthesis, pop operators off the stack onto the output
 				// queue.
-				while (operators.size() > 0
-						&& !(operators.peek() instanceof LeftParenToken)) {
+				while (operators.size() > 0 && !(operators.peek() instanceof LeftParenToken)) {
 					postfixResult.push(operators.pop());
 				}
 
@@ -149,8 +136,7 @@ public class ExpressionTreeGenerator {
 
 				// If the token at the top of the stack is a function token, pop
 				// it onto the output queue.
-				if (operators.size() > 0
-						&& operators.peek() instanceof FunctionToken) {
+				if (operators.size() > 0 && operators.peek() instanceof FunctionToken) {
 					postfixResult.push(operators.pop());
 				}
 
@@ -167,8 +153,7 @@ public class ExpressionTreeGenerator {
 
 			Token top = operators.peek();
 
-			if (top.equals(CharTokenFactory.getToken('('))
-					|| top.equals(CharTokenFactory.getToken(')'))) {
+			if (top.equals(CharTokenFactory.getToken('(')) || top.equals(CharTokenFactory.getToken(')'))) {
 				throw new ParseException("Mismatched Parentheses");
 			}
 			postfixResult.push(operators.pop());
@@ -185,17 +170,17 @@ public class ExpressionTreeGenerator {
 	 */
 	private int orderOfOperation(Token token) {
 
-		// TODO: Need to finish with other operators.
-
-		// TODO: DISCUSS: Is it better to have a method in the OperatorToken
-		// class that gives the order of operation?
-
-		if (token instanceof PlusToken || token instanceof MinusToken)
-			return ADD_OR_SUBTRACT;
-		else
-			return CONSTANT;
+		return token.getOrderOfOperation();
 	}
 	
+	/*
+	 * if (token instanceof PlusToken || token instanceof MinusToken)
+	 * return ADD_OR_SUBTRACT;
+	 * else if (token instanceof DivideToken)
+	 * return MULTIPLY_OR_DIVIDE;
+	 * else return CONSTANT; }
+	 */
+
 	public static void main(String[] args) {
 		ExpressionTreeGenerator x = new ExpressionTreeGenerator();
 		String str = "x - y";

@@ -9,5 +9,9 @@ public class DivideToken extends CharToken implements OperationInterface {
 	public DivideToken() {
 		super(CharConstants.SLASH);
 	}
-
+	
+	@Override
+	public int getOrderOfOperation() {
+		return MULTIPLY_OR_DIVIDE;
+	}
 }

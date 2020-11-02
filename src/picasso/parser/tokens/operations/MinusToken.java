@@ -8,5 +8,9 @@ public class MinusToken extends CharToken implements OperationInterface {
 	public MinusToken() {
 		super(CharConstants.MINUS);
 	}
-
+	
+	@Override
+	public int getOrderOfOperation() {
+		return ADD_OR_SUBTRACT;
+	}
 }

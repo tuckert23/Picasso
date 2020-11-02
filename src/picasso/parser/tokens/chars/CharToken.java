@@ -64,4 +64,9 @@ public class CharToken extends Token {
 	public boolean isFunction() {
 		return false;
 	}
+
+	@Override
+	public int getOrderOfOperation() {
+		return CONSTANT;
+	}
 }

@@ -45,4 +45,9 @@ public class IdentifierToken extends Token {
 		return false;
 	}
 
+	@Override
+	public int getOrderOfOperation() {
+		return CONSTANT;
+	}
+
 }

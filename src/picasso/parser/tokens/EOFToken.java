@@ -46,4 +46,9 @@ public class EOFToken extends Token {
 		return false;
 	}
 
+	@Override
+	public int getOrderOfOperation() {
+		return CONSTANT;
+	}
+
 }
