@@ -12,9 +12,6 @@ import picasso.parser.language.CharConstants;
 import picasso.parser.tokens.EOFToken;
 import picasso.parser.tokens.Token;
 import picasso.parser.tokens.TokenFactory;
-import picasso.parser.tokens.operations.MinusToken;
-import picasso.parser.tokens.operations.OperationInterface;
-import picasso.parser.tokens.operations.PlusToken;
 
 /**
  * A tokenizer for the Picasso language.
