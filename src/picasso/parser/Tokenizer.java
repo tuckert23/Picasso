@@ -12,6 +12,9 @@ import picasso.parser.language.CharConstants;
 import picasso.parser.tokens.EOFToken;
 import picasso.parser.tokens.Token;
 import picasso.parser.tokens.TokenFactory;
+import picasso.parser.tokens.operations.MinusToken;
+import picasso.parser.tokens.operations.OperationInterface;
+import picasso.parser.tokens.operations.PlusToken;
 
 /**
  * A tokenizer for the Picasso language.
@@ -64,6 +67,11 @@ public class Tokenizer {
 		Token result = nextToken();
 
 		while (true) {
+			///////////////////////for testing////////////////////
+			if (result instanceof OperationInterface) {
+				System.out.println(result + " is an operator");
+			}
+			//////////////////////////////////////////////////////
 
 			if (EOFToken.getInstance().equals(result)) {
 				break;
@@ -123,7 +131,7 @@ public class Tokenizer {
 	 * @param args
 	 */
 	public static void main(String[] args) {
-		String expression = "sin(x)";
+		String expression = "x - y";
 		Tokenizer tokenizer = new Tokenizer();
 		System.out.println("Tokens" + tokenizer.parseTokens(expression));
 	}

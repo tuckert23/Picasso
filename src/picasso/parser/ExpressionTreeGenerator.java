@@ -190,7 +190,7 @@ public class ExpressionTreeGenerator {
 		// TODO: DISCUSS: Is it better to have a method in the OperatorToken
 		// class that gives the order of operation?
 
-		if (token instanceof PlusToken)
+		if (token instanceof PlusToken || token instanceof MinusToken)
 			return ADD_OR_SUBTRACT;
 		else
 			return CONSTANT;
@@ -198,7 +198,7 @@ public class ExpressionTreeGenerator {
 	
 	public static void main(String[] args) {
 		ExpressionTreeGenerator x = new ExpressionTreeGenerator();
-		String str = "sin(x+y)";
+		String str = "x - y";
 		System.out.println(x.infixToPostfix(str));
 	}
 }
