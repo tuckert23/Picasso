@@ -67,12 +67,6 @@ public class Tokenizer {
 		Token result = nextToken();
 
 		while (true) {
-			///////////////////////for testing////////////////////
-			if (result instanceof OperationInterface) {
-				System.out.println(result + " is an operator");
-			}
-			//////////////////////////////////////////////////////
-
 			if (EOFToken.getInstance().equals(result)) {
 				break;
 			}
