@@ -17,7 +17,9 @@ import picasso.view.commands.*;
  */
 @SuppressWarnings("serial")
 public class Frame extends JFrame {
+
 	public static JTextField expressionField;
+
 	public Frame(Dimension size) {
 		setDefaultCloseOperation(DISPOSE_ON_CLOSE);
 
@@ -32,7 +34,6 @@ public class Frame extends JFrame {
 		commands.add("Open", new Reader());
 		commands.add("Evaluate", new ThreadedCommand<Pixmap>(canvas, new Evaluater()));
 		commands.add("Save", new Writer());
-		
 
 		// add our container to Frame and show it
 		getContentPane().add(canvas, BorderLayout.CENTER);
