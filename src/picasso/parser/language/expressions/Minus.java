@@ -1,9 +1,10 @@
-
 package picasso.parser.language.expressions;
 
 import picasso.parser.language.ExpressionTreeNode;
 
 /**
+ * Represents the minus operator in the Picasso language.
+ * 
  * @author Abdelrahman AboEitta
  *
  */
@@ -17,13 +18,20 @@ public class Minus extends BinaryOperator {
 		super(param1, param2);
 	}
 
+	/**
+	 * Evaluates this expression at the given x,y point by evaluating the
+	 * subtraction of the operator's two parameters.
+	 * 
+	 * @return the color from evaluating the subtraction of the operator's two
+	 *         parameter
+	 */
 	@Override
 	public RGBColor evaluate(double x, double y) {
-		RGBColor result1 = param1.evaluate(x, y);
-		RGBColor result2 = param2.evaluate(x, y);
-		double red = result2.getRed() - result1.getRed();
-		double green = result2.getGreen() - result1.getGreen();
-		double blue = result2.getBlue() - result1.getBlue();
+		RGBColor right = param1.evaluate(x, y);
+		RGBColor left = param2.evaluate(x, y);
+		double red = left.getRed() - right.getRed();
+		double green = left.getGreen() - right.getGreen();
+		double blue = left.getBlue() - right.getBlue();
 
 		return new RGBColor(red, green, blue);
 	}

@@ -6,18 +6,28 @@ package picasso.parser.language.expressions;
 import picasso.parser.language.ExpressionTreeNode;
 
 /**
+ * Represents the absolute function in the Picasso language.
+ * 
  * @author Abdelrahman AboEitta
  *
  */
 public class Abs extends UnaryFunction {
 
 	/**
-	 * @param param
+	 * Create an absolute expression that takes as a parameter the given expression
+	 * 
+	 * @param param the expression to absolute
 	 */
 	public Abs(ExpressionTreeNode param) {
 		super(param);
 	}
 
+	/**
+	 * Evaluates this expression at the given x,y point by evaluating the absolute of
+	 * the function's parameter.
+	 * 
+	 * @return the color from evaluating the absolute of the expression's parameter
+	 */
 	@Override
 	public RGBColor evaluate(double x, double y) {
 		RGBColor result = param.evaluate(x, y);
@@ -27,7 +37,7 @@ public class Abs extends UnaryFunction {
 
 		return new RGBColor(red, green, blue);
 	}
-	
+
 	/*
 	 * (non-Javadoc)
 	 * 

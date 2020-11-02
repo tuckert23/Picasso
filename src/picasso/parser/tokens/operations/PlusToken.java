@@ -8,11 +8,12 @@ import picasso.parser.tokens.chars.CharToken;
  * 
  */
 public class PlusToken extends CharToken implements OperationInterface {
-	
+
 	public PlusToken() {
 		super(CharConstants.PLUS);
 	}
-	
+
+	@Override
 	public int getOrderOfOperation() {
 		return ADD_OR_SUBTRACT;
 	}

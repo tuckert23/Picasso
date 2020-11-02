@@ -1,7 +1,7 @@
 package picasso.parser.tokens.functions;
 
 /**
- * @author Abdelrahman AboEitta
+ * Represents the sin function token
  *
  */
 public class SinToken extends FunctionToken {

@@ -14,7 +14,6 @@ public abstract class UnaryFunction extends ExpressionTreeNode {
 	ExpressionTreeNode param;
 
 	/**
-	 * 
 	 * @param param
 	 */
 	public UnaryFunction(ExpressionTreeNode param) {
