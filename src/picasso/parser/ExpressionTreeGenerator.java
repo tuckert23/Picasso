@@ -19,7 +19,6 @@ import picasso.parser.tokens.operations.*;
  */
 public class ExpressionTreeGenerator {
 
-
 	/**
 	 * Converts the given string into expression tree for easier manipulation.
 	 * 
@@ -164,21 +163,19 @@ public class ExpressionTreeGenerator {
 	}
 
 	/**
+	 * it returns the order of the operations
 	 * 
 	 * @param token
-	 * @return
+	 * @return order of operation
 	 */
 	private int orderOfOperation(Token token) {
-
 		return token.getOrderOfOperation();
 	}
-	
+
 	/*
-	 * if (token instanceof PlusToken || token instanceof MinusToken)
-	 * return ADD_OR_SUBTRACT;
-	 * else if (token instanceof DivideToken)
-	 * return MULTIPLY_OR_DIVIDE;
-	 * else return CONSTANT; }
+	 * if (token instanceof PlusToken || token instanceof MinusToken) return
+	 * ADD_OR_SUBTRACT; else if (token instanceof DivideToken) return
+	 * MULTIPLY_OR_DIVIDE; else return CONSTANT; }
 	 */
 
 	public static void main(String[] args) {
