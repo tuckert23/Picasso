@@ -1,8 +1,8 @@
 package picasso.parser.tokens.multiargument;
 
-public class PerlinColor {
+public class PerlinColorToken {
 
-	public PerlinColor() {
+	public PerlinColorToken() {
 		// TODO Auto-generated constructor stub
 	}
 
