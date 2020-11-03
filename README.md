@@ -1,5 +1,13 @@
 # Picasso
 
+## Authors:  
+	
+	- Abdul Rahman
+	- August Donovan
+	- Taylor Tucker
+	- Will Medick
+	- Danny Kung
+
 An application that allows the user to create expressions that
 evaluate to colors and then eventually to images.
 
