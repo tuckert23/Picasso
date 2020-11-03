@@ -43,5 +43,9 @@ public abstract class FunctionToken extends Token {
 		}
 		return obj.getClass().equals(this.getClass());
 	}
-
+	
+	@Override
+	public int getOrderOfOperation() {
+		return CONSTANT;
+	}
 }

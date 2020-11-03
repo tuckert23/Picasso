@@ -40,6 +40,7 @@ public class TokenFactory {
 				if (t == null) {
 					return new IdentifierToken(tokenizer.sval);
 				}
+
 				return t;
 			default:
 				Token ct = CharTokenFactory.getToken(result);
@@ -92,8 +93,7 @@ public class TokenFactory {
 
 		Token rightBracket = parse(tokenizer);
 		if (!(rightBracket instanceof RightBracketToken)) {
-			throw new ParseException("Error parsing color, expected ] got "
-					+ rightBracket);
+			throw new ParseException("Error parsing color, expected ] got " + rightBracket);
 		}
 
 		NumberToken red = (NumberToken) r;
@@ -133,10 +133,9 @@ public class TokenFactory {
 		List<String> functionsList = BuiltinFunctionsReader.getFunctionsList();
 
 		for (String function : functionsList) {
-			//System.out.println("Function: " + function);
+			// System.out.println("Function: " + function);
 			String functionForToken = capitalize(function);
-			String tokenName = functionTokenPackage + functionForToken
-					+ "Token";
+			String tokenName = functionTokenPackage + functionForToken + "Token";
 			Class tokenClass = null;
 			Token t = null;
 			// System.out.println(tokenName);
@@ -158,8 +157,7 @@ public class TokenFactory {
 	/**
 	 * Capitalizes the first letter in the string
 	 * 
-	 * @param s
-	 *            - string to be capitalized
+	 * @param s - string to be capitalized
 	 * @return the string capitalized
 	 */
 	public static String capitalize(String s) {

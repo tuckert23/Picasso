@@ -4,17 +4,17 @@ import picasso.parser.language.CharConstants;
 import picasso.parser.tokens.chars.CharToken;
 
 /**
- * Represents the plus sign token
- * 
+ * Represents the Divide sign token
+ *
  */
-public class PlusToken extends CharToken implements OperationInterface {
+public class DivideToken extends CharToken implements OperationInterface {
 
-	public PlusToken() {
-		super(CharConstants.PLUS);
+	public DivideToken() {
+		super(CharConstants.SLASH);
 	}
 
 	@Override
 	public int getOrderOfOperation() {
-		return ADD_OR_SUBTRACT;
+		return MULTIPLY_OR_DIVIDE;
 	}
 }

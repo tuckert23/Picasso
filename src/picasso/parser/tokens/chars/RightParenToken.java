@@ -11,4 +11,10 @@ public class RightParenToken extends CharToken {
 		super(CharConstants.RIGHT_PAREN);
 	}
 	
+	
+	@Override
+	public int getOrderOfOperation() {
+		return GROUPING;
+	}
+	
 }

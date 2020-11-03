@@ -19,8 +19,7 @@ public class FloorAnalyzer extends UnaryFunctionAnalyzer {
 		tokens.pop(); // Need to remove the floor token
 		// the parameter is the next token on the stack.
 		// But, it needs to be processed
-		return new Floor(SemanticAnalyzer.getInstance().generateExpressionTree(
-				tokens));
+		return new Floor(SemanticAnalyzer.getInstance().generateExpressionTree(tokens));
 	}
 
 }

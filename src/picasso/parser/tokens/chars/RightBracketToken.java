@@ -11,5 +11,4 @@ public class RightBracketToken extends CharToken {
 	public RightBracketToken() {
 		super(CharConstants.RIGHT_BRACKET);
 	}
-
 }

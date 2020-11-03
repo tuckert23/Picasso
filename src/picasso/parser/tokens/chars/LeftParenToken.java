@@ -10,4 +10,10 @@ public class LeftParenToken extends CharToken {
 	public LeftParenToken() {
 		super(CharConstants.LEFT_PAREN);
 	}
+	
+	
+	@Override
+	public int getOrderOfOperation() {
+		return GROUPING;
+	}
 }

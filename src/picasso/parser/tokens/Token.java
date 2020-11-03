@@ -12,6 +12,11 @@ package picasso.parser.tokens;
  */
 public abstract class Token {
 
+	public static final int CONSTANT = 0;
+	public static final int GROUPING = 1; // parens
+	public static final int ADD_OR_SUBTRACT = 2;
+	public static final int MULTIPLY_OR_DIVIDE = 3;
+
 	private String description;
 
 	/**
@@ -46,5 +51,12 @@ public abstract class Token {
 	 * @return true iff this Token represents a function
 	 */
 	public abstract boolean isFunction();
+
+	/**
+	 * A method to get the order of operation of a specific token
+	 * 
+	 * @return the order of operation
+	 */
+	public abstract int getOrderOfOperation();
 
 }
