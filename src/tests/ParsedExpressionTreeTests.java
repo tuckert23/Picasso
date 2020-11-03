@@ -14,7 +14,7 @@ import picasso.parser.language.expressions.*;
  * Tests of creating an expression tree from a string expression. Will have
  * compiler errors until some code is created.
  * 
- * @author Sara Sprenkle
+ * @author Sara Sprenkle.
  * 
  */
 public class ParsedExpressionTreeTests {
