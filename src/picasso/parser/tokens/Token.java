@@ -13,7 +13,7 @@ package picasso.parser.tokens;
 public abstract class Token {
 
 	public static final int CONSTANT = 0;
-	public static final int GROUPING = 1; // parens
+	public static final int GROUPING = 4; // parens
 	public static final int ADD_OR_SUBTRACT = 2;
 	public static final int MULTIPLY_OR_DIVIDE = 3;
 

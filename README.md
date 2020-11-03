@@ -2,7 +2,7 @@
 
 ## Authors:  
 	
-	- Abdul Rahman
+	- AbdelRahman AboEitta
 	- August Donovan
 	- Taylor Tucker
 	- Will Medick

@@ -1,6 +1,8 @@
 +=Plus
 -=Minus
 /=Divide
-
+*=Multiply
+%=Modulo
+^=Exponent
 
 

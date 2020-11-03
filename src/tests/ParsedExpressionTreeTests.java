@@ -82,5 +82,4 @@ public class ParsedExpressionTreeTests {
 		assertEquals(new Floor(new Plus(new X(), new Y())), e);
 	}
 
-
 }
