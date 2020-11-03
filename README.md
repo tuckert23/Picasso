@@ -1,6 +1,6 @@
 # Picasso
 
-## Authors: 
+## Authors:  
 	
 	- Abdul Rahman
 	- August Donovan
