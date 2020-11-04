@@ -1,4 +1,4 @@
-package picasso.parser.tokens.multiargument;
+package picasso.parser.tokens.functions.multiargument;
 
 /**
  * 

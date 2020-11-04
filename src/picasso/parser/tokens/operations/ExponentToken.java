@@ -24,7 +24,7 @@ public class ExponentToken extends CharToken implements OperationInterface {
 	
 	public int getOrderOfOperation()
 	{
-		return MULTIPLY_OR_DIVIDE;
+		return EXPONENTIATE;
 	}
 	
 
