@@ -27,4 +27,8 @@ public class StringToken extends Token {
 	public String toString() {
 		return super.toString() + ": " + str;
 	}
+
+	public String getString() {
+		return str;
+	}
 }
