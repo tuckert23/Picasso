@@ -10,6 +10,7 @@ import java.util.List;
 
 import picasso.parser.language.CharConstants;
 import picasso.parser.tokens.EOFToken;
+import picasso.parser.tokens.StringToken;
 import picasso.parser.tokens.Token;
 import picasso.parser.tokens.TokenFactory;
 
@@ -118,7 +119,7 @@ public class Tokenizer {
 	 * @param args
 	 */
 	public static void main(String[] args) {
-		String expression = "x - y";
+		String expression = "\"fo.ja\" x + y^y";
 		Tokenizer tokenizer = new Tokenizer();
 		System.out.println("Tokens" + tokenizer.parseTokens(expression));
 	}

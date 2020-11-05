@@ -8,15 +8,17 @@ import java.util.HashMap;
 
 import picasso.parser.ParseException;
 import picasso.parser.language.BuiltinFunctionsReader;
+import picasso.parser.language.CharConstants;
 import picasso.parser.tokens.chars.CommaToken;
 import picasso.parser.tokens.chars.LeftBracketToken;
+import picasso.parser.tokens.chars.QuoteToken;
 import picasso.parser.tokens.chars.RightBracketToken;
 
 /**
  * Looks at a generic token and creates the appropriate token type
  */
 public class TokenFactory {
-	private static Map<String, Token> tokenNameToToken = new HashMap<String, Token>();
+	private static Map<String, Token> functionNameToToken = new HashMap<String, Token>();
 
 	static {
 		initBuiltinFunctionTokenMappings();
@@ -31,9 +33,11 @@ public class TokenFactory {
 				return EOFToken.getInstance();
 			case StreamTokenizer.TT_NUMBER:
 				return new NumberToken(tokenizer.nval);
+			case CharConstants.QUOTE:
+				return new StringToken(tokenizer.sval);
 			case StreamTokenizer.TT_WORD:
 
-				Token t = (Token) tokenNameToToken.get(tokenizer.sval);
+				Token t = (Token) functionNameToToken.get(tokenizer.sval);
 
 				// If there is no token with the parsed name, the token must be
 				// an identifier
@@ -48,7 +52,19 @@ public class TokenFactory {
 				if (ct instanceof LeftBracketToken) {
 					return parseColorToken(tokenizer);
 				}
-
+				/*
+				else if (ct instanceof QuoteToken) {
+					//result = tokenizer.nextToken();
+					if (result == StreamTokenizer.TT_WORD) {
+						StringToken str = new StringToken(tokenizer.sval);
+						
+						return str;
+					}
+					return ct; //TODO: ??
+					
+				}
+				
+				*/
 				// TODO: Handle quoted strings
 				// Others?
 
@@ -59,7 +75,14 @@ public class TokenFactory {
 			throw new ParseException("io problem " + io);
 		}
 	}
-
+	
+	private static StringToken parseStringToken(StreamTokenizer tokenizer) {
+		Token str = parse(tokenizer);
+		StringToken myStr = (StringToken) str;
+		return myStr;
+		
+		//return new StringToken("foo.jpg");
+	}
 	/**
 	 * Parse a ColorToken
 	 * 
@@ -142,7 +165,7 @@ public class TokenFactory {
 			try {
 				tokenClass = Class.forName(tokenName);
 				t = (Token) tokenClass.newInstance();
-				tokenNameToToken.put(function, t);
+				functionNameToToken.put(function, t);
 			} catch (ClassNotFoundException e) {
 				throw new ParseException(tokenName + " not found " + e);
 			} catch (InstantiationException e) {

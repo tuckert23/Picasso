@@ -80,6 +80,8 @@ public class ExpressionTreeGenerator {
 				postfixResult.push(token);
 			} else if (token instanceof IdentifierToken) {
 				postfixResult.push(token);
+			} else if (token instanceof StringToken) {
+				postfixResult.push(token);
 			} else if (token instanceof FunctionToken) {
 				operators.push(token);
 			} else if (token instanceof OperationInterface) {
@@ -172,15 +174,9 @@ public class ExpressionTreeGenerator {
 		return token.getOrderOfOperation();
 	}
 
-	/*
-	 * if (token instanceof PlusToken || token instanceof MinusToken) return
-	 * ADD_OR_SUBTRACT; else if (token instanceof DivideToken) return
-	 * MULTIPLY_OR_DIVIDE; else return CONSTANT; }
-	 */
-
 	public static void main(String[] args) {
 		ExpressionTreeGenerator x = new ExpressionTreeGenerator();
-		String str = "x - y";
+		String str = " x^y \"hi.jph\"+ bye";
 		System.out.println(x.infixToPostfix(str));
 	}
 }
