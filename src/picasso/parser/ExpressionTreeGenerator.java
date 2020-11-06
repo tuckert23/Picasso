@@ -84,7 +84,7 @@ public class ExpressionTreeGenerator {
 				postfixResult.push(token);
 			} else if (token instanceof FunctionToken) {
 				operators.push(token);
-			} else if (token instanceof OperationInterface) {
+			} else if (token instanceof OperationInterface || token instanceof EqualsToken) {
 
 				/*
 				 * while there is an operator, o2, at the top of the stack (this excludes left
@@ -176,7 +176,7 @@ public class ExpressionTreeGenerator {
 
 	public static void main(String[] args) {
 		ExpressionTreeGenerator x = new ExpressionTreeGenerator();
-		String str = " x^y \"hi.jph\"+ bye";
+		String str = " bug = 0";
 		System.out.println(x.infixToPostfix(str));
 	}
 }

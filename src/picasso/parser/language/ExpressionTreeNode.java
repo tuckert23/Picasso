@@ -26,5 +26,5 @@ public abstract class ExpressionTreeNode implements EvaluatableExpression {
 
 	// TODO: Not being utilized yet. Why would it be useful?
 	// keep a mapping of the element to its value.
-	static protected Map<ExpressionTreeNode, Object> gelementsToValue = new TreeMap<ExpressionTreeNode, Object>();
+	static protected Map<ExpressionTreeNode, Object> elementsToValue = new TreeMap<ExpressionTreeNode, Object>();
 }

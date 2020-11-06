@@ -119,7 +119,7 @@ public class Tokenizer {
 	 * @param args
 	 */
 	public static void main(String[] args) {
-		String expression = "\"fo.ja\" x + y^y";
+		String expression = "a = 15 + x";
 		Tokenizer tokenizer = new Tokenizer();
 		System.out.println("Tokens" + tokenizer.parseTokens(expression));
 	}

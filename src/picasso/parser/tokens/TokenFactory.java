@@ -44,27 +44,14 @@ public class TokenFactory {
 				if (t == null) {
 					return new IdentifierToken(tokenizer.sval);
 				}
-
 				return t;
+
 			default:
 				Token ct = CharTokenFactory.getToken(result);
 				// parse a color token if it starts with a [
 				if (ct instanceof LeftBracketToken) {
 					return parseColorToken(tokenizer);
 				}
-				/*
-				else if (ct instanceof QuoteToken) {
-					//result = tokenizer.nextToken();
-					if (result == StreamTokenizer.TT_WORD) {
-						StringToken str = new StringToken(tokenizer.sval);
-						
-						return str;
-					}
-					return ct; //TODO: ??
-					
-				}
-				
-				*/
 				// TODO: Handle quoted strings
 				// Others?
 
@@ -75,14 +62,7 @@ public class TokenFactory {
 			throw new ParseException("io problem " + io);
 		}
 	}
-	
-	private static StringToken parseStringToken(StreamTokenizer tokenizer) {
-		Token str = parse(tokenizer);
-		StringToken myStr = (StringToken) str;
-		return myStr;
-		
-		//return new StringToken("foo.jpg");
-	}
+
 	/**
 	 * Parse a ColorToken
 	 * 

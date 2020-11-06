@@ -17,10 +17,22 @@ public class Variable extends ExpressionTreeNode {
 	}
 
 	@Override
+	public boolean equals(Object obj) {
+		if (obj == this) {
+			return true;
+		}
+		if (!(obj instanceof Variable)) {
+			return false;
+		}
+		Variable l = (Variable) obj;
+		return this.name.equals(l.name);
+	}
+
+	@Override
 	public RGBColor evaluate(double x, double y) {
-		// TODO Auto-generated method stub
-		// Should be set to some value using assignment.
-		return null;
+		ExpressionTreeNode param = (ExpressionTreeNode) elementsToValue.get(this);
+		RGBColor result = param.evaluate(x, y);
+		return result;
 	}
 
 	public String getName() {
