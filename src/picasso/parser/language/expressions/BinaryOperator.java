@@ -10,8 +10,8 @@ import picasso.parser.language.ExpressionTreeNode;
  */
 public abstract class BinaryOperator extends ExpressionTreeNode {
 
-	ExpressionTreeNode param1;
-	ExpressionTreeNode param2;
+	protected ExpressionTreeNode param1;
+	protected ExpressionTreeNode param2;
 
 	/**
 	 * @param param1

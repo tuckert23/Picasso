@@ -1,6 +1,8 @@
-package picasso.parser.language.expressions;
+package picasso.parser.language.expressions.operators;
 
 import picasso.parser.language.ExpressionTreeNode;
+import picasso.parser.language.expressions.BinaryOperator;
+import picasso.parser.language.expressions.RGBColor;
 
 /**
  * Represents the plus operator in the Picasso language.

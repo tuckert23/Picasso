@@ -1,21 +1,25 @@
 /**
  * 
  */
-package picasso.parser.language.expressions;
+package picasso.parser.language.expressions.operators;
 
 import picasso.parser.language.ExpressionTreeNode;
+import picasso.parser.language.expressions.BinaryOperator;
+import picasso.parser.language.expressions.RGBColor;
+
+import java.lang.Math;
 
 /**
  * @author taylor
  *
  */
-public class Multiply extends BinaryOperator {
+public class Exponent extends BinaryOperator {
 
 	/**
 	 * @param param1
 	 * @param param2
 	 */
-	public Multiply(ExpressionTreeNode param1, ExpressionTreeNode param2) {
+	public Exponent(ExpressionTreeNode param1, ExpressionTreeNode param2) {
 		super(param1, param2);
 
 	}
@@ -31,9 +35,10 @@ public class Multiply extends BinaryOperator {
 	public RGBColor evaluate(double x, double y) {
 		RGBColor right = param1.evaluate(x, y);
 		RGBColor left = param2.evaluate(x, y);
-		double red = left.getRed() * right.getRed();
-		double green = left.getGreen() * right.getGreen();
-		double blue = left.getBlue() * right.getBlue();
+		
+		double red = Math.pow(left.getRed(), right.getRed());
+		double green = Math.pow(left.getGreen(), right.getGreen());
+		double blue = Math.pow(left.getBlue(), right.getBlue());
 
 		return new RGBColor(red, green, blue);
 	}

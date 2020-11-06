@@ -1,9 +1,11 @@
 /**
  * 
  */
-package picasso.parser.language.expressions;
+package picasso.parser.language.expressions.unaryFunctions;
 
 import picasso.parser.language.ExpressionTreeNode;
+import picasso.parser.language.expressions.RGBColor;
+import picasso.parser.language.expressions.UnaryFunction;
 
 /**
  * @author Abdelrahman AboEitta

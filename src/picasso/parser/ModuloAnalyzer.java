@@ -6,8 +6,8 @@ package picasso.parser;
 import java.util.Stack;
 
 import picasso.parser.language.ExpressionTreeNode;
+import picasso.parser.language.expressions.operators.Modulo;
 import picasso.parser.tokens.Token;
-import picasso.parser.language.expressions.Modulo;
 
 /**
  * @author taylor

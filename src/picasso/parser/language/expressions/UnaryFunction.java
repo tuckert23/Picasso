@@ -11,7 +11,7 @@ import picasso.parser.language.ExpressionTreeNode;
  */
 public abstract class UnaryFunction extends ExpressionTreeNode {
 
-	ExpressionTreeNode param;
+	protected ExpressionTreeNode param;
 
 	/**
 	 * @param param
