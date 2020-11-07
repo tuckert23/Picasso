@@ -1,7 +1,7 @@
 package picasso.parser.language.expressions.operators;
 
 import picasso.parser.language.ExpressionTreeNode;
-import picasso.parser.language.expressions.BinaryOperator;
+import picasso.parser.language.expressions.Binary;
 import picasso.parser.language.expressions.RGBColor;
 
 /**
@@ -10,7 +10,7 @@ import picasso.parser.language.expressions.RGBColor;
  * @author Abdelrahman AboEitta
  *
  */
-public class Divide extends BinaryOperator {
+public class Divide extends Binary {
 
 	/**
 	 * @param param1

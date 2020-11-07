@@ -2,14 +2,14 @@ package picasso.parser.language.expressions.binaryFunctions;
 
 import picasso.model.ImprovedNoise;
 import picasso.parser.language.ExpressionTreeNode;
-import picasso.parser.language.expressions.BinaryFunction;
+import picasso.parser.language.expressions.Binary;
 import picasso.parser.language.expressions.RGBColor;
 
 /**
  * @author Abdelrahman AboEitta
  *
  */
-public class PerlinColor extends BinaryFunction {
+public class PerlinColor extends Binary {
 
 	/**
 	 * 

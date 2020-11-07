@@ -2,7 +2,7 @@ package picasso.parser.language.expressions;
 
 import picasso.parser.language.ExpressionTreeNode;
 
-public class Equals extends BinaryOperator {
+public class Equals extends Binary {
 	
 	public Equals(ExpressionTreeNode param1, ExpressionTreeNode param2) {
 		super(param1, param2);
