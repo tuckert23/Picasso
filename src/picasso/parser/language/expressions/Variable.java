@@ -18,7 +18,6 @@ public class Variable extends ExpressionTreeNode {
 
 	@Override
 	public RGBColor evaluate(double x, double y) {
-		//RGBColor result = param.evaluate(x, y);
 		return null;
 	}
 
