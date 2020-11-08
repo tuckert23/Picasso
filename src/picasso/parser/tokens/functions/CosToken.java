@@ -1,7 +1,7 @@
 package picasso.parser.tokens.functions;
 
 /**
- * Represents the tan function token
+ * Represents the cos function token
  * @author August Donovan
  *
  */
