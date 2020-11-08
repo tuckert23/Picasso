@@ -10,21 +10,19 @@ import picasso.parser.language.ExpressionTreeNode;
  */
 public class Variable extends ExpressionTreeNode {
 
-	private String name;
+	private ExpressionTreeNode param;
 
-	public Variable(String name) {
-		this.name = name;
+	public Variable(ExpressionTreeNode param) {
+		this.param = param;
 	}
 
 	@Override
 	public RGBColor evaluate(double x, double y) {
-		return null;
+		RGBColor result = param.evaluate(x, y);
+		return result;
 	}
 
-	public String getName() {
-		return name;
-	}
-	
+	/*
 	@Override
 	public boolean equals(Object obj) {
 		if (obj == this) {
@@ -36,5 +34,6 @@ public class Variable extends ExpressionTreeNode {
 		Variable l = (Variable) obj;
 		return this.name.equals(l.name);
 	}
+	*/
 
 }

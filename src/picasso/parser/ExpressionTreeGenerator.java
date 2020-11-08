@@ -176,7 +176,7 @@ public class ExpressionTreeGenerator {
 
 	public static void main(String[] args) {
 		ExpressionTreeGenerator x = new ExpressionTreeGenerator();
-		String str = "15 + log(x) * perlinColor(x,y)";
-		System.out.println(x.infixToPostfix(str));
+		String str = ".5 + log(x) * perlinColor(x,y)";
+		System.out.println(x.makeExpression(str));
 	}
 }
