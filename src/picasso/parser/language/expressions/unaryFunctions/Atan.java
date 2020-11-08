@@ -11,12 +11,12 @@ import picasso.parser.language.expressions.UnaryFunction;
  * Based on Abdelrahman's structure in Sin
  *
  */
-public class Cos extends UnaryFunction {
+public class Atan extends UnaryFunction {
 
 	/**
-	 * Create a cos expression that takes as a parameter the given expression
+	 * Create an atan expression that takes as a parameter the given expression
 	 * 
-	 * @param param the expression to sin
+	 * @param param the expression to atan
 	 */
 	
 	public Atan(ExpressionTreeNode param) {
