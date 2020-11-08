@@ -32,15 +32,18 @@ public class Divide extends Binary {
 		RGBColor right = param1.evaluate(x, y);
 		RGBColor left = param2.evaluate(x, y);
 
-		// throw an error if attempting to divide by zero
-		if (right.getRed() == 0 || right.getBlue() == 0 || right.getGreen() == 0) {
-			throw new ArithmeticException("Error: attempted to divide by zero. Check dividend value.");
+		double red = 0;
+		double green = 0;
+		double blue = 0;
+		if (right.getRed() != 0) {
+			red = left.getRed() / right.getRed();
 		}
-		
-		double red = left.getRed() / right.getRed();
-		double green = left.getGreen() / right.getGreen();
-		double blue = left.getBlue() / right.getBlue();
-
+		if (right.getGreen() != 0) {
+			green = left.getGreen() / right.getGreen();
+		}
+		if (right.getGreen() != 0) {
+			blue = left.getBlue() / right.getBlue();
+		}
 		return new RGBColor(red, green, blue);
 	}
 }
