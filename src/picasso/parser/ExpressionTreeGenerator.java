@@ -176,7 +176,7 @@ public class ExpressionTreeGenerator {
 
 	public static void main(String[] args) {
 		ExpressionTreeGenerator x = new ExpressionTreeGenerator();
-		String str = ".5 + log(x) * perlinColor(x,y)";
+		String str = " \"foo.jpg\"";
 		System.out.println(x.makeExpression(str));
 	}
 }

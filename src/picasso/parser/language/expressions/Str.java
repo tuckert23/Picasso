@@ -20,7 +20,6 @@ public class Str extends ExpressionTreeNode {
 
 	@Override
 	public RGBColor evaluate(double x, double y) {
-		
 		return null;
 	}
 
