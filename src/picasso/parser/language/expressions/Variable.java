@@ -17,6 +17,16 @@ public class Variable extends ExpressionTreeNode {
 	}
 
 	@Override
+	public RGBColor evaluate(double x, double y) {
+		//RGBColor result = param.evaluate(x, y);
+		return null;
+	}
+
+	public String getName() {
+		return name;
+	}
+	
+	@Override
 	public boolean equals(Object obj) {
 		if (obj == this) {
 			return true;
@@ -26,17 +36,6 @@ public class Variable extends ExpressionTreeNode {
 		}
 		Variable l = (Variable) obj;
 		return this.name.equals(l.name);
-	}
-
-	@Override
-	public RGBColor evaluate(double x, double y) {
-		ExpressionTreeNode param = (ExpressionTreeNode) elementsToValue.get(this);
-		RGBColor result = param.evaluate(x, y);
-		return result;
-	}
-
-	public String getName() {
-		return name;
 	}
 
 }
