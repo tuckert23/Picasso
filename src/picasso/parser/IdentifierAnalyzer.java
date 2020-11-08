@@ -25,6 +25,7 @@ public class IdentifierAnalyzer implements SemanticAnalyzerInterface {
 		// We always have x and y defined.
 		idToExpression.put("x", new X());
 		idToExpression.put("y", new Y());
+		idToExpression.put("bugs", new Variable("bugs"));
 	}
 
 	@Override
@@ -35,17 +36,21 @@ public class IdentifierAnalyzer implements SemanticAnalyzerInterface {
 		if (mapped != null) {
 			return mapped;
 		}
-		addNewVariable(t);
-		mapped = idToExpression.get(t.getName());
+		
+		//addNewVariable(t);
+		//mapped = idToExpression.get(t.getName());
+		
 		// TODO : What should we do if we don't recognize the identifier?
 		// Is that an error? Or, could there a valid reason? The reason is the user
 		// didn't assign this variable yet.
-		return mapped;
+		return null;
 	}
 	
+	/*
 	public static void addNewVariable(IdentifierToken t) {
 		String name = t.getName();
 		idToExpression.put(name, new Variable(name));
 	}
+	*/
 	
 }
