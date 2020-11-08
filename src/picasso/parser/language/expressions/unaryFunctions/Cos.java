@@ -12,7 +12,6 @@ import picasso.parser.language.expressions.UnaryFunction;
  *
  */
 public class Cos extends UnaryFunction {
-
 	/**
 	 * Create a cos expression that takes as a parameter the given expression
 	 * 
@@ -53,6 +52,7 @@ public class Cos extends UnaryFunction {
 		if (!(obj instanceof Cos)) {
 			return false;
 		}
+		
 		Cos s = (Cos) obj;
 		return param.equals(s.param);
 	}
