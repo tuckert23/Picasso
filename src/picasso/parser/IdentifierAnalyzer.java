@@ -25,10 +25,6 @@ public class IdentifierAnalyzer implements SemanticAnalyzerInterface {
 		// We always have x and y defined.
 		idToExpression.put("x", new X());
 		idToExpression.put("y", new Y());
-
-		ExpressionTreeGenerator x = new ExpressionTreeGenerator();
-		ExpressionTreeNode y = x.makeExpression("x^0.4");
-		idToExpression.put("bugs", new Variable(y));
 	}
 
 	@Override
@@ -39,9 +35,6 @@ public class IdentifierAnalyzer implements SemanticAnalyzerInterface {
 		if (mapped != null) {
 			return mapped;
 		}
-
-		// addNewVariable(t);
-		// mapped = idToExpression.get(t.getName());
 
 		// TODO : What should we do if we don't recognize the identifier?
 		// Is that an error? Or, could there a valid reason? The reason is the user
