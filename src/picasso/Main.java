@@ -5,7 +5,7 @@ import java.awt.Dimension;
 import picasso.view.Frame;
 
 /**
- * Starting point for Picasso
+ * Starting point for Picasso.
  * 
  * @author Robert Duvall (rcd@cs.duke.edu) 
  */
