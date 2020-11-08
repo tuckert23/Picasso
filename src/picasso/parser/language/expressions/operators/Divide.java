@@ -8,7 +8,7 @@ import picasso.parser.language.expressions.RGBColor;
  * Represents the divide operator in the Picasso language.
  * 
  * @author Abdelrahman AboEitta
- *
+ * @author August Donovan
  */
 public class Divide extends Binary {
 
@@ -31,19 +31,15 @@ public class Divide extends Binary {
 	public RGBColor evaluate(double x, double y) {
 		RGBColor right = param1.evaluate(x, y);
 		RGBColor left = param2.evaluate(x, y);
-		double red = 0;
-		double green = 0;
-		double blue = 0;
 
-		if (right.getRed() != 0) {
-			red = left.getRed() / right.getRed();
+		// throw an error if attempting to divide by zero
+		if (right.getRed() == 0 || right.getBlue() == 0 || right.getGreen() == 0) {
+			throw new ArithmeticException("Error: attempted to divide by zero. Check dividend value.");
 		}
-		if (right.getGreen() != 0) {
-			green = left.getGreen() / right.getGreen();
-		}
-		if (right.getGreen() != 0) {
-			blue = left.getBlue() / right.getBlue();
-		}
+		
+		double red = left.getRed() / right.getRed();
+		double green = left.getGreen() / right.getGreen();
+		double blue = left.getBlue() / right.getBlue();
 
 		return new RGBColor(red, green, blue);
 	}
