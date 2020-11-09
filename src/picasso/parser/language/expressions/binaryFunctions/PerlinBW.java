@@ -13,8 +13,8 @@ public class PerlinBW extends Binary {
 
 	@Override
 	public RGBColor evaluate(double x, double y) {
-		RGBColor right = param1.evaluate(x, y);
-		RGBColor left = param2.evaluate(x, y);
+		RGBColor right = rightParam.evaluate(x, y);
+		RGBColor left = leftParam.evaluate(x, y);
 		double grey = ImprovedNoise.noise(left.getRed() + right.getRed(), left.getGreen() + right.getGreen(),
 				left.getBlue() + right.getBlue());
 		return new RGBColor(grey, grey, grey);

@@ -3,6 +3,7 @@ package picasso.parser.language.expressions.operators;
 import picasso.parser.language.ExpressionTreeNode;
 import picasso.parser.language.expressions.Binary;
 import picasso.parser.language.expressions.RGBColor;
+import picasso.parser.language.expressions.unaryFunctions.Abs;
 
 /**
  * Represents the plus operator in the Picasso language.
@@ -12,8 +13,8 @@ import picasso.parser.language.expressions.RGBColor;
  */
 public class Plus extends Binary {
 
-	public Plus(ExpressionTreeNode param1, ExpressionTreeNode param2) {
-		super(param1, param2);
+	public Plus(ExpressionTreeNode right, ExpressionTreeNode left) {
+		super(right, left);
 	}
 
 	/**
@@ -25,13 +26,12 @@ public class Plus extends Binary {
 	 */
 	@Override
 	public RGBColor evaluate(double x, double y) {
-		RGBColor right = param1.evaluate(x, y);
-		RGBColor left = param2.evaluate(x, y);
+		RGBColor right = rightParam.evaluate(x, y);
+		RGBColor left = leftParam.evaluate(x, y);
 		double red = left.getRed() + right.getRed();
 		double green = left.getGreen() + right.getGreen();
 		double blue = left.getBlue() + right.getBlue();
 
 		return new RGBColor(red, green, blue);
 	}
-
 }

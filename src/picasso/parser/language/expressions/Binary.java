@@ -10,16 +10,12 @@ import picasso.parser.language.ExpressionTreeNode;
  */
 public abstract class Binary extends ExpressionTreeNode {
 
-	protected ExpressionTreeNode param1;
-	protected ExpressionTreeNode param2;
+	protected ExpressionTreeNode rightParam;
+	protected ExpressionTreeNode leftParam;
 
-	/**
-	 * @param param1
-	 * @param param2
-	 */
-	public Binary(ExpressionTreeNode param1, ExpressionTreeNode param2) {
-		this.param1 = param1;
-		this.param2 = param2;
+	public Binary(ExpressionTreeNode right, ExpressionTreeNode left) {
+		rightParam = right;
+		leftParam = left;
 	}
 
 	/**
@@ -30,7 +26,24 @@ public abstract class Binary extends ExpressionTreeNode {
 	 */
 	@Override
 	public String toString() {
-		return this.getClass() + ": " + param1 + ", " + param2;
+		return this.getClass() + ": " + rightParam + ", " + leftParam;
+	}
+
+	/*
+	 * (non-Javadoc)
+	 * 
+	 * @see java.lang.Object#equals(java.lang.Object)
+	 */
+	@Override
+	public boolean equals(Object obj) {
+		if (obj == this) {
+			return true;
+		}
+		if (!(obj instanceof Binary)) {
+			return false;
+		}
+		Binary a = (Binary) obj;
+		return rightParam.equals(a.rightParam) && leftParam.equals(a.leftParam);
 	}
 
 }

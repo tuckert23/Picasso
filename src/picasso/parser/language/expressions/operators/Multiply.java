@@ -17,9 +17,8 @@ public class Multiply extends Binary {
 	 * @param param1
 	 * @param param2
 	 */
-	public Multiply(ExpressionTreeNode param1, ExpressionTreeNode param2) {
-		super(param1, param2);
-
+	public Multiply(ExpressionTreeNode right, ExpressionTreeNode left) {
+		super(right, left);
 	}
 
 	/**
@@ -31,8 +30,8 @@ public class Multiply extends Binary {
 	 */
 	@Override
 	public RGBColor evaluate(double x, double y) {
-		RGBColor right = param1.evaluate(x, y);
-		RGBColor left = param2.evaluate(x, y);
+		RGBColor right = rightParam.evaluate(x, y);
+		RGBColor left = leftParam.evaluate(x, y);
 		double red = left.getRed() * right.getRed();
 		double green = left.getGreen() * right.getGreen();
 		double blue = left.getBlue() * right.getBlue();
