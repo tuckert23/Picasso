@@ -6,7 +6,7 @@ import picasso.parser.tokens.chars.CharToken;
 /**
  * Represents the equals sign in the Picasso programming language
  */
-public class EqualsToken extends CharToken {
+public class EqualsToken extends CharToken implements OperationInterface{
 	public EqualsToken() {
 		super(CharConstants.EQUAL);
 	}

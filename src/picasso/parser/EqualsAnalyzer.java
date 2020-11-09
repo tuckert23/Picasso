@@ -16,7 +16,7 @@ public class EqualsAnalyzer implements SemanticAnalyzerInterface {
 	public ExpressionTreeNode generateExpressionTree(Stack<Token> tokens) {
 		tokens.pop();
 		expression = SemanticAnalyzer.getInstance().generateExpressionTree(tokens);
-		EqualsAnalyzer.addNewVariable(tokens);
+		addNewVariable(tokens);
 		return new Equals(expression);
 	}
 	

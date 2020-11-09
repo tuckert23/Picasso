@@ -34,10 +34,10 @@ public class IdentifierAnalyzer implements SemanticAnalyzerInterface {
 		if (mapped != null) {
 			return mapped;
 		}
-
+		mapped = new X(); // just returns x if the identifier is not recognized
+		return mapped;
 		// TODO : What should we do if we don't recognize the identifier?
 		// Is that an error? Or, could there a valid reason? The reason is the user
 		// didn't assign this variable yet.
-		return null;
 	}
 }

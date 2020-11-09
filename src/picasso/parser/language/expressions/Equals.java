@@ -12,7 +12,6 @@ public class Equals extends ExpressionTreeNode {
 
 	@Override
 	public RGBColor evaluate(double x, double y) {
-		RGBColor result = param.evaluate(x, y);
-		return result;
+		return param.evaluate(x, y);
 	}
 }
