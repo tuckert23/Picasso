@@ -11,7 +11,6 @@ import org.junit.Test;
 import picasso.parser.ExpressionTreeGenerator;
 import picasso.parser.language.ExpressionTreeNode;
 import picasso.parser.language.expressions.*;
-import picasso.parser.language.expressions.operators.Plus;
 
 /**
  * Tests of the evaluation of x
@@ -51,9 +50,14 @@ public class EvaluatorTests {
 	@Test
 	public void testPlusEvaluation() {
 		ExpressionTreeNode e = parser.makeExpression("x + y");
+		ExpressionTreeNode f = parser.makeExpression("x + y + [0.2, 0.2, 0.2]");
+		ExpressionTreeNode g = parser.makeExpression("sin(x) + floor(y)");
 		for (int x = -1; x <= 1; x++) {
 			for (int y = -1; y <= 1; y++) {
 				assertEquals(new RGBColor(x + y, x + y, x + y), e.evaluate(x, y));
+				assertEquals(new RGBColor(x + y + 0.2, x + y + 0.2, x + y + 0.2), f.evaluate(x, y));
+				assertEquals(new RGBColor(Math.sin(x) + Math.floor(y), Math.sin(x) + Math.floor(y),
+						Math.sin(x) + Math.floor(y)), g.evaluate(x, y));
 			}
 		}
 	}

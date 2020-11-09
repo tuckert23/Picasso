@@ -79,13 +79,18 @@ public class TokenizerTest {
 	
 	@Test
 	public void testTokenizeBasicOperatorExpression() {
-		String expression = "x + y - bugs";
+		String expression = "x + y - floor(x + 0.5)";
 		tokens = tokenizer.parseTokens(expression);
 		assertEquals(new IdentifierToken("x"), tokens.get(0));
 		assertEquals(new PlusToken(), tokens.get(1));
 		assertEquals(new IdentifierToken("y"), tokens.get(2));
 		assertEquals(new MinusToken(), tokens.get(3));
-		assertEquals(new IdentifierToken("bugs"), tokens.get(4));
+		assertEquals(new FloorToken(), tokens.get(4));
+		assertEquals(new LeftParenToken(), tokens.get(5));
+		assertEquals(new IdentifierToken("x"), tokens.get(6));
+		assertEquals(new PlusToken(), tokens.get(7));
+		assertEquals(new NumberToken(0.5), tokens.get(8));
+		assertEquals(new RightParenToken(), tokens.get(9));
 	}
 
 	@Test
