@@ -10,9 +10,10 @@ public class DivideAnalyzer implements SemanticAnalyzerInterface {
 
 	@Override
 	public ExpressionTreeNode generateExpressionTree(Stack<Token> tokens) {
-		tokens.pop(); 
-		return new Divide(SemanticAnalyzer.getInstance().generateExpressionTree(tokens),
-				SemanticAnalyzer.getInstance().generateExpressionTree(tokens));
+		tokens.pop();
+		ExpressionTreeNode right = SemanticAnalyzer.getInstance().generateExpressionTree(tokens);
+		ExpressionTreeNode left = SemanticAnalyzer.getInstance().generateExpressionTree(tokens);
+		return new Divide(left,right);
 	}
 
 }

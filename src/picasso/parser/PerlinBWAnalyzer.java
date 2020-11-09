@@ -11,8 +11,9 @@ public class PerlinBWAnalyzer implements SemanticAnalyzerInterface {
 	@Override
 	public ExpressionTreeNode generateExpressionTree(Stack<Token> tokens) {
 		tokens.pop();
-		return new PerlinBW(SemanticAnalyzer.getInstance().generateExpressionTree(tokens),
-				SemanticAnalyzer.getInstance().generateExpressionTree(tokens));
+		ExpressionTreeNode right = SemanticAnalyzer.getInstance().generateExpressionTree(tokens);
+		ExpressionTreeNode left = SemanticAnalyzer.getInstance().generateExpressionTree(tokens);
+		return new PerlinBW(left, right);
 	}
 
 }

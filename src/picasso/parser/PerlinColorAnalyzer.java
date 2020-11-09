@@ -11,8 +11,9 @@ public class PerlinColorAnalyzer implements SemanticAnalyzerInterface {
 	@Override
 	public ExpressionTreeNode generateExpressionTree(Stack<Token> tokens) {
 		tokens.pop();
-		return new PerlinColor(SemanticAnalyzer.getInstance().generateExpressionTree(tokens),
-				SemanticAnalyzer.getInstance().generateExpressionTree(tokens));
+		ExpressionTreeNode right = SemanticAnalyzer.getInstance().generateExpressionTree(tokens);
+		ExpressionTreeNode left = SemanticAnalyzer.getInstance().generateExpressionTree(tokens);
+		return new PerlinColor(left,right);
 	}
 
 }

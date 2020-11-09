@@ -14,8 +14,8 @@ public class PerlinColor extends Binary {
 	/**
 	 * 
 	 */
-	public PerlinColor(ExpressionTreeNode right, ExpressionTreeNode left) {
-		super(right, left);
+	public PerlinColor(ExpressionTreeNode left, ExpressionTreeNode right) {
+		super(left, right);
 	}
 
 	@Override

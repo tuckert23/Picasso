@@ -17,8 +17,8 @@ public class Modulo extends Binary {
 	 * @param param1
 	 * @param param2
 	 */
-	public Modulo(ExpressionTreeNode right, ExpressionTreeNode left) {
-		super(right, left);
+	public Modulo(ExpressionTreeNode left, ExpressionTreeNode right) {
+		super(left, right);
 	}
 
 	/**

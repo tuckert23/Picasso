@@ -19,8 +19,8 @@ public class Exponent extends Binary {
 	 * @param param1
 	 * @param param2
 	 */
-	public Exponent(ExpressionTreeNode right, ExpressionTreeNode left) {
-		super(right, left);
+	public Exponent(ExpressionTreeNode left, ExpressionTreeNode right) {
+		super(left, right);
 	}
 
 	/**

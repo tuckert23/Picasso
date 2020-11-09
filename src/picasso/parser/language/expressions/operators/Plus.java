@@ -13,8 +13,8 @@ import picasso.parser.language.expressions.unaryFunctions.Abs;
  */
 public class Plus extends Binary {
 
-	public Plus(ExpressionTreeNode right, ExpressionTreeNode left) {
-		super(right, left);
+	public Plus(ExpressionTreeNode left, ExpressionTreeNode right) {
+		super(left, right);
 	}
 
 	/**

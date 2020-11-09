@@ -13,9 +13,9 @@ public abstract class Binary extends ExpressionTreeNode {
 	protected ExpressionTreeNode rightParam;
 	protected ExpressionTreeNode leftParam;
 
-	public Binary(ExpressionTreeNode right, ExpressionTreeNode left) {
-		rightParam = right;
+	public Binary(ExpressionTreeNode left, ExpressionTreeNode right) {
 		leftParam = left;
+		rightParam = right;
 	}
 
 	/**
