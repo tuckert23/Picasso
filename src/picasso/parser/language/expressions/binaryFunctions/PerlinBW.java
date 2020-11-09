@@ -7,8 +7,8 @@ import picasso.parser.language.expressions.RGBColor;
 
 public class PerlinBW extends Binary {
 
-	public PerlinBW(ExpressionTreeNode param1, ExpressionTreeNode param2) {
-		super(param1, param2);
+	public PerlinBW(ExpressionTreeNode right, ExpressionTreeNode left) {
+		super(right, left);
 	}
 
 	@Override
