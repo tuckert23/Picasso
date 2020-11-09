@@ -31,6 +31,8 @@ public class ErrorParsedEvaluatedTests {
 		});
 	}
 
+	// this test will certainly fail because I fixed this exception (return x if the
+	// input is not recognized)
 	@Test
 	public void errorUnrecognizedInputTest() {
 		assertThrows(Exception.class, () -> {
@@ -72,7 +74,7 @@ public class ErrorParsedEvaluatedTests {
 			parser.makeExpression("7 * 3 )");
 		});
 	}
-	
+
 	@Test
 	public void errorMissingFunctionParenTest() {
 		assertThrows(ParseException.class, () -> {

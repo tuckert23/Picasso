@@ -13,6 +13,8 @@ import picasso.parser.ParseException;
 import picasso.parser.tokens.*;
 import picasso.parser.tokens.chars.*;
 import picasso.parser.tokens.functions.*;
+import picasso.parser.tokens.operations.MinusToken;
+import picasso.parser.tokens.operations.PlusToken;
 
 public class TokenizerTest {
 
@@ -73,6 +75,17 @@ public class TokenizerTest {
 		assertEquals(new LeftParenToken(), tokens.get(1));
 		assertEquals(new IdentifierToken("x"), tokens.get(2));
 		assertEquals(new RightParenToken(), tokens.get(3));
+	}
+	
+	@Test
+	public void testTokenizeBasicOperatorExpression() {
+		String expression = "x + y - bugs";
+		tokens = tokenizer.parseTokens(expression);
+		assertEquals(new IdentifierToken("x"), tokens.get(0));
+		assertEquals(new PlusToken(), tokens.get(1));
+		assertEquals(new IdentifierToken("y"), tokens.get(2));
+		assertEquals(new MinusToken(), tokens.get(3));
+		assertEquals(new IdentifierToken("bugs"), tokens.get(4));
 	}
 
 	@Test
