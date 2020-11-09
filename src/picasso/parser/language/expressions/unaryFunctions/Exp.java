@@ -57,10 +57,7 @@ public class Exp extends UnaryFunction {
 		{
 			blue = -1;
 		}
-
-		
-		
-		
+				
 		return new RGBColor(red, green, blue);
 	}
 

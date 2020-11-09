@@ -37,24 +37,4 @@ public class Cos extends UnaryFunction {
 
 		return new RGBColor(red, green, blue);
 	}
-
-	/*
-	 * (non-Javadoc)
-	 * 
-	 * @see java.lang.Object#equals(java.lang.Object)
-	 */
-	@Override
-	public boolean equals(Object obj) {
-		if (obj == this) {
-			return true;
-		}
-		
-		if (!(obj instanceof Cos)) {
-			return false;
-		}
-		
-		Cos s = (Cos) obj;
-		return param.equals(s.param);
-	}
-
 }

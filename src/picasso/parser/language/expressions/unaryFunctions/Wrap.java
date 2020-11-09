@@ -25,29 +25,11 @@ public class Wrap extends UnaryFunction {
 		double blue = wrap(result.getBlue());
 		return new RGBColor(red, green, blue);
 	}
-	
+
 	private double wrap(double num) {
 		num += 3;
 		num %= 2;
 		num -= 1;
 		return num;
 	}
-
-	/*
-	 * (non-Javadoc)
-	 * 
-	 * @see java.lang.Object#equals(java.lang.Object)
-	 */
-	@Override
-	public boolean equals(Object obj) {
-		if (obj == this) {
-			return true;
-		}
-		if (!(obj instanceof Wrap)) {
-			return false;
-		}
-		Wrap a = (Wrap) obj;
-		return param.equals(a.param);
-	}
-
 }

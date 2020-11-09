@@ -38,21 +38,4 @@ public class Floor extends UnaryFunction {
 		return new RGBColor(red, green, blue);
 	}
 
-	/*
-	 * (non-Javadoc)
-	 * 
-	 * @see java.lang.Object#equals(java.lang.Object)
-	 */
-	@Override
-	public boolean equals(Object obj) {
-		if (obj == this) {
-			return true;
-		}
-		if (!(obj instanceof Floor)) {
-			return false;
-		}
-		Floor f = (Floor) obj;
-		return param.equals(f.param);
-	}
-
 }

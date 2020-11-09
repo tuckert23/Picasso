@@ -24,11 +24,7 @@ public class Not extends UnaryFunction {
 	@Override
 	public RGBColor evaluate(double x, double y) {
 		RGBColor result = param.evaluate(x, y);
-		double red = -1 * result.getRed();
-		double green = -1 * result.getGreen();
-		double blue = -1 * result.getBlue();
-
-		return new RGBColor(red, green, blue);
+		return new RGBColor(-result.getRed(), -result.getGreen(), -result.getBlue());
 	}
 
 }

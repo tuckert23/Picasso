@@ -38,24 +38,4 @@ public class Tan extends UnaryFunction {
 
 		return new RGBColor(red, green, blue);
 	}
-
-	/*
-	 * (non-Javadoc)
-	 * 
-	 * @see java.lang.Object#equals(java.lang.Object)
-	 */
-	@Override
-	public boolean equals(Object obj) {
-		if (obj == this) {
-			return true;
-		}
-		
-		if (!(obj instanceof Tan)) {
-			return false;
-		}
-		
-		Tan s = (Tan) obj;
-		return param.equals(s.param);
-	}
-
 }

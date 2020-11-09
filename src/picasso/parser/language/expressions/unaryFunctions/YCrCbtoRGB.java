@@ -26,11 +26,9 @@ public class YCrCbtoRGB extends UnaryFunction {
 		double red = result.getRed() + result.getBlue() * 1.4022;
 		double green = result.getRed() + result.getGreen() * -0.3456 + result.getBlue() * -0.7145;
 		double blue = result.getRed() + result.getGreen() * 1.7710;
-		
+
 		return new RGBColor(red, green, blue);
 
-		
-		
 	}
 
 }
