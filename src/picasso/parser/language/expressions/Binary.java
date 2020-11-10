@@ -43,7 +43,7 @@ public abstract class Binary extends ExpressionTreeNode {
 			return false;
 		}
 		Binary a = (Binary) obj;
-		return rightParam.equals(a.rightParam) && leftParam.equals(a.leftParam);
+		return rightParam.equals(a.rightParam) && leftParam.equals(a.leftParam) && this.getClass().equals(a.getClass());
 	}
 
 }

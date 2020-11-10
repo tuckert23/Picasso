@@ -9,6 +9,7 @@ import org.junit.jupiter.api.BeforeEach;
 import picasso.parser.ExpressionTreeGenerator;
 import picasso.parser.language.ExpressionTreeNode;
 import picasso.parser.language.expressions.*;
+import picasso.parser.language.expressions.operators.Minus;
 import picasso.parser.language.expressions.operators.Plus;
 import picasso.parser.language.expressions.unaryFunctions.Floor;
 
@@ -44,10 +45,12 @@ public class ParsedExpressionTreeTests {
 	public void PlusExpressionTests() {
 		ExpressionTreeNode e = parser.makeExpression("x + y");
 		assertEquals(new Plus(new X(), new Y()), e);
-		
+		// TODO: add more tests here so that if u change plus to minus it should fail
+		// for example, assertEquals(new Minus(new X(), new Y()), e); should fail
+
 		e = parser.makeExpression("[1,.3,-1] + y");
 		assertEquals(new Plus(new RGBColor(1, .3, -1), new Y()), e);
-		
+
 		e = parser.makeExpression("x + y + [ -.51, 0, 1]");
 		assertEquals(new Plus(new Plus(new X(), new Y()), new RGBColor(-.51, 0, 1)), e);
 	}
