@@ -45,8 +45,8 @@ public class ParsedExpressionTreeTests {
 	public void PlusExpressionTests() {
 		ExpressionTreeNode e = parser.makeExpression("x + y");
 		assertEquals(new Plus(new X(), new Y()), e);
-		// TODO: add more tests here so that if u change plus to minus it should fail
-		// for example, assertEquals(new Minus(new X(), new Y()), e); should fail
+
+		assertNotEquals(new Minus(new X(), new Y()), e); 
 
 		e = parser.makeExpression("[1,.3,-1] + y");
 		assertEquals(new Plus(new RGBColor(1, .3, -1), new Y()), e);
@@ -72,5 +72,9 @@ public class ParsedExpressionTreeTests {
 		e = parser.makeExpression("floor( x + y )");
 		assertEquals(new Floor(new Plus(new X(), new Y())), e);
 	}
+	
+	// Danny and Will work on more tests for binary operators
+	
+	// Taylor work on unary function tests
 
 }
