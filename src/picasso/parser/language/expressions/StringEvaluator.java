@@ -17,27 +17,27 @@ import picasso.parser.language.ExpressionTreeNode;
 public class StringEvaluator extends ExpressionTreeNode {
 
 	private String myString;
-	private BufferedImage img;
+	private BufferedImage myImage;
+	private static final String DEAFULT_PATH = "images/";
 	
 	public StringEvaluator(String str) {
 		myString = str;
 		try {
-			img = ImageIO.read(new File(myString));
+			myImage = ImageIO.read(new File(DEAFULT_PATH + myString));
 		} catch (IOException e) {
 		}
 	}
 
-	private int domainScaleToImage(double value, int bound) {
-		value += 1;
-		return (int) (value * bound) / 2;
-	}
-
 	@Override
 	public RGBColor evaluate(double x, double y) {
-		int xDomain = domainScaleToImage(x, img.getWidth());
-		int yDomain = domainScaleToImage(y, img.getHeight());
-		Color pixColor = new Color(img.getRGB(xDomain, yDomain));
+		int xDomain = domainScaleToImage(x, myImage.getWidth());
+		int yDomain = domainScaleToImage(y, myImage.getHeight());
+		Color pixColor = new Color(myImage.getRGB(xDomain, yDomain));
 		return new RGBColor(pixColor);
+	}
+	
+	private int domainScaleToImage(double value, int bound) {
+		return (int) (++value * bound) / 2;
 	}
 
 }
