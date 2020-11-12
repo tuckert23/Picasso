@@ -176,7 +176,8 @@ public class ExpressionTreeGenerator {
 
 	public static void main(String[] args) {
 		ExpressionTreeGenerator x = new ExpressionTreeGenerator();
-		String str = " \"foo.jpg\"";
+		String str = " \"foo.jpg\" + 0.15";
+		System.out.println(x.infixToPostfix(str));
 		System.out.println(x.makeExpression(str));
 	}
 }
