@@ -9,8 +9,7 @@ import org.junit.jupiter.api.BeforeEach;
 import picasso.parser.ExpressionTreeGenerator;
 import picasso.parser.language.ExpressionTreeNode;
 import picasso.parser.language.expressions.*;
-import picasso.parser.language.expressions.operators.Minus;
-import picasso.parser.language.expressions.operators.Plus;
+import picasso.parser.language.expressions.operators.*;
 import picasso.parser.language.expressions.unaryFunctions.Floor;
 
 /**
@@ -74,6 +73,33 @@ public class ParsedExpressionTreeTests {
 	}
 	
 	// Danny and Will work on more tests for binary operators
+	
+	@Test
+	public void MinusExpressionTests() {
+		ExpressionTreeNode e = parser.makeExpression("x - y");
+		assertEquals(new Minus(new X(), new Y()), e);
+
+		assertNotEquals(new Plus(new X(), new Y()), e); 
+
+		e = parser.makeExpression("[1,.3,-1] - y");
+		assertEquals(new Minus(new RGBColor(1, .3, -1), new Y()), e);
+
+		e = parser.makeExpression("x - y - [ -.51, 0, 1]");
+		assertEquals(new Minus(new Minus(new X(), new Y()), new RGBColor(-.51, 0, 1)), e);
+	}
+	
+	@Test public void MultiplyExpressionTests() {
+		ExpressionTreeNode e = parser.makeExpression("x * y");
+		assertEquals(new Multiply(new X(), new Y()), e);
+
+		assertNotEquals(new Divide(new X(), new Y()), e); 
+
+		e = parser.makeExpression("[1,.3,-1] * y");
+		assertEquals(new Multiply(new RGBColor(1, .3, -1), new Y()), e);
+
+		e = parser.makeExpression("x * y * [ -.51, 0, 1]");
+		assertEquals(new Multiply(new Multiply(new X(), new Y()), new RGBColor(-.51, 0, 1)), e);
+	}
 	
 	// Taylor work on unary function tests
 
