@@ -18,13 +18,28 @@ public class StringEvaluator extends ExpressionTreeNode {
 
 	private String myString;
 	private BufferedImage myImage;
-	private static final String DEAFULT_PATH = "images/";
+	private static final String DEFAULT_PATH = "images/";
 	
 	public StringEvaluator(String str) {
 		myString = str;
-		try {
-			myImage = ImageIO.read(new File(DEAFULT_PATH + myString));
-		} catch (IOException e) {
+		if (myString.substring(0, 7).equals(DEFAULT_PATH))
+		{
+			try 
+			{
+				myImage = ImageIO.read(new File(myString));
+			}
+			catch(IOException e) 
+			{
+			}
+		}
+		else {
+			try 
+			{
+				myImage = ImageIO.read(new File(DEFAULT_PATH + myString));
+			} 
+			catch (IOException e) 
+			{
+			}
 		}
 	}
 
