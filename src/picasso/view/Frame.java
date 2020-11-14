@@ -33,6 +33,7 @@ public class Frame extends JFrame {
 		ButtonPanel commands = new ButtonPanel(canvas);
 		commands.add("Open", new Reader());
 		commands.add("Evaluate", new ThreadedCommand<Pixmap>(canvas, new Evaluater()));
+		commands.add("File Evaluate", new FileEvaluator());
 		commands.add("Save", new Writer());
 
 		// add our container to Frame and show it

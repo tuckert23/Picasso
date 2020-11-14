@@ -101,6 +101,32 @@ public class ParsedExpressionTreeTests {
 		assertEquals(new Multiply(new Multiply(new X(), new Y()), new RGBColor(-.51, 0, 1)), e);
 	}
 	
+	@Test
+	public void DivideExpressionTests() {
+		ExpressionTreeNode e = parser.makeExpression("x / y");
+		assertEquals(new Divide(new X(), new Y()), e);
+
+		assertNotEquals(new Multiply(new X(), new Y()), e); 
+
+		e = parser.makeExpression("[1,.3,-1] / y");
+		assertEquals(new Divide(new RGBColor(1, .3, -1), new Y()), e);
+
+		e = parser.makeExpression("x / y / [ -.51, 0, 1]");
+		assertEquals(new Divide(new Divide(new X(), new Y()), new RGBColor(-.51, 0, 1)), e);
+	}
+	
+	@Test
+	public void ExponentExpressionTests() {
+		ExpressionTreeNode e = parser.makeExpression("x ^ y");
+		assertEquals(new Exponent(new X(), new Y()), e);
+
+		e = parser.makeExpression("[1,.3,-1] ^ y");
+		assertEquals(new Exponent(new RGBColor(1, .3, -1), new Y()), e);
+
+		e = parser.makeExpression("x ^ y ^ [ -.51, 0, 1]");
+		assertEquals(new Exponent(new Exponent(new X(), new Y()), new RGBColor(-.51, 0, 1)), e);
+	}
+	
 	// Taylor work on unary function tests
 
 }

@@ -42,7 +42,7 @@ public class Modulo extends Binary {
 		if (right.getGreen() != 0) {
 			green = left.getGreen() % right.getGreen();
 		}
-		if (right.getGreen() != 0) {
+		if (right.getBlue() != 0) {
 			blue = left.getBlue() % right.getBlue();
 		}
 
