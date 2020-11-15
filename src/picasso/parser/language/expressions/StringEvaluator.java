@@ -19,28 +19,10 @@ public class StringEvaluator extends ExpressionTreeNode {
 	private String myString;
 	private BufferedImage myImage;
 	private static final String DEFAULT_PATH = "images/";
-	
+
 	public StringEvaluator(String str) {
 		myString = str;
-		if (myString.substring(0, 7).equals(DEFAULT_PATH))
-		{
-			try 
-			{
-				myImage = ImageIO.read(new File(myString));
-			}
-			catch(IOException e) 
-			{
-			}
-		}
-		else {
-			try 
-			{
-				myImage = ImageIO.read(new File(DEFAULT_PATH + myString));
-			} 
-			catch (IOException e) 
-			{
-			}
-		}
+		readImage(myString);
 	}
 
 	@Override
@@ -50,9 +32,23 @@ public class StringEvaluator extends ExpressionTreeNode {
 		Color pixColor = new Color(myImage.getRGB(xDomain, yDomain));
 		return new RGBColor(pixColor);
 	}
-	
+
 	private int domainScaleToImage(double value, int bound) {
 		return (int) (++value * bound) / 2;
 	}
 
+	private void readImage(String imageName) {
+		String[] pathFolders = imageName.split("/");
+		if (pathFolders.length == 1) {
+			try {
+				myImage = ImageIO.read(new File(DEFAULT_PATH + imageName));
+			} catch (IOException e) {
+			}
+		} else {
+			try {
+				myImage = ImageIO.read(new File(imageName));
+			} catch (IOException e) {
+			}
+		}
+	}
 }
