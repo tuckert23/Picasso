@@ -14,7 +14,7 @@ import picasso.parser.language.ExpressionTreeNode;
 public class StringEvaluator extends ExpressionTreeNode {
 
 	private String myString;
-	private BufferedImage myImage;
+	public BufferedImage myImage;
 	private static final String DEFAULT_PATH = "images/";
 
 	public StringEvaluator(String str) {
@@ -30,7 +30,7 @@ public class StringEvaluator extends ExpressionTreeNode {
 		return new RGBColor(pixColor);
 	}
 
-	private int domainScaleToImage(double value, int bound) {
+	public int domainScaleToImage(double value, int bound) {
 		return (int) (++value * bound) / 2;
 	}
 
