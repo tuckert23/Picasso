@@ -34,7 +34,9 @@ public class Frame extends JFrame {
 		expressionField.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
-				expressionField.setText("");
+				if (expressionField.getText().equals("Write your expression here")) {
+					expressionField.setText("");
+				}
 			}
 		});
 
