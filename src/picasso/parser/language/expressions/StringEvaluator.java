@@ -1,6 +1,3 @@
-/**
- * 
- */
 package picasso.parser.language.expressions;
 
 import java.awt.Color;
