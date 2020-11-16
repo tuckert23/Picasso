@@ -2,6 +2,9 @@ package picasso.view;
 
 import java.awt.BorderLayout;
 import java.awt.Dimension;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
+
 import javax.swing.JFrame;
 import javax.swing.JTextField;
 
@@ -28,6 +31,12 @@ public class Frame extends JFrame {
 		canvas.setSize(size);
 		expressionField = new JTextField("Write your expression here");
 		expressionField.setPreferredSize(new Dimension(100, 30));
+		expressionField.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				expressionField.setText("");
+			}
+		});
 
 		// add commands to test here
 		ButtonPanel commands = new ButtonPanel(canvas);
@@ -41,5 +50,6 @@ public class Frame extends JFrame {
 		getContentPane().add(commands, BorderLayout.SOUTH);
 		getContentPane().add(expressionField, BorderLayout.NORTH);
 		pack();
+
 	}
 }
