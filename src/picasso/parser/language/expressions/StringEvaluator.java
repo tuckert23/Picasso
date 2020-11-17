@@ -34,7 +34,12 @@ public class StringEvaluator extends ExpressionTreeNode {
 										"wrap(x)", "wrap(y)", 
 										"!y", "!x", 
 										"clamp(y)", "clamp(x)", 
-										"exp(x)", "exp(y)"};
+										"exp(x)", "exp(y)",
+										"ceiling(x)", "ceiling(y)",
+										"x + y", "x * y",
+										"x - y", "y - x", 
+										"x / y", "y / x",
+										"x % y", "y % x"};
 	
 
 	private final String[] OPERATIONS = {" + ", " - ", " / ", " % ", " * "}; 
@@ -105,6 +110,7 @@ public class StringEvaluator extends ExpressionTreeNode {
 	{
 		hash = Math.abs(str.hashCode());
 		System.out.println("Hash before: " + hash);
+		
 		if (hash < 100)
 		{
 			hash += "Washington and Lee".hashCode();
