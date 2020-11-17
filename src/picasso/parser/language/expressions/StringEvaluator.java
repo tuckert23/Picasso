@@ -18,24 +18,11 @@ public class StringEvaluator extends ExpressionTreeNode {
 	private static final String DEFAULT_PATH = "images/";
 	private boolean image = false;
 	private int hash;
-	/*
-	private ArrayList fns = ["floor", "sin", "abs", "log", "rgbToYCrCB", "YCrCbtoRGB"
-	                         sin
-	                         abs
-	                         log
-	                         rgbToYCrCb
-	                         yCrCbtoRGB
-	                         perlinColor
-	                         perlinBW
-	                         atan
-	                         tan
-	                         cos
-	                         wrap
-	                         not
-	                         clamp
-	                         exp
-	                         imageWrap];
-	*/
+	private final String[] FUNCTIONS = {"floor", "sin", "abs", "log", "rgbToYCrCB", "YCrCbtoRGB", "perlinColor", 
+							"perlinBW", "atan", "tan", "cos", "wrap", "not", "clamp", "exp", "imageWrap", "imageClip"};
+	private final int LEN_FUNCTIONS = FUNCTIONS.length;
+
+	
 	
 	public StringEvaluator(String str) {
 		myString = str;
