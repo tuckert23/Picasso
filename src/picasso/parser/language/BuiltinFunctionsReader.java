@@ -39,9 +39,8 @@ public class BuiltinFunctionsReader {
 		try {
 			reader = new Scanner(new File(FUNCTIONS_CONF_FILE));
 		} catch (FileNotFoundException e1) {
+			System.out.println("functions.conf file not found");
 			e1.printStackTrace();
-			// TODO: should pass the error up so that the user knows what the
-			// problem is.
 			return;
 		}
 		while (reader.hasNextLine()) {

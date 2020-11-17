@@ -51,8 +51,7 @@ public class TokenFactory {
 				if (ct instanceof LeftBracketToken) {
 					return parseColorToken(tokenizer);
 				}
-				// TODO: Handle Others?
-
+				
 				return ct;
 			}
 

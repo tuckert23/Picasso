@@ -15,18 +15,9 @@ import picasso.parser.tokens.Token;
  */
 public class ClampAnalyzer extends UnaryFunctionAnalyzer {
 
-	/**
-	 * 
-	 */
-	public ClampAnalyzer() {
-		// TODO Auto-generated constructor stub
-	}
-
 	@Override
 	public ExpressionTreeNode generateExpressionTree(Stack<Token> tokens) {
-		tokens.pop(); // Need to remove the clamp token
-		// the parameter is the next token on the stack.
-		// But, it needs to be processed
+		tokens.pop();
 		return new Clamp(SemanticAnalyzer.getInstance().generateExpressionTree(tokens));
 	}
 
