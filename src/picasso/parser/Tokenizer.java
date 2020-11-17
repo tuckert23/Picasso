@@ -39,6 +39,7 @@ public class Tokenizer {
 	 * @return the list of Picasso tokens (in order) in the string
 	 */
 	public List<Token> parseTokens(String s) {
+		s = s.replace("-", " -"); 
 		tokenizer = new StreamTokenizer(new StringReader(s));
 		tokenizer.quoteChar(CharConstants.QUOTE);
 

@@ -1,11 +1,10 @@
 /**
  * 
  */
-package picasso.parser.tokens.functions;
+package picasso.parser.tokens.operations;
 
 import picasso.parser.language.CharConstants;
 import picasso.parser.tokens.chars.CharToken;
-import picasso.parser.tokens.operations.OperationInterface;
 
 /**
  * @author taylor
