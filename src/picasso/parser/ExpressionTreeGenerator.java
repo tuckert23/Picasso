@@ -53,7 +53,7 @@ public class ExpressionTreeGenerator {
 	 * @param infix
 	 * @return a stack of tokens, in postfix order
 	 */
-	private Stack<Token> infixToPostfix(String infix) {
+	protected Stack<Token> infixToPostfix(String infix) {
 
 		// Algorithm for converting infix to postfix was adapted from
 		// http://en.wikipedia.org/wiki/Shunting_yard_algorithm
