@@ -3,7 +3,7 @@ package picasso.view.commands;
 import java.awt.Color;
 import java.awt.Dimension;
 import java.util.Random;
-import picasso.parser.language.expressions.*;
+import picasso.parser.language.expressions.RGBColor;
 import picasso.model.Pixmap;
 import picasso.util.Command;
 import picasso.view.Frame;
@@ -31,10 +31,10 @@ public class RandomEvaluator implements Command<Pixmap> {
 			double evalY = imageToDomainScale(imageY, size.height);
 			for (int imageX = 0; imageX < size.width; imageX++) {
 				double evalX = imageToDomainScale(imageX, size.width);
-				double red = rd.nextDouble();
-				double green = rd.nextDouble();
-				double blue = rd.nextDouble();
-				Color pixelColor = new Color(red,green,blue);
+				float red = rd.nextFloat();
+				float green = rd.nextFloat();
+				float blue = rd.nextFloat();
+				Color pixelColor = new Color(red, green, blue);
 				target.setColor(imageX, imageY, pixelColor);
 			}
 		}
