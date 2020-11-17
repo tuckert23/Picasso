@@ -2,7 +2,6 @@ package picasso.parser.tokens;
 
 import picasso.parser.language.CharConstants;
 import picasso.parser.tokens.chars.*;
-import picasso.parser.tokens.functions.NotToken;
 import picasso.parser.tokens.operations.*;
 
 /**

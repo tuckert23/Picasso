@@ -26,7 +26,7 @@ public class Wrap extends UnaryFunction {
 		return new RGBColor(red, green, blue);
 	}
 
-	private double wrap(double num) {
+	public static double wrap(double num) {
 		num += 3;
 		num %= 2;
 		num -= 1;
