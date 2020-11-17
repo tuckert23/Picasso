@@ -20,10 +20,28 @@ public class StringEvaluator extends ExpressionTreeNode {
 	private static final String DEFAULT_PATH = "images/";
 	private boolean image = false;
 	private int hash;
-	private final String[] FUNCTIONS = {"floor(x)", "sin(y)", "abs(x)", "log(x)", "rgbToYCrCb(y)", "yCrCbtoRGB(x)", "perlinColor(x, y)", 
-										"perlinBW(y, x)", "atan(x)", "tan(y)", "cos(y)", "wrap(x)", "!y", "clamp(y)", "exp(x)"};
+	private final String[] FUNCTIONS = {"floor(x)", "floor(y)", 
+										"sin(y)", "sin(x)", 
+										"abs(x)", "abs(y)", 
+										"log(x)", "log(y)", 
+										"rgbToYCrCb(y)", "rgbToYCrCb(x)", 
+										"yCrCbtoRGB(x)", "yCrCbtoRGB(y)", 
+										"perlinColor(x, y)","perlinColor(y, x)", 
+										"perlinBW(y, x)", "perlinBW(x, y)", 
+										"atan(x)", "atan(y)", 
+										"tan(y)", "tan(x)", 
+										"cos(y)", "cos(x)", 
+										"wrap(x)", "wrap(y)", 
+										"!y", "!x", 
+										"clamp(y)", "clamp(x)", 
+										"exp(x)", "exp(y)"};
+	
+
+	private final String[] OPERATIONS = {" + ", " - ", " / ", " % ", " * "}; 
+										 //" + !", " - !", " / !", " % !", " * !"};
 	
 	private final int LEN_FUNCTIONS = FUNCTIONS.length;
+	private final int LEN_OPERATIONS = OPERATIONS.length;
 	private ExpressionTreeNode node;
 
 	
@@ -78,15 +96,28 @@ public class StringEvaluator extends ExpressionTreeNode {
 		return success;
 	}
 	
+	/**
+	 * Takes a string as input. Translates the string into its unique has code then builds an expression using 
+	 * modulo to choose a deterministic function defined above.
+	 * @param str
+	 */
 	private void treeFromString(String str)
 	{
 		hash = Math.abs(str.hashCode());
+		System.out.println("Hash before: " + hash);
+		if (hash < 100)
+		{
+			hash += "Washington and Lee".hashCode();
+			System.out.println("Hash after: " + hash);
+		}
+		
 		String expression = "0";
 		
 		for (int i = 0; i < 10; i++)
 		{
-			String f = FUNCTIONS[hash % LEN_FUNCTIONS];
-			expression = expression + " + "+ f;
+			String function  = FUNCTIONS[hash % LEN_FUNCTIONS];
+			String operation = OPERATIONS[hash % LEN_OPERATIONS];
+			expression = expression + operation + function;
 			hash /= 2;
 		}
 		System.out.println(expression);
