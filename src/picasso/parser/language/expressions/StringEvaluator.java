@@ -10,8 +10,8 @@ import picasso.parser.ExpressionTreeGenerator;
 import picasso.parser.language.ExpressionTreeNode;
 
 /**
- * @author Abdelrahman AboEitta
- * @author taylor
+ * @author Abdelrahman AboEitta for the base
+ * @author taylor for the extension
  */
 public class StringEvaluator extends ExpressionTreeNode {
 
