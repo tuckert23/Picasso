@@ -137,12 +137,10 @@ public class StringEvaluator extends ExpressionTreeNode {
 	private void treeFromString(String str)
 	{
 		hash = Math.abs(str.hashCode());
-		System.out.println("Hash before: " + hash);
 		
 		if (hash < 100)
 		{
 			hash += "Washington and Lee".hashCode();
-			System.out.println("Hash after: " + hash);
 		}
 		
 		String expression = "0";
@@ -154,7 +152,6 @@ public class StringEvaluator extends ExpressionTreeNode {
 			expression += operation + function;
 			hash /= 2;
 		}
-		System.out.println(expression);
 		
 		ExpressionTreeGenerator expTreeGen = new ExpressionTreeGenerator();
 		node = expTreeGen.makeExpression(expression);
