@@ -153,6 +153,7 @@ public class StringEvaluator extends ExpressionTreeNode {
 			hash /= 2;
 		}
 		
+		System.out.println("Expression generated: " + expression +"\n");
 		ExpressionTreeGenerator expTreeGen = new ExpressionTreeGenerator();
 		node = expTreeGen.makeExpression(expression);
 		
