@@ -3,7 +3,7 @@ package picasso.parser.language.expressions.operators;
 import picasso.parser.language.ExpressionTreeNode;
 import picasso.parser.language.expressions.Binary;
 import picasso.parser.language.expressions.RGBColor;
-import picasso.parser.language.expressions.unaryFunctions.Abs;
+
 
 /**
  * Represents the plus operator in the Picasso language.
