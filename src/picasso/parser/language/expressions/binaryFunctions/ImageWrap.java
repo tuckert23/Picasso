@@ -11,27 +11,34 @@ import picasso.parser.language.expressions.unaryFunctions.Wrap;
 public class ImageWrap extends Binary {
 
 	private StringEvaluator imageEvaluator;
-	private ExpressionTreeNode left;
-	private ExpressionTreeNode right;
+	private ExpressionTreeNode x;
+	private ExpressionTreeNode y;
 
-	public ImageWrap(String str, ExpressionTreeNode left, ExpressionTreeNode right) {
-		super(left, right);
-		this.left = left;
-		this.right = right;
+	public ImageWrap(String str, ExpressionTreeNode x, ExpressionTreeNode y) {
+		super(x, y);
+		this.x = x;
+		this.y = y;
 		imageEvaluator = new StringEvaluator(str);
 	}
 
 	@Override
 	public RGBColor evaluate(double x, double y) {
 		
-		RGBColor leftResult = left.evaluate(x, y);
-		RGBColor rightResult = right.evaluate(x, y);
+		// Evaluate left and right
+		// Call wrap() on whatever values I get from left and right
+		// retrieve (left,right) point from image
+				
 		
-		double red   = Wrap.wrap(leftResult.getRed()   + rightResult.getRed()); 
-		double green = Wrap.wrap(leftResult.getGreen() + rightResult.getGreen());
-		double blue  = Wrap.wrap(leftResult.getBlue()  + rightResult.getBlue());
+		RGBColor xResult = this.x.evaluate(x, y);
+		RGBColor yResult = this.y.evaluate(x, y);
 		
-		return new RGBColor(red, green, blue);
+		double xWrapped = Wrap.wrap(xResult.getRed());
+		double yWrapped = Wrap.wrap(yResult.getRed());
+		
+		RGBColor imageRep = imageEvaluator.evaluate(xWrapped, yWrapped);
+		
+		
+		return imageRep;
 	}
 
 
