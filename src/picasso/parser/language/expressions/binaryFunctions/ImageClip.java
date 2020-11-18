@@ -31,18 +31,31 @@ public class ImageClip extends Image {
 		RGBColor xResult = super.leftParam.evaluate(x, y);
 		RGBColor yResult = super.rightParam.evaluate(x, y);
 		
-		double xWrapped = clip(xResult.getRed());
-		double yWrapped = clip(yResult.getRed());
+		double xClipped = clip(xResult.getRed());
+		double yClipped = yResult.getRed();
 		
-		RGBColor imageRep = super.imageEvaluator.evaluate(xWrapped, yWrapped);
+		RGBColor imageRep = super.imageEvaluator.evaluate(xClipped, yClipped);
 		
 		
 		return imageRep;
 	}
 	
-	private double clip(double val)
-	{
-		return 0.1;
+	public static double clip(double num) {
+		num /= 2;
+		
+		if (num <= -0.5)
+		{
+			return -0.5;
+		}
+		else if (num >= 0.5)
+		{
+			return 0.5;
+		}
+		else
+		{
+			return num;
+		}
+		
 	}
 
 }

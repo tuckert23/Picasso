@@ -88,7 +88,6 @@ public class StringEvaluator extends ExpressionTreeNode {
 		}
 		else
 		{
-			// return new RGBColor(new Color(hash));
 			return node.evaluate(x, y);
 		}
 	}

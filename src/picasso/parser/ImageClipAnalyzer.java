@@ -6,7 +6,7 @@ package picasso.parser;
 import java.util.Stack;
 
 import picasso.parser.language.ExpressionTreeNode;
-import picasso.parser.language.expressions.binaryFunctions.ImageWrap;
+import picasso.parser.language.expressions.binaryFunctions.ImageClip;
 import picasso.parser.tokens.StringToken;
 import picasso.parser.tokens.Token;
 
@@ -23,7 +23,7 @@ public class ImageClipAnalyzer implements SemanticAnalyzerInterface {
 		ExpressionTreeNode x = SemanticAnalyzer.getInstance().generateExpressionTree(tokens);
 		StringToken t = (StringToken) tokens.pop();
 		String str = t.getString();
-		return new ImageWrap(str, x, y);
+		return new ImageClip(str, x, y);
 	}
 
 }
