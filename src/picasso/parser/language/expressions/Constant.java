@@ -8,6 +8,7 @@ import picasso.parser.language.ExpressionTreeNode;
  * @author Sara Sprenkle
  * 
  */
+
 public class Constant extends ExpressionTreeNode {
 
 	protected double value;
@@ -29,6 +30,7 @@ public class Constant extends ExpressionTreeNode {
 	 * 
 	 * @return the value of the constant
 	 */
+	
 	public double value() {
 		return value;
 	}
@@ -36,6 +38,7 @@ public class Constant extends ExpressionTreeNode {
 	/**
 	 * Returns the constant as a string formatted as "Constant: <value>"
 	 */
+	
 	@Override
 	public String toString() {
 		return "Constant: " + value;
@@ -45,6 +48,7 @@ public class Constant extends ExpressionTreeNode {
 	 * The constant is like an RGB Color with the constant as each component. It is
 	 * not affected by the values of x and y.
 	 */
+	
 	@Override
 	public RGBColor evaluate(double x, double y) {
 		return new RGBColor(value, value, value);
@@ -55,6 +59,7 @@ public class Constant extends ExpressionTreeNode {
 	 * 
 	 * @see java.lang.Object#equals(java.lang.Object)
 	 */
+	
 	@Override
 	public boolean equals(Object obj) {
 		if (this == obj) {

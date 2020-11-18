@@ -6,7 +6,7 @@ package picasso.parser.language.expressions;
 import picasso.parser.language.ExpressionTreeNode;
 
 /**
- * @author taylor
+ * @author Taylor Tucker
  *
  */
 public class Clamp extends UnaryFunction {
@@ -14,6 +14,7 @@ public class Clamp extends UnaryFunction {
 	/**
 	 * @param param
 	 */
+	
 	public Clamp(ExpressionTreeNode param) {
 		super(param);
 	}
