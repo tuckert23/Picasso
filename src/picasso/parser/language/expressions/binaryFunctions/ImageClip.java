@@ -50,7 +50,7 @@ public class ImageClip extends Image {
 		}
 	
 	 protected double clip(double value) {
-		 return ((value/2) + 0.5)*799;
+		 return ((value/2) + 0.5) * 799;
 	    }
 	//imageClip("foo.jpg", x+x, y))
 

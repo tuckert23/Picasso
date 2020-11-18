@@ -101,7 +101,7 @@ public class StringEvaluator extends ExpressionTreeNode {
 	 */
 	public static int domainScaleToImage(double value, int bound) {
 		//return (int) ((value/2) + 0.5) * 799;
-		return (int) (++value * bound) / 2;
+		return (int) ((++value * bound) / 2) + 399;
 	}
 
 	/**
