@@ -83,6 +83,7 @@ public class StringEvaluator extends ExpressionTreeNode {
 		{
 			int xDomain = domainScaleToImage(x, myImage.getWidth());
 			int yDomain = domainScaleToImage(y, myImage.getHeight());
+		
 			Color pixColor = new Color(myImage.getRGB(xDomain, yDomain));
 			return new RGBColor(pixColor);
 		}
@@ -98,7 +99,8 @@ public class StringEvaluator extends ExpressionTreeNode {
 	 * @param bound
 	 * @return
 	 */
-	public int domainScaleToImage(double value, int bound) {
+	public static int domainScaleToImage(double value, int bound) {
+		//return (int) ((value/2) + 0.5) * 799;
 		return (int) (++value * bound) / 2;
 	}
 

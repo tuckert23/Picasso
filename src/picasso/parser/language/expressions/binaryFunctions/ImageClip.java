@@ -6,6 +6,7 @@ package picasso.parser.language.expressions.binaryFunctions;
 import picasso.parser.language.ExpressionTreeNode;
 import picasso.parser.language.expressions.Image;
 import picasso.parser.language.expressions.RGBColor;
+//import picasso.parser.language.expressions.StringEvaluator;
 
 /**
  * @author taylor
@@ -48,17 +49,10 @@ public class ImageClip extends Image {
 		
 		}
 	
-	/**
-	 * This function binds the x parameter to the edges of the given image. Therefore, for every 
-	 * x value between [-1, -0.5], will evaluate to the color of the image at (x=-0.5,y=-1).
-	 * 
-	 * @param num
-	 * @return
-	 */
-	public static double clip(double num) {
-		 
-		return RGBColor.clamp(num);
-		
-	}
+	 protected double clip(double value) {
+		 return ((value/2) + 0.5)*799;
+	    }
+	//imageClip("foo.jpg", x+x, y))
+
 
 }
