@@ -105,7 +105,7 @@ public class StringEvaluator extends ExpressionTreeNode {
 	}
 
 	/**
-	 * Takes in the string and opens the file if it can be linked to a directory, or returns
+	 * Takes in the string and opens the file if it can be linked to an image in the directory, or returns
 	 * false if the string does not represent an image in a directory
 	 * 
 	 * @param imageName
