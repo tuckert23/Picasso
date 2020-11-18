@@ -8,6 +8,7 @@ import picasso.parser.language.ExpressionTreeNode;
  * @author Sara Sprenkle
  *
  */
+
 public class Variable extends ExpressionTreeNode {
 
 	private ExpressionTreeNode param;

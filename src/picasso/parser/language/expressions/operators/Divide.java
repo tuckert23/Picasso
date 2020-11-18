@@ -35,6 +35,7 @@ public class Divide extends Binary {
 		double red = 0;
 		double green = 0;
 		double blue = 0;
+		
 		if (right.getRed() != 0) {
 			red = left.getRed() / right.getRed();
 		}

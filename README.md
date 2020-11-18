@@ -1,5 +1,31 @@
 # Picasso
 
+An application that allows the user to create expressions that
+evaluate to colors and then eventually to images.
+
+See the specification for Picasso on the course web site,
+or use our helpful Javadocs!
+
+
+___
+
+## Implemented extensions:
+
+- Extension 0  
+	- Indented note on extension explaining its functionality  
+	- Indented note on extension about the `function` code  
+<br>
+
+- Extension 1  
+<br>
+
+- Extension 2  
+<br>
+
+- Extension 3  
+
+___
+
 ## Authors:  
 	
 	- AbdelRahman AboEitta
@@ -8,11 +34,6 @@
 	- Will Medick
 	- Danny Kung
 
-An application that allows the user to create expressions that
-evaluate to colors and then eventually to images.
+___ 
 
-The given code base is a good start, but it is sparsely documented
-(document each method/part after you understand what it's doing) and,
-as your application grows, you may need to refactor.
-
-See the specification for Picasso on the course web site
+August referenced this [markdown guide](https://www.markdownguide.org/basic-syntax/) to create this README.

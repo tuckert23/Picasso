@@ -14,6 +14,7 @@ public class X extends ExpressionTreeNode {
 	/**
 	 * Returns the color represented by x. The value of y doesn't matter.
 	 */
+	
 	@Override
 	public RGBColor evaluate(double x, double y) {
 		return new RGBColor(x, x, x);
@@ -40,6 +41,7 @@ public class X extends ExpressionTreeNode {
 	 * 
 	 * @see java.lang.Object#toString()
 	 */
+	
 	@Override
 	public String toString() {
 		return "x";

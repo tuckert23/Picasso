@@ -9,6 +9,7 @@ import picasso.parser.language.ExpressionTreeNode;
  * @author Sara Sprenkle
  *
  */
+
 public abstract class UnaryFunction extends ExpressionTreeNode {
 
 	protected ExpressionTreeNode param;
@@ -16,6 +17,7 @@ public abstract class UnaryFunction extends ExpressionTreeNode {
 	/**
 	 * @param param
 	 */
+	
 	public UnaryFunction(ExpressionTreeNode param) {
 		this.param = param;
 	}
@@ -26,17 +28,18 @@ public abstract class UnaryFunction extends ExpressionTreeNode {
 	 * 
 	 * @see java.lang.Object#toString()
 	 */
+	
 	@Override
 	public String toString() {
 		return this.getClass() + ": " + param;
 	}
-	
 	
 	/*
 	 * (non-Javadoc)
 	 * 
 	 * @see java.lang.Object#equals(java.lang.Object)
 	 */
+	
 	@Override
 	public boolean equals(Object obj) {
 		if (obj == this) {

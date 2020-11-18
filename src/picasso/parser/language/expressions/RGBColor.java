@@ -10,6 +10,7 @@ import picasso.parser.language.ExpressionTreeNode;
  * is evaluated in the expression tree, it is the color.
  *
  */
+
 public class RGBColor extends ExpressionTreeNode {
 	public static final double COLOR_MIN = -1;
 	public static final double COLOR_MAX = 1;
@@ -27,6 +28,7 @@ public class RGBColor extends ExpressionTreeNode {
 	 * @param green
 	 * @param blue
 	 */
+	
 	public RGBColor(double red, double green, double blue) {
 		myRed = red;
 		myGreen = green;
@@ -38,6 +40,7 @@ public class RGBColor extends ExpressionTreeNode {
 	 * 
 	 * @param javaColor the color to convert into a Picassoc RGBColor object
 	 */
+	
 	public RGBColor(Color javaColor) {
 		myRed = toDouble(javaColor.getRed());
 		myGreen = toDouble(javaColor.getGreen());
@@ -86,6 +89,7 @@ public class RGBColor extends ExpressionTreeNode {
 	 * @param value the color's component value (from [0,255])
 	 * @return the value of the color component, scaled from [1,1]
 	 */
+	
 	protected double toDouble(int value) {
 		double range = COLOR_MAX - COLOR_MIN;
 		return (double) value / JAVA_COLOR_MAX * range + COLOR_MIN;
@@ -98,6 +102,7 @@ public class RGBColor extends ExpressionTreeNode {
 	 * @param value the color's component value (from [-1,1s])
 	 * @return the value of the color component, scaled from [0,255]
 	 */
+	
 	protected int toInt(double value) {
 		double range = COLOR_MAX - COLOR_MIN;
 		return (int) ((value - COLOR_MIN) / range * JAVA_COLOR_MAX);
