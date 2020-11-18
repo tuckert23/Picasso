@@ -29,15 +29,20 @@ public class Log extends UnaryFunction {
 	 */
 	@Override
 	public RGBColor evaluate(double x, double y) {
-		RGBColor result = param.evaluate(x, y);
 		if (x == 0)
 		{
-			return new RGBColor(1, 1, 1);
+			x = 0.000000000001;
+		}
+		if (y == 0)
+		{
+			y = 0.000000000001;
 		}
 		
-		double red = 1;
-		double blue = 1;
-		double green = 1;
+		RGBColor result = param.evaluate(x, y);
+		
+		double red = 0;
+		double blue = 0;
+		double green = 0;
 		
 		if (result.getRed() != 0) {
 			red = Math.log(Math.abs(result.getRed()));

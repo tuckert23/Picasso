@@ -29,6 +29,7 @@ public class Divide extends Binary {
 	 */
 	@Override
 	public RGBColor evaluate(double x, double y) {
+		
 		RGBColor right = rightParam.evaluate(x, y);
 		RGBColor left = leftParam.evaluate(x, y);
 
