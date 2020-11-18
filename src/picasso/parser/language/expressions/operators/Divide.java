@@ -16,8 +16,8 @@ public class Divide extends Binary {
 	 * @param param1
 	 * @param param2
 	 */
-	public Divide(ExpressionTreeNode right, ExpressionTreeNode left) {
-		super(right, left);
+	public Divide(ExpressionTreeNode left, ExpressionTreeNode right) {
+		super(left, right);
 	}
 
 	/**

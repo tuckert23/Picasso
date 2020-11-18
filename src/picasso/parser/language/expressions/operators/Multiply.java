@@ -17,8 +17,8 @@ public class Multiply extends Binary {
 	 * @param param1
 	 * @param param2
 	 */
-	public Multiply(ExpressionTreeNode right, ExpressionTreeNode left) {
-		super(right, left);
+	public Multiply(ExpressionTreeNode left, ExpressionTreeNode right) {
+		super(left, right);
 	}
 
 	/**

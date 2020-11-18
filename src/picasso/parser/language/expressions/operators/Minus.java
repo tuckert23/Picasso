@@ -16,8 +16,8 @@ public class Minus extends Binary {
 	 * @param param1
 	 * @param param2
 	 */
-	public Minus(ExpressionTreeNode right, ExpressionTreeNode left) {
-		super(right, left);
+	public Minus(ExpressionTreeNode left, ExpressionTreeNode right) {
+		super(left, right);
 	}
 
 	/**

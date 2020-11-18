@@ -2,7 +2,6 @@ package picasso.parser.tokens;
 
 import picasso.parser.language.CharConstants;
 import picasso.parser.tokens.chars.*;
-import picasso.parser.tokens.functions.NotToken;
 import picasso.parser.tokens.operations.*;
 
 /**
@@ -44,9 +43,6 @@ public class CharTokenFactory {
 		tokenList[CharConstants.CARET] = new ExponentToken();
 		tokenList[CharConstants.QUOTE] = new QuoteToken();
 		tokenList[CharConstants.BANG] = new NotToken();
-
-		// TODO: What other tokens should be in here?
-		// TODO: Need to create the associated Token classes too.
 
 	}
 }

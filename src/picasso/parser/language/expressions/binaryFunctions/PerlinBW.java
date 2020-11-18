@@ -4,11 +4,21 @@ import picasso.model.ImprovedNoise;
 import picasso.parser.language.ExpressionTreeNode;
 import picasso.parser.language.expressions.Binary;
 import picasso.parser.language.expressions.RGBColor;
-
+/**
+ * 
+ * @author taylor
+ *
+ */
 public class PerlinBW extends Binary {
+	
+	/**
+	 * 
+	 * @param left
+	 * @param right
+	 */
 
-	public PerlinBW(ExpressionTreeNode right, ExpressionTreeNode left) {
-		super(right, left);
+	public PerlinBW(ExpressionTreeNode left, ExpressionTreeNode right) {
+		super(left, right);
 	}
 
 	@Override

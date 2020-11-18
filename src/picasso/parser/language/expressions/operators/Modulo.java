@@ -17,8 +17,8 @@ public class Modulo extends Binary {
 	 * @param param1
 	 * @param param2
 	 */
-	public Modulo(ExpressionTreeNode right, ExpressionTreeNode left) {
-		super(right, left);
+	public Modulo(ExpressionTreeNode left, ExpressionTreeNode right) {
+		super(left, right);
 	}
 
 	/**
@@ -42,7 +42,7 @@ public class Modulo extends Binary {
 		if (right.getGreen() != 0) {
 			green = left.getGreen() % right.getGreen();
 		}
-		if (right.getGreen() != 0) {
+		if (right.getBlue() != 0) {
 			blue = left.getBlue() % right.getBlue();
 		}
 

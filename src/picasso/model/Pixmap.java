@@ -3,7 +3,11 @@ package picasso.model;
 import java.awt.*;
 import java.awt.image.*;
 import java.io.*;
+import java.util.Scanner;
+
 import javax.imageio.*;
+
+import picasso.view.Frame;
 
 /**
  * Class for manipulating graphics images, originally developed in C++.
@@ -178,6 +182,26 @@ public class Pixmap {
 			myFileName = fileName;
 			myImage = ImageIO.read(new File(myFileName));
 			mySize = new Dimension(myImage.getWidth(), myImage.getHeight());
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+	}
+
+	/**
+	 * Read the expression from the file named by fileName
+	 * 
+	 * @param fileName the name of the expression file to be read in
+	 */
+	public void readExpression(String fileName) {
+		String expression = "";
+		try {
+			File myFile = new File(fileName);
+			Scanner myReader = new Scanner(myFile);
+			while (myReader.hasNextLine()) {
+				expression = myReader.nextLine();
+			}
+			myReader.close();
+			Frame.expressionField.setText(expression);
 		} catch (IOException e) {
 			e.printStackTrace();
 		}

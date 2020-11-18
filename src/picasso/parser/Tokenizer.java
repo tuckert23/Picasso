@@ -10,7 +10,6 @@ import java.util.List;
 
 import picasso.parser.language.CharConstants;
 import picasso.parser.tokens.EOFToken;
-import picasso.parser.tokens.StringToken;
 import picasso.parser.tokens.Token;
 import picasso.parser.tokens.TokenFactory;
 
@@ -40,6 +39,7 @@ public class Tokenizer {
 	 * @return the list of Picasso tokens (in order) in the string
 	 */
 	public List<Token> parseTokens(String s) {
+		s = s.replace("-", " -"); 
 		tokenizer = new StreamTokenizer(new StringReader(s));
 		tokenizer.quoteChar(CharConstants.QUOTE);
 
@@ -119,7 +119,7 @@ public class Tokenizer {
 	 * @param args
 	 */
 	public static void main(String[] args) {
-		String expression = "15 + log(x) * perlinColor(x,y)";
+		String expression = "\"foo.j\" + .5";
 		Tokenizer tokenizer = new Tokenizer();
 		System.out.println("Tokens" + tokenizer.parseTokens(expression));
 	}

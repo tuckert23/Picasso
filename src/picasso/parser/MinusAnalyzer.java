@@ -18,8 +18,9 @@ public class MinusAnalyzer implements SemanticAnalyzerInterface {
 	@Override
 	public ExpressionTreeNode generateExpressionTree(Stack<Token> tokens) {
 		tokens.pop();
-		return new Minus(SemanticAnalyzer.getInstance().generateExpressionTree(tokens),
-				SemanticAnalyzer.getInstance().generateExpressionTree(tokens));
+		ExpressionTreeNode right = SemanticAnalyzer.getInstance().generateExpressionTree(tokens);
+		ExpressionTreeNode left = SemanticAnalyzer.getInstance().generateExpressionTree(tokens);
+		return new Minus(left, right);
 	}
 
 }

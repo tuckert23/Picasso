@@ -21,11 +21,13 @@ public class ColorAnalyzer implements SemanticAnalyzerInterface {
 	@Override
 	public ExpressionTreeNode generateExpressionTree(Stack<Token> tokens) {
 		Token t = tokens.pop();
-		if( ! ( t instanceof ColorToken )) {
-			// XXX: Look into this more.  Is this even possible?
-			throw new ParseException("Expected a color");
-		}
+		// No, that's not possible because this method will never be called unless the
+		// token is an instance of color
+		/*
+		 * if( ! ( t instanceof ColorToken )) {
+		 * throw new ParseException("Expected a color"); }
+		 */
 		ColorToken ct = (ColorToken) t;
-		return new RGBColor( ct.getRed(), ct.getGreen(), ct.getBlue());
+		return new RGBColor(ct.getRed(), ct.getGreen(), ct.getBlue());
 	}
 }

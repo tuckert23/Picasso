@@ -7,6 +7,7 @@ import java.lang.reflect.InvocationTargetException;
 import java.util.*;
 
 import picasso.parser.language.BuiltinFunctionsReader;
+import picasso.parser.language.BuiltinSpecialTokenReader;
 import picasso.parser.language.ExpressionTreeNode;
 import picasso.parser.tokens.Token;
 import picasso.parser.tokens.TokenFactory;
@@ -46,6 +47,7 @@ public class SemanticAnalyzer implements SemanticAnalyzerInterface {
 		tokenToSemAnalyzer = new HashMap<Class<?>, SemanticAnalyzerInterface>();
 		createFunctionParserMappings();
 		createOperationMappings();
+		createspecialTokensParserMappings(); //better way to map special tokens
 
 		// TODO: Probably should put this information into a file
 		// that can be read in. Separates business rules/syntax from the code.
@@ -55,19 +57,7 @@ public class SemanticAnalyzer implements SemanticAnalyzerInterface {
 		String tokenName = PARSER_PACKAGE + TOKENS_PACKAGE_NAME + "NumberToken";
 		String parserName = PARSER_PACKAGE + "ConstantAnalyzer";
 		addSemanticAnalyzerMapping(tokenName, parserName);
-
-		// IdentifierToken --> IdentifierAnalyzer
-		tokenName = PARSER_PACKAGE + TOKENS_PACKAGE_NAME + "IdentifierToken";
-		parserName = PARSER_PACKAGE + "IdentifierAnalyzer";
-		addSemanticAnalyzerMapping(tokenName, parserName);
-
-		// Color mapping
-		tokenName = PARSER_PACKAGE + TOKENS_PACKAGE_NAME + "ColorToken";
-		parserName = PARSER_PACKAGE + "ColorAnalyzer";
-		addSemanticAnalyzerMapping(tokenName, parserName);
-
-		// TODO: Are there any others that should be added?
-		// Is there a better way to create this mapping?
+		
 	}
 
 	/**
@@ -115,20 +105,34 @@ public class SemanticAnalyzer implements SemanticAnalyzerInterface {
 			addSemanticAnalyzerMapping(tokenName, semanticAnalyzer);
 		}
 	}
+	
+	/**
+	 * Map each special tokens to its semantic analyzer
+	 */
+	private void createspecialTokensParserMappings() {
+		List<String> tokensList = BuiltinSpecialTokenReader.getTokensList();
+
+		for (String token : tokensList) {
+			String tokenClass = TokenFactory.capitalize(token);
+			String tokenName = PARSER_PACKAGE + "tokens." + tokenClass + "Token";
+			String semanticAnalyzer = PARSER_PACKAGE + tokenClass + "Analyzer";
+			addSemanticAnalyzerMapping(tokenName, semanticAnalyzer);
+		}
+	}
 
 	/**
 	 * Map each operation token to its semantic analyzer
 	 */
 	private void createOperationMappings() {
 
-		// TODO: The following exceptions should probably be propagated up to
-		// the user.
 		Properties opProps = new Properties();
 		try {
 			opProps.load(new FileReader(OPS_FILE));
 		} catch (FileNotFoundException e1) {
+			System.out.println("operations.prop file not found");
 			e1.printStackTrace();
 		} catch (IOException e1) {
+			System.out.println("IO Exception: error in reading, searching or writing to the file");
 			e1.printStackTrace();
 		}
 
@@ -149,8 +153,7 @@ public class SemanticAnalyzer implements SemanticAnalyzerInterface {
 	public ExpressionTreeNode generateExpressionTree(Stack<Token> tokens) {
 
 		if (tokens.isEmpty()) {
-			// XXX: Is this the only reason that the token stack is empty?
-			throw new ParseException("Expected another argument.");
+			throw new ParseException("Expected another argument or user didn't input an expression");
 		}
 
 		// Find the appropriate semantic analyzer for the token.

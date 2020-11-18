@@ -6,30 +6,28 @@ package picasso.parser.language.expressions.unaryFunctions;
 import picasso.parser.language.ExpressionTreeNode;
 import picasso.parser.language.expressions.RGBColor;
 import picasso.parser.language.expressions.UnaryFunction;
+import java.lang.Math;
 
 /**
- * @author Abdelrahman AboEitta
+ * @author taylor
  *
  */
-public class Wrap extends UnaryFunction {
+public class Ceiling extends UnaryFunction {
 
-	public Wrap(ExpressionTreeNode param) {
+	/**
+	 * @param param
+	 */
+	public Ceiling(ExpressionTreeNode param) {
 		super(param);
 	}
 
 	@Override
 	public RGBColor evaluate(double x, double y) {
 		RGBColor result = param.evaluate(x, y);
-		double red = wrap(result.getRed());
-		double green = wrap(result.getGreen());
-		double blue = wrap(result.getBlue());
+		double red = Math.ceil(result.getRed());
+		double green = Math.ceil(result.getGreen());
+		double blue = Math.ceil(result.getBlue());
 		return new RGBColor(red, green, blue);
 	}
 
-	public static double wrap(double num) {
-		num += 3;
-		num %= 2;
-		num -= 1;
-		return num;
-	}
 }
