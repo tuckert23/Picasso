@@ -18,6 +18,7 @@ public class StringEvaluator extends ExpressionTreeNode {
 	private String myString;
 	public BufferedImage myImage;
 	private static final String DEFAULT_PATH = "images/";
+	private static final int BOUND = 799;
 	private boolean image = false;
 	private int hash;
 	private final String[] FUNCTIONS = {"floor(x)", "floor(y)", 
@@ -81,8 +82,8 @@ public class StringEvaluator extends ExpressionTreeNode {
 	public RGBColor evaluate(double x, double y) {
 		if (image)
 		{
-			int xDomain = domainScaleToImage(x, myImage.getWidth());
-			int yDomain = domainScaleToImage(y, myImage.getHeight());
+			int xDomain = domainScaleToImage(x);
+			int yDomain = domainScaleToImage(y);
 		
 			Color pixColor = new Color(myImage.getRGB(xDomain, yDomain));
 			return new RGBColor(pixColor);
@@ -99,10 +100,9 @@ public class StringEvaluator extends ExpressionTreeNode {
 	 * @param bound
 	 * @return
 	 */
-	public static int domainScaleToImage(double value, int bound) {
-		
-		//return (int) ((value/2) + 0.5) * 799;
-		return (int) ((++value * bound) / 2) + 399;
+	public static int domainScaleToImage(double value) 
+	{
+		return (int) (((value * BOUND) / 2) + (int)(BOUND/2));
 	}
 
 	/**
