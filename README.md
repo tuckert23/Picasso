@@ -16,7 +16,15 @@ ___
 	- Indented note on extension about the `function` code  
 <br>
 
-- Extension 1  
+- Extension 1: Generating unique images from strings (Taylor)
+	- My extension allows strings of any length to be put into the expression box in the GUI. The code will take that string and 
+	get its hashCode. This hash code will be used iteratively to choose both a deterministic function from a list of functions and an
+	operator from a list of operators. It does this by taking, for example, hashCode % FunctionList.length, and then choosing the 
+	function at that index. Then, the hashCode is divided by 2 and the process repeats. Each of the functions and the operators chosen 
+	are then concatenated to the expression iteratively, until we have a string that looks something like "0 + perlinColor(x, y) - 
+	log(x) * clamp(y)....". This expression is then parsed and made into an expression tree, which is then evaluated like every other 
+	expression tree. Since each hashCode is the same for a particular string, this is deterministic yet produces some incredibly 
+	unique and cool pictures. 
 <br>
 
 - Extension 2  
