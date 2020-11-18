@@ -1,33 +1,33 @@
 package picasso.view.commands;
 
-import java.io.File;
+import java.io.BufferedWriter;
 import java.io.FileWriter;
 import java.io.IOException;
-
-import javax.imageio.ImageIO;
-import javax.swing.JFileChooser;
+import java.io.PrintWriter;
 
 import picasso.model.Pixmap;
-import picasso.util.FileCommand;
+import picasso.util.Command;
 import picasso.view.Frame;
 
-public class HistoryWriter extends FileCommand<Pixmap> {
+public class HistoryWriter implements Command<Pixmap> {
 
-	public HistoryWriter() {
-		super(JFileChooser.SAVE_DIALOG);
+	private final String defaultFileName = "expressions/history.exp";
+	private static int idNum = 1;
+
+	public void writeToHistory() {
+		try {
+			PrintWriter outHistory = new PrintWriter (new BufferedWriter(new FileWriter(defaultFileName, true)));
+			outHistory.println(idNum + ": " + Frame.expressionField.getText() + "\n\n");
+			idNum++;
+			outHistory.close();
+		} catch (IOException e) {
+			System.out.println("An IOException");
+			e.printStackTrace();
+		}
 	}
 
 	@Override
 	public void execute(Pixmap target) {
-		String fileName = getFileName();
-		if (fileName != null) {
-			try {
-				FileWriter expressionWriter = new FileWriter(fileName);
-				expressionWriter.write(Frame.expressionField.getText());
-				expressionWriter.close();
-			} catch (IOException e) {
-				e.printStackTrace();
-			}
-		}
+		writeToHistory();
 	}
 }
