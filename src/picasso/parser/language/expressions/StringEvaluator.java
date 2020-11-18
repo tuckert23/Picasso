@@ -59,7 +59,9 @@ public class StringEvaluator extends ExpressionTreeNode {
 	 */
 	public StringEvaluator(String str) {
 		myString = str;
-		if (!readImage(myString))
+		readImage(myString);
+		
+		if (!image)
 		{
 			treeFromString(myString);
 		}
@@ -107,25 +109,21 @@ public class StringEvaluator extends ExpressionTreeNode {
 	 * @param imageName
 	 * @return if it is an image or not
 	 */
-	private boolean readImage(String imageName) {
+	private void readImage(String imageName) {
 		String[] pathFolders = imageName.split("/");
-		boolean success = false;
 		if (pathFolders.length == 1) {
 			try {
 				myImage = ImageIO.read(new File(DEFAULT_PATH + imageName));
-				success = true;
 				image = true;
 			} catch (IOException e) {
 			}
 		} else {
 			try {
 				myImage = ImageIO.read(new File(imageName));
-				success = true;
 				image = true;
 			} catch (IOException e) {
 			}
 		}
-		return success;
 	}
 	
 	/**
@@ -153,7 +151,7 @@ public class StringEvaluator extends ExpressionTreeNode {
 		{
 			String function  = FUNCTIONS[hash % LEN_FUNCTIONS];
 			String operation = OPERATIONS[hash % LEN_OPERATIONS];
-			expression = expression + operation + function;
+			expression += operation + function;
 			hash /= 2;
 		}
 		System.out.println(expression);
