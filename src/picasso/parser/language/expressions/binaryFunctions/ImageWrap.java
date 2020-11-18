@@ -1,20 +1,15 @@
 package picasso.parser.language.expressions.binaryFunctions;
 
-import java.awt.Color;
 
 import picasso.parser.language.ExpressionTreeNode;
-import picasso.parser.language.expressions.Binary;
+import picasso.parser.language.expressions.Image;
 import picasso.parser.language.expressions.RGBColor;
-import picasso.parser.language.expressions.StringEvaluator;
 import picasso.parser.language.expressions.unaryFunctions.Wrap;
 
-public class ImageWrap extends Binary {
+public class ImageWrap extends Image {
 
-	StringEvaluator imageEvaluator;
-
-	public ImageWrap(String str, ExpressionTreeNode left, ExpressionTreeNode right) {
-		super(left, right);
-		imageEvaluator = new StringEvaluator(str);
+	public ImageWrap(String str, ExpressionTreeNode x, ExpressionTreeNode y) {
+		super(str, x, y);
 	}
 
 	@Override
@@ -23,17 +18,19 @@ public class ImageWrap extends Binary {
 		// Evaluate left and right
 		// Call wrap() on whatever values I get from left and right
 		// retrieve (left,right) point from image
+				
+		
+		RGBColor xResult = super.leftParam.evaluate(x, y);
+		RGBColor yResult = super.rightParam.evaluate(x, y);
+		
+		double xWrapped = Wrap.wrap(xResult.getRed());
+		double yWrapped = Wrap.wrap(yResult.getRed());
+		
+		RGBColor imageRep = super.imageEvaluator.evaluate(xWrapped, yWrapped);
 		
 		
-		int xDomain = imageEvaluator.domainScaleToImage(x, imageEvaluator.myImage.getWidth());
-		int yDomain = imageEvaluator.domainScaleToImage(y, imageEvaluator.myImage.getHeight());
-		double xd = wrap(xDomain, imageEvaluator.myImage.getWidth());
-		double yd = wrap(yDomain, imageEvaluator.myImage.getHeight());
-		Color pixColor = new Color(imageEvaluator.myImage.getRGB(xDomain, yDomain));
-		return new RGBColor(pixColor);
+		return imageRep;
 	}
 
-	private double wrap(int num, int boundary) {
-		return Wrap.wrap(num);
-	}
+
 }
