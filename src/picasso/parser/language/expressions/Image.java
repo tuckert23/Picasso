@@ -11,16 +11,16 @@ import picasso.parser.language.ExpressionTreeNode;
  */
 public abstract class Image extends ExpressionTreeNode {
 
-	protected ExpressionTreeNode rightParam;
-	protected ExpressionTreeNode leftParam;
+	protected ExpressionTreeNode y;
+	protected ExpressionTreeNode x;
 	protected String image;
 	protected StringEvaluator imageEvaluator;
 	/**
 	 * 
 	 */
 	public Image(String str, ExpressionTreeNode x, ExpressionTreeNode y) {
-		leftParam = x;
-		rightParam = y;
+		this.x = x;
+		this.y = y;
 		image = str;
 		imageEvaluator = new StringEvaluator(str);
 	}
@@ -34,7 +34,7 @@ public abstract class Image extends ExpressionTreeNode {
 	 */
 	@Override
 	public String toString() {
-		return this.getClass() + ": " + rightParam + ", " + leftParam + ", " + image;
+		return this.getClass() + ": " + y + ", " + x + ", " + image;
 	}
 
 	/*
@@ -51,7 +51,7 @@ public abstract class Image extends ExpressionTreeNode {
 			return false;
 		}
 		Image a = (Image) obj;
-		return rightParam.equals(a.rightParam) && leftParam.equals(a.leftParam) && image.equals(a.image) && this.getClass().equals(a.getClass());
+		return this.y.equals(a.y) && this.x.equals(a.x) && image.equals(a.image) && this.getClass().equals(a.getClass());
 	}
 
 }

@@ -12,16 +12,21 @@ public class ImageWrap extends Image {
 		super(str, x, y);
 	}
 
+	/**
+	 * This function evaluates the x and y expressions given in the imageWrap function call.
+	 * It then takes the corresponding value from the RGBColor those expressions give (in this case, the red value, 
+	 * but all are the same), and uses the wrap function. It then evaluates the point as the wrapped point on the image, 
+	 * which essentially takes a point from the image and puts it in another place on the newly generated image, giving the
+	 * wrapping effect. 
+	 * 
+	 * @param x
+	 * @param y
+	 */
 	@Override
 	public RGBColor evaluate(double x, double y) {
 		
-		// Evaluate left and right
-		// Call wrap() on whatever values I get from left and right
-		// retrieve (left,right) point from image
-				
-		
-		RGBColor xResult = super.leftParam.evaluate(x, y);
-		RGBColor yResult = super.rightParam.evaluate(x, y);
+		RGBColor xResult = super.x.evaluate(x, y);
+		RGBColor yResult = super.y.evaluate(x, y);
 		
 		double xWrapped = Wrap.wrap(xResult.getRed());
 		double yWrapped = Wrap.wrap(yResult.getRed());

@@ -21,15 +21,22 @@ public class ImageClip extends Image {
 		super(str, x, y);
 	}
 
+	/**
+	 * This function evaluates both the x and y expression in the imageClip function call. It then takes one
+	 * of the values from the RGBColor given by the evaluation, and clips the x value while leaving the y value.
+	 * By leaving the y value, the imageClip maintains all the image in the y direction, while "streaking" the x values 
+	 * at each y value. After determining the position from where on the image to grab the color, the function
+	 * returns that color from the image. 
+	 * 
+	 * @param x
+	 * @param y
+	 * @return imageRep
+	 */
 	@Override
 	public RGBColor evaluate(double x, double y) {
-		// Evaluate left and right
-		// Call wrap() on whatever values I get from left and right
-		// retrieve (left,right) point from image
-				
 		
-		RGBColor xResult = super.leftParam.evaluate(x, y);
-		RGBColor yResult = super.rightParam.evaluate(x, y);
+		RGBColor xResult = super.x.evaluate(x, y);
+		RGBColor yResult = super.y.evaluate(x, y);
 		
 		double xClipped = clip(xResult.getRed());
 		double yClipped = yResult.getRed();
@@ -40,6 +47,13 @@ public class ImageClip extends Image {
 		return imageRep;
 	}
 	
+	/**
+	 * This function binds the x parameter to the edges of the given image. Therefore, for every 
+	 * x value between [-1, -0.5], will evaluate to the color of the image at (x=-0.5,y=-1).
+	 * 
+	 * @param num
+	 * @return
+	 */
 	public static double clip(double num) {
 		num /= 2;
 		
