@@ -1,24 +1,15 @@
 package picasso.parser.language.expressions.binaryFunctions;
 
-import java.awt.Color;
 
 import picasso.parser.language.ExpressionTreeNode;
-import picasso.parser.language.expressions.Binary;
+import picasso.parser.language.expressions.Image;
 import picasso.parser.language.expressions.RGBColor;
-import picasso.parser.language.expressions.StringEvaluator;
 import picasso.parser.language.expressions.unaryFunctions.Wrap;
 
-public class ImageWrap extends Binary {
-
-	private StringEvaluator imageEvaluator;
-	private ExpressionTreeNode x;
-	private ExpressionTreeNode y;
+public class ImageWrap extends Image {
 
 	public ImageWrap(String str, ExpressionTreeNode x, ExpressionTreeNode y) {
-		super(x, y);
-		this.x = x;
-		this.y = y;
-		imageEvaluator = new StringEvaluator(str);
+		super(str, x, y);
 	}
 
 	@Override
@@ -29,13 +20,13 @@ public class ImageWrap extends Binary {
 		// retrieve (left,right) point from image
 				
 		
-		RGBColor xResult = this.x.evaluate(x, y);
-		RGBColor yResult = this.y.evaluate(x, y);
+		RGBColor xResult = super.leftParam.evaluate(x, y);
+		RGBColor yResult = super.rightParam.evaluate(x, y);
 		
 		double xWrapped = Wrap.wrap(xResult.getRed());
 		double yWrapped = Wrap.wrap(yResult.getRed());
 		
-		RGBColor imageRep = imageEvaluator.evaluate(xWrapped, yWrapped);
+		RGBColor imageRep = super.imageEvaluator.evaluate(xWrapped, yWrapped);
 		
 		
 		return imageRep;
