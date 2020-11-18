@@ -63,7 +63,7 @@ public class StringEvaluator extends ExpressionTreeNode {
 		
 		if (!image)
 		{
-			System.out.println("Image could not be found, generating a unique image from the given string.");
+			System.out.println("Image at the given path could not be found. Generating a unique image from the given string.");
 			treeFromString(myString);
 		}
 			
