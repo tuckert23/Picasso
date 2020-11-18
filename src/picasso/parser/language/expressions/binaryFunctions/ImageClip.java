@@ -33,19 +33,20 @@ public class ImageClip extends Image {
 	 * @return imageRep
 	 */
 	@Override
-	public RGBColor evaluate(double x, double y) {
+	public RGBColor evaluate(double x, double y) 
+		{
 		
 		RGBColor xResult = super.x.evaluate(x, y);
 		RGBColor yResult = super.y.evaluate(x, y);
 		
-		double xClipped = clip(xResult.getRed());
-		double yClipped = yResult.getRed();
-		
+		double xClipped = RGBColor.clamp(xResult.getRed());
+		double yClipped = RGBColor.clamp(yResult.getRed());
+
 		RGBColor imageRep = super.imageEvaluator.evaluate(xClipped, yClipped);
 		
-		
 		return imageRep;
-	}
+		
+		}
 	
 	/**
 	 * This function binds the x parameter to the edges of the given image. Therefore, for every 
@@ -55,20 +56,8 @@ public class ImageClip extends Image {
 	 * @return
 	 */
 	public static double clip(double num) {
-		num /= 2;
-		
-		if (num <= -0.5)
-		{
-			return -0.5;
-		}
-		else if (num >= 0.5)
-		{
-			return 0.5;
-		}
-		else
-		{
-			return num;
-		}
+		 
+		return RGBColor.clamp(num);
 		
 	}
 

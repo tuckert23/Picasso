@@ -108,7 +108,7 @@ public class RGBColor extends ExpressionTreeNode {
 		return (int) ((value - COLOR_MIN) / range * JAVA_COLOR_MAX);
 	}
 
-	protected static double clamp(double value) {
+	public static double clamp(double value) {
 		return Math.max(COLOR_MIN, Math.min(COLOR_MAX, value));
 	}
 
