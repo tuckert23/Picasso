@@ -14,6 +14,12 @@ import picasso.parser.language.expressions.RGBColor;
  */
 public abstract class ExpressionTreeNode implements EvaluatableExpression {
 
+	protected static int numberOfChildren = 0;
+	
+	public ExpressionTreeNode() {
+		
+	}
+	
 	/**
 	 * Evaluate this expression, given x and y
 	 * 
@@ -27,4 +33,9 @@ public abstract class ExpressionTreeNode implements EvaluatableExpression {
 	// TODO: Not being utilized yet. Why would it be useful?
 	// keep a mapping of the element to its value.
 	static protected Map<ExpressionTreeNode, Object> elementsToValue = new TreeMap<ExpressionTreeNode, Object>();
+	
+	public static int getNumberOfChildren() {
+		
+		return numberOfChildren;
+	}
 }
