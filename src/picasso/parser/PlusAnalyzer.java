@@ -3,7 +3,7 @@ package picasso.parser;
 import java.util.Stack;
 
 import picasso.parser.language.ExpressionTreeNode;
-import picasso.parser.language.expressions.operators.Plus;
+import picasso.parser.language.expressions.operators.Addition;
 import picasso.parser.tokens.Token;
 
 /**
@@ -20,7 +20,7 @@ public class PlusAnalyzer implements SemanticAnalyzerInterface {
 		tokens.pop();
 		ExpressionTreeNode right = SemanticAnalyzer.getInstance().generateExpressionTree(tokens);
 		ExpressionTreeNode left = SemanticAnalyzer.getInstance().generateExpressionTree(tokens);
-		return new Plus(left,right);
+		return new Addition(left,right);
 	}
 
 }

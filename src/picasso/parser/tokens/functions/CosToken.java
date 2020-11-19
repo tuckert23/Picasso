@@ -2,6 +2,7 @@ package picasso.parser.tokens.functions;
 
 /**
  * Represents the cos function token
+ * 
  * @author August Donovan
  *
  */

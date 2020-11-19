@@ -4,14 +4,13 @@
 package picasso.parser.tokens.functions;
 
 /**
+ * Represents the perlinBW function token
+ * 
  * @author Abdelrahman AboEitta
  *
  */
 public class PerlinBWToken extends FunctionToken {
 
-	/**
-	 * @param name
-	 */
 	public PerlinBWToken() {
 		super("PerlinBW Function Token");
 	}

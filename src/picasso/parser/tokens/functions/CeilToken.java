@@ -4,6 +4,8 @@
 package picasso.parser.tokens.functions;
 
 /**
+ * Represents the ceil function token
+ * 
  * @author taylor
  *
  */

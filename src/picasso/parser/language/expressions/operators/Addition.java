@@ -11,9 +11,9 @@ import picasso.parser.language.expressions.RGBColor;
  * @author Abdelrahman AboEitta
  *
  */
-public class Plus extends BinaryOperatorsOrFunctions {
+public class Addition extends BinaryOperatorsOrFunctions {
 
-	public Plus(ExpressionTreeNode left, ExpressionTreeNode right) {
+	public Addition(ExpressionTreeNode left, ExpressionTreeNode right) {
 		super(left, right);
 	}
 

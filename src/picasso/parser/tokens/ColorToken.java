@@ -48,6 +48,12 @@ public class ColorToken extends Token {
 		this.blue = blue;
 	}
 
+	/**
+	 * check if the number is a valid color
+	 * 
+	 * @param value
+	 * @return true if the value is between 1 and -1
+	 */
 	public static boolean isValidValue(double value) {
 		return (value >= -1 && value <= 1);
 	}
