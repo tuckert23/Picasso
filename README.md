@@ -24,7 +24,10 @@ ___
 	are then concatenated to the expression iteratively, until we have a string that looks something like "0 + perlinColor(x, y) - 
 	log(x) * clamp(y)....". This expression is then parsed and made into an expression tree, which is then evaluated like every other 
 	expression tree. Since each hashCode is the same for a particular string, this is deterministic yet produces some incredibly 
-	unique and cool pictures. 
+	unique and cool pictures. The extension is fairly easy to use: in the expression box of the GUI, use quotation marks around any 
+	string. Foe example, try "computer science" or  "<your name>". If the string, for example, is "foo.jpg", the image displayed will 
+	be the image found in the  images directory. But, if the string cannot be mapped to a path for an image, it will create an image 
+	for you!
 <br>
 
 - Extension 2  
