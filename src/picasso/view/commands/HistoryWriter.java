@@ -20,7 +20,7 @@ public class HistoryWriter implements Command<Pixmap> {
 	public HistoryWriter() {
 		countExpressions();
 	}
-
+	
 	public void writeToHistory() {
 		try {
 			PrintWriter outHistory = new PrintWriter (new BufferedWriter(new FileWriter(defaultFileName, true)));
