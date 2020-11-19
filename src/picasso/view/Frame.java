@@ -46,7 +46,7 @@ public class Frame extends JFrame {
 		commands.add("Evaluate", new ThreadedCommand<Pixmap>(canvas, new Evaluater()));
 		commands.add("File Evaluate", new FileEvaluator());
 		commands.add("Save", new Writer());
-		commands.add("Save History", new HistoryWriter());
+		commands.add("Save in History", new HistoryWriter());
 		commands.add("Random Image Generator", new ThreadedCommand<Pixmap>(canvas, new RandomEvaluator()));
 
 		// add our container to Frame and show it
