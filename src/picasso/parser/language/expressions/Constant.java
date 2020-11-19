@@ -48,7 +48,6 @@ public class Constant extends ExpressionTreeNode {
 	 * The constant is like an RGB Color with the constant as each component. It is
 	 * not affected by the values of x and y.
 	 */
-	
 	@Override
 	public RGBColor evaluate(double x, double y) {
 		return new RGBColor(value, value, value);

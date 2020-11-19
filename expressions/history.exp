@@ -16,3 +16,4 @@
 6: "beholder.jpg"
 
 
+19: imageClip("beholder.jpg", x+x, y)

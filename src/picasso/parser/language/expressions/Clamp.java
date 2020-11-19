@@ -21,6 +21,9 @@ public class Clamp extends UnaryFunction {
 		super(param);
 	}
 
+	/**
+	 * Clamps the colors between [-1, 1]
+	 */
 	@Override
 	public RGBColor evaluate(double x, double y) {
 		RGBColor result = param.evaluate(x, y);

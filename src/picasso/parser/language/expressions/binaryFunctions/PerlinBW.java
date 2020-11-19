@@ -21,6 +21,10 @@ public class PerlinBW extends BinaryOperatorsOrFunctions {
 		super(left, right);
 	}
 
+	/**
+	 * This  function implements the PerlinColor evaluation of position using noise to determine the shade of grey
+	 * to return. 
+	 */
 	@Override
 	public RGBColor evaluate(double x, double y) {
 		RGBColor right = rightParam.evaluate(x, y);

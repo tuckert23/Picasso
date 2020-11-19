@@ -18,6 +18,10 @@ public class PerlinColor extends BinaryOperatorsOrFunctions {
 		super(left, right);
 	}
 
+	/**
+	 * This function also uses improvedNoise to generate "noisy" distributions of color which creates a mosaic of color 
+	 * on the canvas. 
+	 */
 	@Override
 	public RGBColor evaluate(double x, double y) {
 		RGBColor right = rightParam.evaluate(x, y);

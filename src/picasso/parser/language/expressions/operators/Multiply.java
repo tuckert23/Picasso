@@ -22,7 +22,7 @@ public class Multiply extends BinaryOperatorsOrFunctions {
 	}
 
 	/**
-	 * Evaluates this expression at the given x,y point by evaluating the addition
+	 * Evaluates this expression at the given x,y point by evaluating the multiplication
 	 * of the operator's two parameters.
 	 * 
 	 * @return the color from evaluating the addition of the operator's two
