@@ -14,7 +14,7 @@ import picasso.view.Frame;
 
 public class HistoryWriter implements Command<Pixmap> {
 
-	private final String defaultFileName = "expressions/history.exp";
+	public final String defaultFileName = "expressions/history.exp";
 	private static int idNum = 1;
 	
 	public HistoryWriter() {
@@ -33,6 +33,12 @@ public class HistoryWriter implements Command<Pixmap> {
 		}
 	}
 	
+	public int getNumOfLines() {
+		countExpressions();
+		int copyNum = idNum--;
+		return copyNum;
+	}
+	
 	public void countExpressions() {
 		BufferedReader reader;
 		int lines = 1;
@@ -42,7 +48,6 @@ public class HistoryWriter implements Command<Pixmap> {
 				lines++;
 			}
 			idNum = lines++;
-			System.out.println(idNum);
 			reader.close();
 	} catch (FileNotFoundException e1) {
 	} catch (IOException e) {
