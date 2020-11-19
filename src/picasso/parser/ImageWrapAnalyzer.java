@@ -7,6 +7,12 @@ import picasso.parser.language.expressions.binaryFunctions.ImageWrap;
 import picasso.parser.tokens.StringToken;
 import picasso.parser.tokens.Token;
 
+/**
+ * Handles parsing the imageWrap function.
+ * 
+ * @author Taylor
+ *
+ */
 public class ImageWrapAnalyzer implements SemanticAnalyzerInterface {
 
 	@Override

@@ -10,6 +10,8 @@ import picasso.parser.language.expressions.unaryFunctions.Tan;
 import picasso.parser.tokens.Token;
 
 /**
+ * Handles parsing the tan function.
+ * 
  * @author Abdelrahman AboEitta
  *
  */

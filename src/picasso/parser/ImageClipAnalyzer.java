@@ -11,6 +11,8 @@ import picasso.parser.tokens.StringToken;
 import picasso.parser.tokens.Token;
 
 /**
+ * Handles parsing the imageClip function.
+ * 
  * @author taylor
  *
  */

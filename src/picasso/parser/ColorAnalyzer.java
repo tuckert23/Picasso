@@ -23,6 +23,7 @@ public class ColorAnalyzer implements SemanticAnalyzerInterface {
 		Token t = tokens.pop();
 		// No, that's not possible because this method will never be called unless the
 		// token is an instance of color
+		
 		/*
 		 * if( ! ( t instanceof ColorToken )) {
 		 * throw new ParseException("Expected a color"); }

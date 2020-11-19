@@ -6,6 +6,12 @@ import picasso.parser.language.ExpressionTreeNode;
 import picasso.parser.language.expressions.binaryFunctions.PerlinColor;
 import picasso.parser.tokens.Token;
 
+/**
+ * Handles parsing the perlinColor function.
+ * 
+ * @author Abdelrahman AboEitta
+ *
+ */
 public class PerlinColorAnalyzer implements SemanticAnalyzerInterface {
 
 	@Override

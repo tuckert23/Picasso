@@ -8,9 +8,15 @@ import picasso.parser.language.expressions.Variable;
 import picasso.parser.tokens.IdentifierToken;
 import picasso.parser.tokens.Token;
 
+/**
+ * Handles parsing the equals operator.
+ * 
+ * @author Abdelrahman AboEitta
+ *
+ */
 public class EqualsAnalyzer implements SemanticAnalyzerInterface {
 
-	public static ExpressionTreeNode expression;
+	private static ExpressionTreeNode expression;
 
 	@Override
 	public ExpressionTreeNode generateExpressionTree(Stack<Token> tokens) {

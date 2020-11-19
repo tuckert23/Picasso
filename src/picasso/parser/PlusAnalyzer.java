@@ -7,7 +7,7 @@ import picasso.parser.language.expressions.operators.Plus;
 import picasso.parser.tokens.Token;
 
 /**
- * Handles parsing the plus or "addition function".
+ * Handles parsing the plus or "addition operator".
  * 
  * @author Robert C. Duvall
  * @author Sara Sprenkle

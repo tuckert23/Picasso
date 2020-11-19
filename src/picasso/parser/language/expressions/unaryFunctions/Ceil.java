@@ -12,12 +12,12 @@ import java.lang.Math;
  * @author taylor
  *
  */
-public class Ceiling extends UnaryFunction {
+public class Ceil extends UnaryFunction {
 
 	/**
 	 * @param param
 	 */
-	public Ceiling(ExpressionTreeNode param) {
+	public Ceil(ExpressionTreeNode param) {
 		super(param);
 	}
 

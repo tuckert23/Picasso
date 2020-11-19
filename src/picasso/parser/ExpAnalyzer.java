@@ -10,6 +10,8 @@ import picasso.parser.language.expressions.unaryFunctions.Exp;
 import picasso.parser.tokens.Token;
 
 /**
+ * Handles parsing the exp function.
+ * 
  * @author taylor
  *
  */

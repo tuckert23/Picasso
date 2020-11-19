@@ -6,6 +6,12 @@ import picasso.parser.language.ExpressionTreeNode;
 import picasso.parser.language.expressions.operators.Divide;
 import picasso.parser.tokens.Token;
 
+/**
+ * Handles parsing the divide operator.
+ * 
+ * @author Abdelrahman AboEitta
+ *
+ */
 public class DivideAnalyzer implements SemanticAnalyzerInterface {
 
 	@Override

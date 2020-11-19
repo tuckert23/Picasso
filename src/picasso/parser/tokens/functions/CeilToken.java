@@ -7,13 +7,13 @@ package picasso.parser.tokens.functions;
  * @author taylor
  *
  */
-public class CeilingToken extends FunctionToken {
+public class CeilToken extends FunctionToken {
 
 	/**
 	 * @param name
 	 */
-	public CeilingToken() {
-		super("Ceiling Function Token");
+	public CeilToken() {
+		super("Ceil Function Token");
 	}
 
 }
