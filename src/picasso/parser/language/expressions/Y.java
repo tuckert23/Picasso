@@ -11,6 +11,10 @@ import picasso.parser.language.ExpressionTreeNode;
  */
 public class Y extends ExpressionTreeNode {
 
+	public Y() {
+		super();
+	}
+	
 	/**
 	 * Returns the color represented by y. The value of x doesn't matter.
 	 */

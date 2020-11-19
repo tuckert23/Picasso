@@ -21,7 +21,10 @@ public class TestConstructors {
 		for (String unaryClassName : unaryFunctionNames) {
 			try {
 				Class className = Class.forName(unaryClassName);
+				System.out.print("Durhurr");
+				System.out.println(className);
 				Constructor constructor = className.getDeclaredConstructor(picasso.parser.language.ExpressionTreeNode.class);
+				System.out.println(constructor);
 				nameToConstructor.put(unaryClassName, constructor);
 			} catch (ClassNotFoundException e) {
 				// TODO Auto-generated catch block
@@ -38,6 +41,8 @@ public class TestConstructors {
 		for (String binaryClassName : binaryFunctionNames) {
 			try {
 				Class className = Class.forName(binaryClassName);
+				System.out.print("test ");
+				System.out.println(className);
 				Constructor constructor = className.getDeclaredConstructor(
 						picasso.parser.language.ExpressionTreeNode.class,
 						picasso.parser.language.ExpressionTreeNode.class);
