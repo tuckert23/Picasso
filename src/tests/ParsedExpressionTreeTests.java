@@ -12,6 +12,7 @@ import picasso.parser.language.expressions.*;
 import picasso.parser.language.expressions.operators.*;
 import picasso.parser.language.expressions.unaryFunctions.*;
 import picasso.parser.language.expressions.unaryFunctions.Floor;
+import picasso.parser.language.expressions.binaryFunctions.*;
 
 /**
  * Tests of creating an expression tree from a string expression. Will have
@@ -385,6 +386,87 @@ public class ParsedExpressionTreeTests {
 
 	}
 	
-	// Taylor work on unary function tests
+	
+
+	
+	@Test
+	public void PerlinColorExpressionTest()
+	{
+		ExpressionTreeNode e = parser.makeExpression("perlinColor(x, y)");
+		assertEquals(new PerlinColor(new X(), new Y()), e);
+		
+		e = parser.makeExpression("perlinColor(y, x)");
+		assertEquals(new PerlinColor(new Y(), new X()), e);
+		
+		e = parser.makeExpression("perlinColor(x + y, y)");
+		assertEquals(new PerlinColor(new Addition(new X(), new Y()), new Y()), e);
+		
+		e = parser.makeExpression("perlinColor(x - y, x)");
+		assertEquals(new PerlinColor(new Minus(new X(), new Y()), new X()), e);
+		
+		e = parser.makeExpression("perlinColor(x * y, y + x)");
+		assertEquals(new PerlinColor(new Multiply(new X(), new Y()), new Addition(new Y(), new X())), e);
+
+	}
+	
+	@Test
+	public void PerlinBWExpressionTest()
+	{
+		ExpressionTreeNode e = parser.makeExpression("perlinBW(x, y)");
+		assertEquals(new PerlinBW(new X(), new Y()), e);
+		
+		e = parser.makeExpression("perlinBW(y, x)");
+		assertEquals(new PerlinBW(new Y(), new X()), e);
+		
+		e = parser.makeExpression("perlinBW(x + y, y)");
+		assertEquals(new PerlinBW(new Addition(new X(), new Y()), new Y()), e);
+		
+		e = parser.makeExpression("perlinBW(x - y, x)");
+		assertEquals(new PerlinBW(new Minus(new X(), new Y()), new X()), e);
+		
+		e = parser.makeExpression("perlinBW(x * y, y + x)");
+		assertEquals(new PerlinBW(new Multiply(new X(), new Y()), new Addition(new Y(), new X())), e);
+
+	}
+	
+	@Test
+	public void ImageClipExpressionTest()
+	{
+		ExpressionTreeNode e = parser.makeExpression("imageClip(\"foo.jpg\", x, y)");
+		assertEquals(new ImageClip("foo.jpg", new X(), new Y()), e);
+		
+		e = parser.makeExpression("imageClip(\"foo.jpg\", x + x, y)");
+		assertEquals(new ImageClip("foo.jpg", new Addition(new X(), new X()), new Y()), e);
+		
+		e = parser.makeExpression("imageClip(\"foo.jpg\", x, y + y)");
+		assertEquals(new ImageClip("foo.jpg", new X(), new Addition(new Y(), new Y())), e);
+		
+		e = parser.makeExpression("imageClip(\"foo.jpg\", x + x, y + y)");
+		assertEquals(new ImageClip("foo.jpg", new Addition(new X(), new X()), new Addition(new Y(), new Y())), e);
+		
+		e = parser.makeExpression("imageClip(\"foo.jpg\", x - 0.2, y + y)");
+		assertEquals(new ImageClip("foo.jpg", new Minus(new X(), new Constant(0.2)), new Addition(new Y(), new Y())), e);
+
+	}
+	
+	@Test
+	public void ImageWrapExpressionTest()
+	{
+		ExpressionTreeNode e = parser.makeExpression("imageWrap(\"foo.jpg\", x, y)");
+		assertEquals(new ImageWrap("foo.jpg", new X(), new Y()), e);
+		
+		e = parser.makeExpression("imageWrap(\"foo.jpg\", x + x, y)");
+		assertEquals(new ImageWrap("foo.jpg", new Addition(new X(), new X()), new Y()), e);
+		
+		e = parser.makeExpression("imageWrap(\"foo.jpg\", x, y + y)");
+		assertEquals(new ImageWrap("foo.jpg", new X(), new Addition(new Y(), new Y())), e);
+		
+		e = parser.makeExpression("imageWrap(\"foo.jpg\", x + x, y + y)");
+		assertEquals(new ImageWrap("foo.jpg", new Addition(new X(), new X()), new Addition(new Y(), new Y())), e);
+		
+		e = parser.makeExpression("imageWrap(\"foo.jpg\", x - 0.2, y + y)");
+		assertEquals(new ImageWrap("foo.jpg", new Minus(new X(), new Constant(0.2)), new Addition(new Y(), new Y())), e);
+
+	}
 
 }
