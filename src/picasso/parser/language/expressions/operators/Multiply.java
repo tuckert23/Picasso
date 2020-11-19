@@ -4,14 +4,14 @@
 package picasso.parser.language.expressions.operators;
 
 import picasso.parser.language.ExpressionTreeNode;
-import picasso.parser.language.expressions.Binary;
+import picasso.parser.language.expressions.BinaryOperatorsOrFunctions;
 import picasso.parser.language.expressions.RGBColor;
 
 /**
  * @author taylor
  *
  */
-public class Multiply extends Binary {
+public class Multiply extends BinaryOperatorsOrFunctions {
 
 	/**
 	 * @param param1

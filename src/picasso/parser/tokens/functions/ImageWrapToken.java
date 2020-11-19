@@ -4,6 +4,8 @@
 package picasso.parser.tokens.functions;
 
 /**
+ * Represents the imageWrap function token
+ * 
  * @author Abdelrahman AboEitta
  *
  */

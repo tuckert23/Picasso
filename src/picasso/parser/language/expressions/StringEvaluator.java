@@ -36,7 +36,7 @@ public class StringEvaluator extends ExpressionTreeNode {
 										"!y", "!x", 
 										"clamp(y)", "clamp(x)", 
 										"exp(x)", "exp(y)",
-										"ceiling(x)", "ceiling(y)",
+										"ceil(x)", "ceil(y)",
 										"(x + y)", "(x * y)",
 										"(x - y)", "(y - x)", 
 										"(x / y)", "(y / x)",

@@ -34,8 +34,12 @@ public abstract class ExpressionTreeNode implements EvaluatableExpression {
 	// keep a mapping of the element to its value.
 	static protected Map<ExpressionTreeNode, Object> elementsToValue = new TreeMap<ExpressionTreeNode, Object>();
 	
+	/**
+	 * get the number of children from an expression tree.
+	 * 
+	 * @return number of children
+	 */
 	public static int getNumberOfChildren() {
-		
 		return numberOfChildren;
 	}
 }

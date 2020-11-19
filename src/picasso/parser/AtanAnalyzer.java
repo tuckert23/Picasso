@@ -10,6 +10,8 @@ import picasso.parser.language.expressions.unaryFunctions.Atan;
 import picasso.parser.tokens.Token;
 
 /**
+ * Handles parsing the atan function.
+ * 
  * @author Abdelrahman AboEitta
  *
  */

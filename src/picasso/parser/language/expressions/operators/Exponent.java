@@ -4,7 +4,7 @@
 package picasso.parser.language.expressions.operators;
 
 import picasso.parser.language.ExpressionTreeNode;
-import picasso.parser.language.expressions.Binary;
+import picasso.parser.language.expressions.BinaryOperatorsOrFunctions;
 import picasso.parser.language.expressions.RGBColor;
 
 import java.lang.Math;
@@ -13,7 +13,7 @@ import java.lang.Math;
  * @author taylor
  *
  */
-public class Exponent extends Binary {
+public class Exponent extends BinaryOperatorsOrFunctions {
 
 	/**
 	 * @param param1

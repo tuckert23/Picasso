@@ -6,6 +6,8 @@ package picasso.parser.language.expressions;
 import picasso.parser.language.ExpressionTreeNode;
 
 /**
+ * Represents the clamp function in the Picasso language.
+ * 
  * @author Taylor Tucker
  *
  */

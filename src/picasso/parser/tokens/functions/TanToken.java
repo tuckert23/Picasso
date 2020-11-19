@@ -2,6 +2,7 @@ package picasso.parser.tokens.functions;
 
 /**
  * Represents the tan function token
+ * 
  * @author August Donovan
  *
  */

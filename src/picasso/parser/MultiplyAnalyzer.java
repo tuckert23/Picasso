@@ -10,6 +10,8 @@ import picasso.parser.language.expressions.operators.Multiply;
 import picasso.parser.tokens.Token;
 
 /**
+ * Handles parsing the multiply operator.
+ * 
  * @author taylor
  *
  */

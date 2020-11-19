@@ -3,17 +3,17 @@ package picasso.parser.language.expressions;
 import picasso.parser.language.ExpressionTreeNode;
 
 /**
- * Represents an operator that takes two argument.
+ * Represents an operator or a function that takes two argument.
  * 
  * @author Abdelrahman AboEitta
  *
  */
-public abstract class Binary extends ExpressionTreeNode {
+public abstract class BinaryOperatorsOrFunctions extends ExpressionTreeNode {
 
 	protected ExpressionTreeNode rightParam;
 	protected ExpressionTreeNode leftParam;
 
-	public Binary(ExpressionTreeNode left, ExpressionTreeNode right) {
+	public BinaryOperatorsOrFunctions(ExpressionTreeNode left, ExpressionTreeNode right) {
 		leftParam = left;
 		rightParam = right;
 	}
@@ -39,10 +39,10 @@ public abstract class Binary extends ExpressionTreeNode {
 		if (obj == this) {
 			return true;
 		}
-		if (!(obj instanceof Binary)) {
+		if (!(obj instanceof BinaryOperatorsOrFunctions)) {
 			return false;
 		}
-		Binary a = (Binary) obj;
+		BinaryOperatorsOrFunctions a = (BinaryOperatorsOrFunctions) obj;
 		return rightParam.equals(a.rightParam) && leftParam.equals(a.leftParam) && this.getClass().equals(a.getClass());
 	}
 

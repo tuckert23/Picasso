@@ -10,6 +10,8 @@ import picasso.parser.language.expressions.unaryFunctions.Not;
 import picasso.parser.tokens.Token;
 
 /**
+ * Handles parsing the negation operator.
+ * 
  * @author taylor
  *
  */

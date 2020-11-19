@@ -10,6 +10,8 @@ import picasso.parser.language.expressions.operators.Modulo;
 import picasso.parser.tokens.Token;
 
 /**
+ * Handles parsing the modulo operator.
+ * 
  * @author taylor
  *
  */

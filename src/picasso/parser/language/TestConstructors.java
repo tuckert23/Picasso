@@ -14,7 +14,7 @@ public class TestConstructors {
 		String[] unaryFunctionNames = { unaryFunctionsPackage + "Tan", unaryFunctionsPackage + "Sin" };
 
 		final String binaryFunctionsPackage = "picasso.parser.language.expressions.operators.";
-		String[] binaryFunctionNames = { binaryFunctionsPackage + "Plus" };
+		String[] binaryFunctionNames = { binaryFunctionsPackage + "Addition" };
 
 		Map<String, Constructor> nameToConstructor = new HashMap<>();
 

@@ -4,6 +4,8 @@
 package picasso.parser.tokens.functions;
 
 /**
+ * Represents the yCrCbtoRGB function token
+ * 
  * @author Abdelrahman AboEitta
  *
  */

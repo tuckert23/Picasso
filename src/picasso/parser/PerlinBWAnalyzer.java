@@ -6,6 +6,12 @@ import picasso.parser.language.ExpressionTreeNode;
 import picasso.parser.language.expressions.binaryFunctions.PerlinBW;
 import picasso.parser.tokens.Token;
 
+/**
+ * Handles parsing the perlinBW function.
+ * 
+ * @author Abdelrahman AboEitta
+ *
+ */
 public class PerlinBWAnalyzer implements SemanticAnalyzerInterface {
 
 	@Override

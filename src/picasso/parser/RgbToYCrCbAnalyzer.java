@@ -10,6 +10,8 @@ import picasso.parser.language.expressions.unaryFunctions.RgbToYCrCb;
 import picasso.parser.tokens.Token;
 
 /**
+ * Handles parsing the RgbToYCrCb function.
+ * 
  * @author Abdelrahman AboEitta
  *
  */

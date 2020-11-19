@@ -10,6 +10,8 @@ import picasso.parser.language.expressions.operators.Exponent;
 import picasso.parser.tokens.Token;
 
 /**
+ * Handles parsing the exponent operator.
+ * 
  * @author taylor
  *
  */

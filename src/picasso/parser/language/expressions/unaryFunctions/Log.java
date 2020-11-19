@@ -8,6 +8,7 @@ import picasso.parser.language.expressions.UnaryFunction;
  * Represents the log function in the Picasso language.
  * 
  * @author Abdelrahman AboEitta
+ * @author taylor
  *
  */
 public class Log extends UnaryFunction {
@@ -29,21 +30,19 @@ public class Log extends UnaryFunction {
 	 */
 	@Override
 	public RGBColor evaluate(double x, double y) {
-		if (x == 0)
-		{
+		if (x == 0) {
 			x = 0.000000000001;
 		}
-		if (y == 0)
-		{
+		if (y == 0) {
 			y = 0.000000000001;
 		}
-		
+
 		RGBColor result = param.evaluate(x, y);
-		
+
 		double red = 0;
 		double blue = 0;
 		double green = 0;
-		
+
 		if (result.getRed() != 0) {
 			red = Math.log(Math.abs(result.getRed()));
 		}

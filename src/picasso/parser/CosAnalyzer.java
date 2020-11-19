@@ -10,6 +10,8 @@ import picasso.parser.language.expressions.unaryFunctions.Cos;
 import picasso.parser.tokens.Token;
 
 /**
+ * Handles parsing the cos function.
+ * 
  * @author Abdelrahman AboEitta
  *
  */

@@ -10,6 +10,8 @@ import picasso.parser.language.expressions.Clamp;
 import picasso.parser.tokens.Token;
 
 /**
+ * Handles parsing the clamp function.
+ * 
  * @author taylor
  *
  */

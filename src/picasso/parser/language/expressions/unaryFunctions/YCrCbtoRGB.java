@@ -8,18 +8,28 @@ import picasso.parser.language.expressions.RGBColor;
 import picasso.parser.language.expressions.UnaryFunction;
 
 /**
+ * Represents the YCrCbtoRGB function in the Picasso language.
+ * 
  * @author Abdelrahman AboEitta
  *
  */
 public class YCrCbtoRGB extends UnaryFunction {
 
 	/**
-	 * @param param
+	 * Create a YCrCbtoRGB expression that takes as a parameter the given expression
+	 * 
+	 * @param param the expression to YCrCbtoRGB
 	 */
 	public YCrCbtoRGB(ExpressionTreeNode param) {
 		super(param);
 	}
 
+	/**
+	 * Evaluates this expression at the given x,y point by evaluating the YCrCbtoRGB of
+	 * the function's parameter.
+	 * 
+	 * @return the color from evaluating the YCrCbtoRGB of the expression's parameter
+	 */
 	@Override
 	public RGBColor evaluate(double x, double y) {
 		RGBColor result = param.evaluate(x, y);

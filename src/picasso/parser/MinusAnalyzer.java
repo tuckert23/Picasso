@@ -10,6 +10,8 @@ import picasso.parser.language.expressions.operators.Minus;
 import picasso.parser.tokens.Token;
 
 /**
+ * Handles parsing the minus operator.
+ * 
  * @author Abdelrahman AboEitta
  *
  */
