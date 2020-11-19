@@ -6,8 +6,7 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Random;
 import picasso.parser.language.ExpressionTreeNode;
-import picasso.parser.tokens.Token;
-import picasso.parser.language.expressions.unaryFunctions.*;
+import picasso.parser.language.expressions.*;
 
 public class RandomExpressionTreeGenerator {
 
@@ -16,6 +15,7 @@ public class RandomExpressionTreeGenerator {
 	String[] expressionNames = { "picasso.parser.language.expressions.UnaryFunctions.Sin", 
 			"picasso.parser.language.expressions.UnaryFunctions.Floor", 
 			"picasso.parser.language.expressions.X" };
+	
 	private static Random rnd = new Random();
 	
 	Map<String, Constructor<?>> nameToConstructor = new HashMap<>();
@@ -30,21 +30,30 @@ public class RandomExpressionTreeGenerator {
 	
 	
 	
-	public void makeOneExpression() {
+	public ExpressionTreeNode makeOneExpression() {
 		//randomly pick class name
 		String className = expressionNames[rnd.nextInt(expressionNames.length)];
 		
 		//retrieve constructor for class name
 		Constructor<?> constructor = nameToConstructor.get(className);
 		
-		//figure out how many parameters constructors has and create array of that size
-		
+		//figure out how many parameters the constructor has and create array of that size
+		int numParams = constructor.getParameterCount();
+		ExpressionTreeNode[] params = new ExpressionTreeNode[numParams];
 		//create array of random expression tree nodes and put that into array
 		
 		//create expression tree passing in those parameters
-		
-		//return expression tree
-		
+		for (int i = 0; i < numParams; i++) {
+			if (numParams == 2 ) {
+				params[i] = new Binary(left,right);
+				//return expression tree
+				return params[i];
+			}
+			if (numParams == 1 ) {
+				params[i] = new UnaryFunction(param);
+				return params[i];
+			}
+		}
 	}
 		
 	public void makeExpression() {
