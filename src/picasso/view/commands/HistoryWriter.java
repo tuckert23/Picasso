@@ -73,7 +73,10 @@ public class HistoryWriter implements Command<Pixmap> {
 		} catch (IOException e) {
 		}
 	}
-
+	
+	/**
+	 * writes to history
+	 */
 	@Override
 	public void execute(Pixmap target) {
 		writeToHistory();

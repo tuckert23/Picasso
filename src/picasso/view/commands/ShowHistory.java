@@ -84,6 +84,9 @@ public class ShowHistory implements Command<Pixmap> {
 		return result;
 	}
 
+	/**
+	 * executes the functionality
+	 */
 	@Override
 	public void execute(Pixmap target) {
 		displayHistory();

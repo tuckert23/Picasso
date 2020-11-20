@@ -15,10 +15,16 @@ public class FileEvaluator extends FileCommand<Pixmap> {
 
 	Evaluater evaluate = new Evaluater();
 
+	/**
+	 * opens a dialog box to choose from
+	 */
 	public FileEvaluator() {
 		super(JFileChooser.OPEN_DIALOG);
 	}
 
+	/**
+	 * reads an expression from the file and execute it
+	 */
 	@Override
 	public void execute(Pixmap target) {
 		String fileName = getFileName();
