@@ -28,7 +28,7 @@ ___
 	- The history is saved in the /expressions/history.exp file.
 <br>
 
-- Show expression history 
+- Show expression history
 	- At any time, the user can click "Show History" to view the expressions they have saved.
 	- Each expression is assigned an ID number, but the expression itself can be seen by selecting it and clicking "Show Expression".
 	- The user can ctrl+click IDs to view multiple expressions at a time.
@@ -38,7 +38,6 @@ ___
 	- The user can select "Combine from History" to combine any two expressions previously saved in their history.
 	- Dialog boxes prompt the user to enter two expression ID numbers to combine.
 	- These expressions are then combined in an interesting way and shown to the user.
-<br>
 
 - RandomEvaluator
 	- The user can select "Generate Random Expression" to create and evaluate on the Pixmap a random expression.
