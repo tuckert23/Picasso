@@ -6,6 +6,8 @@ package picasso.parser.language.expressions;
 import picasso.parser.language.ExpressionTreeNode;
 
 /**
+ * Represents an a function that takes more than one argument including an image.
+ * 
  * @author taylor
  *
  */
@@ -15,8 +17,13 @@ public abstract class Image extends ExpressionTreeNode {
 	protected ExpressionTreeNode x;
 	protected String image;
 	protected StringEvaluator imageEvaluator;
+	
 	/**
+	 * constructor that takes a string, x and y as parameters
 	 * 
+	 * @param str
+	 * @param x
+	 * @param y
 	 */
 	public Image(String str, ExpressionTreeNode x, ExpressionTreeNode y) {
 		this.x = x;

@@ -130,6 +130,36 @@ public class StringEvaluator extends ExpressionTreeNode {
 	}
 	
 	/**
+	 * Returns the hash of the instance
+	 * 
+	 * @return hash 
+	 */
+	public int getHash()
+	{
+		return this.hash;
+	}
+	
+	/**
+	 * Returns length of functions list
+	 * @return length of functions list
+	 */
+	public int getLenFunctions()
+	{
+		return this.LEN_FUNCTIONS;
+	}
+	
+	/**
+	 * Returns the length of the operations list
+	 * @return length of the operations list
+	 */
+	public int getLenOperations()
+	{
+		return this.LEN_OPERATIONS;
+	}
+	
+	
+	
+	/**
 	 * Takes a string as input. Translates the string into it's unique HashCode then builds an expression using 
 	 * modulo to choose a deterministic expression based on the functions and expressions defined above.
 	 * 
@@ -159,6 +189,5 @@ public class StringEvaluator extends ExpressionTreeNode {
 		System.out.println("Expression generated: " + expression +"\n");
 		ExpressionTreeGenerator expTreeGen = new ExpressionTreeGenerator();
 		node = expTreeGen.makeExpression(expression);
-		
 	}
 }

@@ -25,7 +25,12 @@ public class EqualsAnalyzer implements SemanticAnalyzerInterface {
 		addNewVariable(tokens);
 		return new Equals(expression);
 	}
-	
+
+	/**
+	 * define a new variable with its corresponding expression
+	 * 
+	 * @param tokens
+	 */
 	private static void addNewVariable(Stack<Token> tokens) {
 		IdentifierToken t = (IdentifierToken) tokens.pop();
 		String name = t.getName();

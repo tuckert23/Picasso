@@ -11,10 +11,12 @@ import picasso.util.FileCommand;
  * @author Robert C Duvall
  */
 public class Writer extends FileCommand<Pixmap> {
+	
 	public Writer() {
 		super(JFileChooser.SAVE_DIALOG);
 	}
-
+	
+	@Override
 	public void execute(Pixmap target) {
 		String fileName = getFileName();
 		if (fileName != null) {
