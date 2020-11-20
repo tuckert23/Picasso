@@ -1,20 +1,2 @@
-1: "beholder.jpg"
-
-
-2: "beholder.jpg"
-
-
-3: "beholder.jpg"
-
-
-4: "beholder.jpg"
-
-
-5: "beholder.jpg"
-
-
-6: "beholder.jpg"
-
-
-19: imageClip("beholder.jpg", x+x, y)
-20: "amoeba.jpg"
+21: perlinColor(x+x,y)
+22: x * y

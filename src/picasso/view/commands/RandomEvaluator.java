@@ -4,23 +4,17 @@ package picasso.view.commands;
 import java.awt.Color;
 import java.awt.Dimension;
 import java.lang.reflect.InvocationTargetException;
-import java.util.Random;
 
 import picasso.parser.RandomExpressionTreeGenerator;
 import picasso.parser.language.ExpressionTreeNode;
-import picasso.parser.language.expressions.RGBColor;
 import picasso.model.Pixmap;
 import picasso.util.Command;
-import picasso.view.Frame;
 
 /**
  * Evaluate a random expression for each pixel in a image.
  * 
- * @author Robert C Duvall
- * @author Sara Sprenkle
+ * @author Will
  */
-
-
 public class RandomEvaluator implements Command<Pixmap> {
 	public static final double DOMAIN_MIN = -1;
 	public static final double DOMAIN_MAX = 1;
@@ -46,7 +40,6 @@ public class RandomEvaluator implements Command<Pixmap> {
 			}
 		}
 	}
-	
 
 	/**
 	 * Convert from image space to domain space.
@@ -64,7 +57,6 @@ public class RandomEvaluator implements Command<Pixmap> {
 	 * @throws IllegalArgumentException
 	 * @throws InvocationTargetException
 	 */
-	
 	private ExpressionTreeNode createRandomExpression() {
 		RandomExpressionTreeGenerator rndTreeGen = new RandomExpressionTreeGenerator();
 		return rndTreeGen.makeOneExpression();
