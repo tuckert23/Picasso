@@ -6,28 +6,13 @@ evaluate to colors and then eventually to images.
 See the specification for Picasso on the course web site,
 or use our helpful Javadocs!
 
-
 ___
 
 ## Implemented extensions:
 
-# Picasso
-
-An application that allows the user to create expressions that
-evaluate to colors and then eventually to images.
-
-See the specification for Picasso on the course web site,
-or use our helpful Javadocs!
-
-___
-
-## Implemented extensions:
-
-- Write expressions into history
+- Write expressions into history, show expression history
 	- Whenever the user enters an expression into the prompt, they can also save it to their history.
 	- The history is saved in the /expressions/history.exp file.
-
-- Show expression history
 	- At any time, the user can click "Show History" to view the expressions they have saved.
 	- Each expression is assigned an ID number, but the expression itself can be seen by selecting it and clicking "Show Expression".
 	- The user can ctrl+click IDs to view multiple expressions at a time.
@@ -39,7 +24,7 @@ ___
 
 - RandomEvaluator
 	- The user can select "Generate Random Expression" to create and evaluate on the Pixmap a random expression.
-	- Colors are selected per pixel, at random, and are displayed accordingly.
+	- Various image specifications are selected at random and the resulting image is displayed accordingly.
 	
 	
 - StringEvaluator: Generating unique images from strings (Taylor)
