@@ -1,5 +1,3 @@
-## Implemented extensions:
-
 # Picasso
 
 An application that allows the user to create expressions that
