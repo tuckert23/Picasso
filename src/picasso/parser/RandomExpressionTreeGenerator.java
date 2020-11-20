@@ -22,20 +22,33 @@ import java.lang.Class;
  */
 public class RandomExpressionTreeGenerator {
 	
+//	public static void main(String[] args) {
+//		
+//		RandomExpressionTreeGenerator test = new RandomExpressionTreeGenerator();
+//		System.out.println(test.makeOneExpression());
+//	}
+	
 	final String unaryFunctionsPackage = "picasso.parser.language.expressions.unaryFunctions.";
-	String[] unaryFunctionNames = { unaryFunctionsPackage + "Tan", unaryFunctionsPackage + "Sin" };
+	String[] unaryFunctionNames = { unaryFunctionsPackage + "Tan", unaryFunctionsPackage + "Sin",
+			unaryFunctionsPackage + "Abs", unaryFunctionsPackage + "Atan", unaryFunctionsPackage + "Ceil",
+			unaryFunctionsPackage + "Exp", unaryFunctionsPackage + "Log", unaryFunctionsPackage + "Not",
+			unaryFunctionsPackage + "RgbToYCrCb", unaryFunctionsPackage + "Wrap",
+			unaryFunctionsPackage + "YCrCbtoRGB"};
 
 	final String binaryFunctionsPackage = "picasso.parser.language.expressions.operators.";
-	String[] binaryFunctionNames = { binaryFunctionsPackage + "Addition", binaryFunctionsPackage + "Minus" };
+	String[] binaryFunctionNames = { binaryFunctionsPackage + "Addition", binaryFunctionsPackage + "Minus",
+			binaryFunctionsPackage + "Divide", binaryFunctionsPackage + "Exponent", binaryFunctionsPackage + "Modulo",
+			binaryFunctionsPackage + "Multiply"};
 	
 	final String operandsPackage = "picasso.parser.language.expressions.";
 	String[] operandNames = { operandsPackage + "X", operandsPackage + "Y" };
 
 	String[] expressions = { unaryFunctionsPackage + "Tan", unaryFunctionsPackage + "Sin",
 			binaryFunctionsPackage + "Addition", binaryFunctionsPackage + "Minus",
-			operandsPackage + "X", operandsPackage + "Y"};
-//	
-	ExpressionTreeNode[] params;
+			operandsPackage + "X", operandsPackage + "Y",
+			unaryFunctionsPackage + "Abs", binaryFunctionsPackage + "Addition",
+			binaryFunctionsPackage + "Divide", binaryFunctionsPackage + "Exponent", binaryFunctionsPackage + "Modulo",
+			binaryFunctionsPackage + "Multiply"};
 //	
 	private static Random rnd = new Random();
 	Map<String, Constructor<?>> nameToConstructor = new HashMap<>();
@@ -137,12 +150,17 @@ public class RandomExpressionTreeGenerator {
 			String classString = expressions[rnd.nextInt(expressions.length)];
 			Constructor<?> constructor = nameToConstructor.get(classString);
 			int numParams = constructor.getParameterCount();
-			params = new ExpressionTreeNode[numParams];
+			ExpressionTreeNode[] params = new ExpressionTreeNode[numParams];
+			System.out.println(numParams);
+			System.out.println(classString);
 			
 			for (int i = 0; i < numParams; i++) {
 					System.out.println("This Node: ");
 					params[i] = makeOneExpression();
 			}
+			
+			if (numParams > 0)
+			{
 
 			try {
 				ExpressionTreeNode etn = (ExpressionTreeNode) constructor.newInstance(params);
@@ -153,6 +171,9 @@ public class RandomExpressionTreeGenerator {
 					| InvocationTargetException e) {
 				e.printStackTrace();
 			}
+			}
+			else
+			{
 			ExpressionTreeNode etn;
 			try {
 				etn = (ExpressionTreeNode) constructor.newInstance();
@@ -161,6 +182,7 @@ public class RandomExpressionTreeGenerator {
 					| InvocationTargetException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
+			}
 			}
 			return null;
 	}
