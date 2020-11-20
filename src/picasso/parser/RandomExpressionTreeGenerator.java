@@ -29,26 +29,22 @@ public class RandomExpressionTreeGenerator {
 //	}
 	
 	final String unaryFunctionsPackage = "picasso.parser.language.expressions.unaryFunctions.";
-	String[] unaryFunctionNames = { unaryFunctionsPackage + "Tan", unaryFunctionsPackage + "Sin",
-			unaryFunctionsPackage + "Abs", unaryFunctionsPackage + "Atan", unaryFunctionsPackage + "Ceil",
-			unaryFunctionsPackage + "Exp", unaryFunctionsPackage + "Log", unaryFunctionsPackage + "Not",
-			unaryFunctionsPackage + "RgbToYCrCb", unaryFunctionsPackage + "Wrap",
-			unaryFunctionsPackage + "YCrCbtoRGB"};
+	String[] unaryFunctionNames = {unaryFunctionsPackage + "Tan", unaryFunctionsPackage + "Sin",
+			unaryFunctionsPackage + "Floor", unaryFunctionsPackage + "Abs", unaryFunctionsPackage + "Log"};
 
 	final String binaryFunctionsPackage = "picasso.parser.language.expressions.operators.";
 	String[] binaryFunctionNames = { binaryFunctionsPackage + "Addition", binaryFunctionsPackage + "Minus",
-			binaryFunctionsPackage + "Divide", binaryFunctionsPackage + "Exponent", binaryFunctionsPackage + "Modulo",
-			binaryFunctionsPackage + "Multiply"};
+			binaryFunctionsPackage + "Multiply", binaryFunctionsPackage + "Divide",
+			binaryFunctionsPackage + "Exponent"};
 	
 	final String operandsPackage = "picasso.parser.language.expressions.";
 	String[] operandNames = { operandsPackage + "X", operandsPackage + "Y" };
 
-	String[] expressions = { unaryFunctionsPackage + "Tan", unaryFunctionsPackage + "Sin",
-			binaryFunctionsPackage + "Addition", binaryFunctionsPackage + "Minus",
-			operandsPackage + "X", operandsPackage + "Y",
-			unaryFunctionsPackage + "Abs", binaryFunctionsPackage + "Addition",
-			binaryFunctionsPackage + "Divide", binaryFunctionsPackage + "Exponent", binaryFunctionsPackage + "Modulo",
-			binaryFunctionsPackage + "Multiply"};
+	String[] expressions = {operandsPackage + "X", operandsPackage + "Y", 
+			binaryFunctionsPackage + "Addition",
+			unaryFunctionsPackage + "Sin",
+			binaryFunctionsPackage + "Divide", unaryFunctionsPackage + "Log", unaryFunctionsPackage + "Tan"};
+//			binaryFunctionsPackage + "Multiply", unaryFunctionsPackage + "Floor",};
 //	
 	private static Random rnd = new Random();
 	Map<String, Constructor<?>> nameToConstructor = new HashMap<>();
@@ -87,8 +83,6 @@ public class RandomExpressionTreeGenerator {
 		for (String binaryClassName : binaryFunctionNames) {
 			try {
 				Class<?> className = Class.forName(binaryClassName);
-				System.out.print("test ");
-				System.out.println(className);
 				Constructor<?> constructor = className.getDeclaredConstructor(
 						picasso.parser.language.ExpressionTreeNode.class,
 						picasso.parser.language.ExpressionTreeNode.class);
@@ -105,6 +99,7 @@ public class RandomExpressionTreeGenerator {
 			}
 			
 		}
+		
 			for (String operandClassName : operandNames) {
 				try {
 					Class<?> className = Class.forName(operandClassName);
