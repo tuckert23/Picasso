@@ -22,11 +22,7 @@ import java.lang.Class;
  */
 public class RandomExpressionTreeGenerator {
 	
-//	public static void main(String[] args) {
-//		
-//		RandomExpressionTreeGenerator test = new RandomExpressionTreeGenerator();
-//		System.out.println(test.makeOneExpression());
-//	}
+
 	
 	final String unaryFunctionsPackage = "picasso.parser.language.expressions.unaryFunctions.";
 	String[] unaryFunctionNames = {unaryFunctionsPackage + "Tan", unaryFunctionsPackage + "Sin",
@@ -49,19 +45,11 @@ public class RandomExpressionTreeGenerator {
 	private static Random rnd = new Random();
 	Map<String, Constructor<?>> nameToConstructor = new HashMap<>();
 
-//public class RandomExpressionTreeGenerator {
-//	
-//  private String[] constructorNames = {"Sin", "Tan", "Addition", "Minus", "X", "Y"};
-//  private int[] constructorParams = {1, 1, 2, 2, 0, 0};
-  //private Map<String, Integer> constructorParams = new HashMap<String, Integer>();
-  //constructorParams.put("Sin", new Integer(1));
-  //constructorParams.put("Tan", new Integer(1));
-  
-  
-  // private Map<String, int> constructorParams = {"Sin", 1, "Tan", 1, "Addition", 2, "Minus", 2, "X", 0, "Y", 0};
-//  private int lenConstNames = constructorNames.length;
-//  private Random rand = new Random();
- 
+	/**
+	 * 
+	 * Constructor for the RandomExpressionTreeGenerator class.
+	 * 
+	 */
 	public RandomExpressionTreeGenerator() {
 		for (String unaryClassName : unaryFunctionNames) {
 			try {
@@ -103,10 +91,7 @@ public class RandomExpressionTreeGenerator {
 			for (String operandClassName : operandNames) {
 				try {
 					Class<?> className = Class.forName(operandClassName);
-					System.out.print("test ");
-					System.out.println(className);
 					Constructor<?> constructor = className.getDeclaredConstructor();
-					System.out.println(constructor);
 					nameToConstructor.put(operandClassName, constructor);
 				} catch (ClassNotFoundException e) {
 					e.printStackTrace();
@@ -117,40 +102,20 @@ public class RandomExpressionTreeGenerator {
 				}
 			}
 		}
-  
-  
-  
-//	private ExpressionTreeNode makeOneExpression() {
-//		int ind = rand.nextInt(lenConstNames);
-//	    String randConstructor = constructorNames[ind];
-//	    int numParams = constructorParams[ind];
-//	 
-//	    if (numParams == 0)
-//	    {
-//	      return (ExpressionTreeNode) Class.forName(randConstructor).newInstance();
-//	    }
-//	    else if (numParams == 1)
-//	    {
-//	      return (ExpressionTreeNode) Class.forName(randConstructor).newInstance(makeOneExpression());
-//	    }
-//	    else if (numParams == 2)
-//	    {
-//	      return (ExpressionTreeNode) Class.forName(randConstructor).newInstance(makeOneExpression(), makeOneExpression());
-//	    }
-// 
-//  }
-//}
 
+	/**
+	 * Makes a single expression tree node.
+	 * @return etn
+	 */
+	
 	public ExpressionTreeNode makeOneExpression() {
 			String classString = expressions[rnd.nextInt(expressions.length)];
 			Constructor<?> constructor = nameToConstructor.get(classString);
 			int numParams = constructor.getParameterCount();
 			ExpressionTreeNode[] params = new ExpressionTreeNode[numParams];
-			System.out.println(numParams);
-			System.out.println(classString);
 			
 			for (int i = 0; i < numParams; i++) {
-					System.out.println("This Node: ");
+
 					params[i] = makeOneExpression();
 			}
 			
@@ -159,8 +124,6 @@ public class RandomExpressionTreeGenerator {
 
 			try {
 				ExpressionTreeNode etn = (ExpressionTreeNode) constructor.newInstance(params);
-				System.err.print("Node: ");
-				System.err.println(etn);
 				return etn;
 			} catch (InstantiationException | IllegalAccessException | IllegalArgumentException
 					| InvocationTargetException e) {
