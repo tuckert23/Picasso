@@ -1,16 +1,11 @@
 package picasso.parser;
 
-import java.util.Stack;
 import java.lang.reflect.Constructor;
 import java.lang.reflect.InvocationTargetException;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Random;
 import picasso.parser.language.ExpressionTreeNode;
-import picasso.parser.language.expressions.unaryFunctions.*;
-import picasso.parser.language.expressions.*;
-import picasso.parser.language.expressions.operators.*;
-import java.util.ArrayList;
 import java.lang.Class;
 
 /**
