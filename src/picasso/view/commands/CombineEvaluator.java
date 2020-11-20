@@ -103,6 +103,7 @@ public class CombineEvaluator implements Command<Pixmap> {
 				
 		//System.out.println(exp1);
 		//System.out.println(exp2);
+		System.out.println(combinedExpression);
 		Frame.expressionField.setText(combinedExpression);
 		
 		evaluator.execute(target);

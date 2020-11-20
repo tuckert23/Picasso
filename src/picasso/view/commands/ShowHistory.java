@@ -13,6 +13,7 @@ import javax.swing.JFrame;
 import javax.swing.JList;
 import javax.swing.JOptionPane;
 import javax.swing.JScrollPane;
+import javax.swing.JTextArea;
 
 import picasso.model.Pixmap;
 import picasso.util.Command;
@@ -31,6 +32,7 @@ public class ShowHistory implements Command<Pixmap> {
 	private JFrame frame;
 	private JButton btnGet;
 	HistoryWriter historyWriter;
+	
 
 	/**
 	 * displays the history
@@ -51,12 +53,16 @@ public class ShowHistory implements Command<Pixmap> {
 
 		btnGet.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				String selectedElem = "";
+				String selectedElem = "You selected:\n";
 				int selectedIndices[] = list.getSelectedIndices();
 				for (int index : selectedIndices) {
 					selectedElem = selectedElem + "#" + getExpressionFromID(index) + "\n";
 				}
-				JOptionPane.showMessageDialog(frame, "You selected: \n" + selectedElem);
+				JTextArea textArea = new JTextArea(6, 25);
+			    textArea.setText(selectedElem);
+			    textArea.setEditable(false);
+			    JScrollPane scrollPane = new JScrollPane(textArea);
+				JOptionPane.showMessageDialog(frame, scrollPane);
 			}
 		});
 	}
