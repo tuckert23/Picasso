@@ -17,6 +17,7 @@ public class Variable extends ExpressionTreeNode {
 		this.param = param;
 	}
 
+	
 	@Override
 	public RGBColor evaluate(double x, double y) {
 		RGBColor result = param.evaluate(x, y);
@@ -24,6 +25,10 @@ public class Variable extends ExpressionTreeNode {
 	}
 
 	/*
+	 * (non-Javadoc)
+	 * 
+	 * @see java.lang.Object#equals(java.lang.Object)
+	 */
 	@Override
 	public boolean equals(Object obj) {
 		if (obj == this) {
@@ -33,8 +38,6 @@ public class Variable extends ExpressionTreeNode {
 			return false;
 		}
 		Variable l = (Variable) obj;
-		return this.name.equals(l.name);
+		return this.param.equals(l.param);
 	}
-	*/
-
 }

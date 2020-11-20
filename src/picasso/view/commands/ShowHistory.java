@@ -17,15 +17,24 @@ import javax.swing.JScrollPane;
 import picasso.model.Pixmap;
 import picasso.util.Command;
 
+/**
+ * It displays the expressions in the history file in a user-friendly way
+ * 
+ * @author Danny
+ *
+ */
 public class ShowHistory implements Command<Pixmap> {
 
 	private int numOfElements;
-	private  JList list;
-	private  JScrollPane pane;
-	private  JFrame frame;
-	private  JButton btnGet;
+	private JList list;
+	private JScrollPane pane;
+	private JFrame frame;
+	private JButton btnGet;
 	HistoryWriter historyWriter;
 
+	/**
+	 * displays the history
+	 */
 	private void displayHistory() {
 		frame = new JFrame("Expressions History");
 		historyWriter = new HistoryWriter();
@@ -52,6 +61,12 @@ public class ShowHistory implements Command<Pixmap> {
 		});
 	}
 
+	/**
+	 * takes an ID number and returns the corresponding expression from the history
+	 * 
+	 * @param idNum
+	 * @return expression
+	 */
 	private String getExpressionFromID(int idNum) {
 		String result = "";
 		int index = 1;
@@ -69,6 +84,9 @@ public class ShowHistory implements Command<Pixmap> {
 		return result;
 	}
 
+	/**
+	 * executes the functionality
+	 */
 	@Override
 	public void execute(Pixmap target) {
 		displayHistory();
