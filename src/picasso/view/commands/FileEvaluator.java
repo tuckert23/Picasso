@@ -6,6 +6,8 @@ import picasso.model.Pixmap;
 import picasso.util.FileCommand;
 
 /**
+ * Evaluates an expression from a file
+ * 
  * @author Abdelrahman AboEitta
  *
  */
