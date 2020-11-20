@@ -30,7 +30,6 @@ public class Constant extends ExpressionTreeNode {
 	 * 
 	 * @return the value of the constant
 	 */
-	
 	public double value() {
 		return value;
 	}
@@ -38,7 +37,6 @@ public class Constant extends ExpressionTreeNode {
 	/**
 	 * Returns the constant as a string formatted as "Constant: <value>"
 	 */
-	
 	@Override
 	public String toString() {
 		return "Constant: " + value;
@@ -58,7 +56,6 @@ public class Constant extends ExpressionTreeNode {
 	 * 
 	 * @see java.lang.Object#equals(java.lang.Object)
 	 */
-	
 	@Override
 	public boolean equals(Object obj) {
 		if (this == obj) {

@@ -55,6 +55,10 @@ public class Evaluater implements Command<Pixmap> {
 		// objects directly (as in the commented statemetn below).
 
 		String expression = Frame.expressionField.getText();
+		if (expression.trim().equals(""))
+		{
+			expression = "x";
+		}
 
 		ExpressionTreeGenerator expTreeGen = new ExpressionTreeGenerator();
 		return expTreeGen.makeExpression(expression);

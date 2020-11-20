@@ -6,13 +6,18 @@ import picasso.parser.language.expressions.BinaryOperatorsOrFunctions;
 import picasso.parser.language.expressions.RGBColor;
 
 /**
+ * Represents the perlinColor function in the Picasso language.
+ * 
  * @author Abdelrahman AboEitta
  *
  */
 public class PerlinColor extends BinaryOperatorsOrFunctions {
 
 	/**
+	 * Create a PerlinColor expression that takes left and right as parameters.
 	 * 
+	 * @param left node
+	 * @param right node
 	 */
 	public PerlinColor(ExpressionTreeNode left, ExpressionTreeNode right) {
 		super(left, right);
@@ -21,6 +26,8 @@ public class PerlinColor extends BinaryOperatorsOrFunctions {
 	/**
 	 * This function also uses improvedNoise to generate "noisy" distributions of color which creates a mosaic of color 
 	 * on the canvas. 
+	 * 
+	 * @return the color from evaluating perlinColor
 	 */
 	@Override
 	public RGBColor evaluate(double x, double y) {

@@ -49,6 +49,8 @@ public class Frame extends JFrame {
 		commands.add("Save in History", new HistoryWriter());
 		commands.add("Show History", new ShowHistory());
 		commands.add("Random Expression", new ThreadedCommand<Pixmap>(canvas, new RandomEvaluator()));
+		commands.add("Combine from History", new CombineEvaluator());
+		//commands.add("Random Image Generator", new ThreadedCommand<Pixmap>(canvas, new RandomEvaluator()));
 
 		// add our container to Frame and show it
 		getContentPane().add(canvas, BorderLayout.CENTER);
