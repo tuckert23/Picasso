@@ -6,15 +6,20 @@ package picasso.parser.language.expressions.binaryFunctions;
 import picasso.parser.language.ExpressionTreeNode;
 import picasso.parser.language.expressions.Image;
 import picasso.parser.language.expressions.RGBColor;
-//import picasso.parser.language.expressions.StringEvaluator;
 
 /**
+ * Represents the imageClip function in the Picasso language.
+ * 
  * @author taylor
  *
  */
 public class ImageClip extends Image {
 
 	/**
+	 * Create an imageWrap expression that takes x,y expressions and an image as
+	 * arguments
+	 * 
+	 * @param str the name of the image
 	 * @param x
 	 * @param y
 	 */
@@ -23,30 +28,31 @@ public class ImageClip extends Image {
 	}
 
 	/**
-	 * This function evaluates both the x and y expression in the imageClip function call. It then takes one
-	 * of the values from the RGBColor given by the evaluation, and clips the x value while leaving the y value.
-	 * By leaving the y value, the imageClip maintains all the image in the y direction, while "streaking" the x values 
-	 * at each y value. After determining the position from where on the image to grab the color, the function
-	 * returns that color from the image. 
+	 * This function evaluates both the x and y expression in the imageClip function
+	 * call. It then takes one of the values from the RGBColor given by the
+	 * evaluation, and clips the x value while leaving the y value. By leaving the y
+	 * value, the imageClip maintains all the image in the y direction, while
+	 * "streaking" the x values at each y value. After determining the position from
+	 * where on the image to grab the color, the function returns that color from
+	 * the image.
 	 * 
 	 * @param x
 	 * @param y
 	 * @return imageRep
 	 */
 	@Override
-	public RGBColor evaluate(double x, double y) 
-		{
-		
+	public RGBColor evaluate(double x, double y) {
+
 		RGBColor xResult = super.x.evaluate(x, y);
 		RGBColor yResult = super.y.evaluate(x, y);
-		
+
 		double xClipped = RGBColor.clamp(xResult.getRed());
 		double yClipped = RGBColor.clamp(yResult.getRed());
 
 		RGBColor imageRep = super.imageEvaluator.evaluate(xClipped, yClipped);
-		
+
 		return imageRep;
-		
-		}
+
+	}
 
 }

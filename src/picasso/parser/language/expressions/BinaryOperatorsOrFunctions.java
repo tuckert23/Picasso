@@ -13,6 +13,12 @@ public abstract class BinaryOperatorsOrFunctions extends ExpressionTreeNode {
 	protected ExpressionTreeNode rightParam;
 	protected ExpressionTreeNode leftParam;
 
+	/**
+	 * constructs the left and right nodes.
+	 * 
+	 * @param left
+	 * @param right
+	 */
 	public BinaryOperatorsOrFunctions(ExpressionTreeNode left, ExpressionTreeNode right) {
 		leftParam = left;
 		rightParam = right;
