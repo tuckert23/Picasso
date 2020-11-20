@@ -26,13 +26,11 @@ ___
 - Write expressions into history
 	- Whenever the user enters an expression into the prompt, they can also save it to their history.
 	- The history is saved in the /expressions/history.exp file.
-<br>
 
 - Show expression history
 	- At any time, the user can click "Show History" to view the expressions they have saved.
 	- Each expression is assigned an ID number, but the expression itself can be seen by selecting it and clicking "Show Expression".
 	- The user can ctrl+click IDs to view multiple expressions at a time.
-<br>
 
 - Combine expressions from history
 	- The user can select "Combine from History" to combine any two expressions previously saved in their history.
