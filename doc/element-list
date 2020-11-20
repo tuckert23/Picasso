@@ -1,0 +1,16 @@
+picasso
+picasso.model
+picasso.parser
+picasso.parser.language
+picasso.parser.language.expressions
+picasso.parser.language.expressions.binaryFunctions
+picasso.parser.language.expressions.operators
+picasso.parser.language.expressions.unaryFunctions
+picasso.parser.tokens
+picasso.parser.tokens.chars
+picasso.parser.tokens.functions
+picasso.parser.tokens.operations
+picasso.util
+picasso.view
+picasso.view.commands
+tests

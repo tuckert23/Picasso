@@ -8,6 +8,8 @@ import picasso.parser.language.CharConstants;
 
 
 /**
+ * Represents the Modulo sign token
+ * 
  * @author taylor
  *
  */

@@ -10,6 +10,8 @@ import picasso.parser.language.expressions.RGBColor;
 import java.lang.Math;
 
 /**
+ * Represents the exponent operator in the Picasso language.
+ * 
  * @author taylor
  *
  */

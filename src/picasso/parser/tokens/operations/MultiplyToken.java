@@ -6,6 +6,8 @@ import picasso.parser.language.CharConstants;
 import picasso.parser.tokens.chars.CharToken;
 
 /**
+ * Represents the Multiply sign token
+ * 
  * @author taylor
  *
  */

@@ -10,6 +10,8 @@ import picasso.parser.ExpressionTreeGenerator;
 import picasso.parser.language.ExpressionTreeNode;
 
 /**
+ * Evaluates an expression from a string or open an image from a string
+ * 
  * @author Abdelrahman AboEitta for the base
  * @author taylor for the extension
  */

@@ -8,6 +8,8 @@ import picasso.parser.language.expressions.BinaryOperatorsOrFunctions;
 import picasso.parser.language.expressions.RGBColor;
 
 /**
+ * Represents the Multiply operator in the Picasso language.
+ * 
  * @author taylor
  *
  */

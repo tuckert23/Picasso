@@ -8,6 +8,8 @@ import picasso.parser.language.expressions.BinaryOperatorsOrFunctions;
 import picasso.parser.language.expressions.RGBColor;
 
 /**
+ * Represents the Modulo operator in the Picasso language.
+ * 
  * @author taylor
  *
  */
