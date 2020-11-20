@@ -7,9 +7,9 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Random;
 import picasso.parser.language.ExpressionTreeNode;
-import picasso.parser.language.expressions.UnaryFunction;
-import picasso.parser.language.expressions.X;
-import picasso.parser.language.expressions.BinaryOperatorsOrFunctions;
+import picasso.parser.language.expressions.unaryFunctions.*;
+import picasso.parser.language.expressions.*;
+import picasso.parser.language.expressions.operators.*;
 
 
 /**
@@ -17,6 +17,7 @@ import picasso.parser.language.expressions.BinaryOperatorsOrFunctions;
  * extend ExpressionTreeNode.
  * 
  * @author Will Medick
+ * 
  */
 public class RandomExpressionTreeGenerator {
 	
@@ -24,86 +25,121 @@ public class RandomExpressionTreeGenerator {
 	String[] unaryFunctionNames = { unaryFunctionsPackage + "Tan", unaryFunctionsPackage + "Sin" };
 
 	final String binaryFunctionsPackage = "picasso.parser.language.expressions.operators.";
-	String[] binaryFunctionNames = { binaryFunctionsPackage + "Addition" };
+	String[] binaryFunctionNames = { binaryFunctionsPackage + "Addition", binaryFunctionsPackage + "Minus" };
 	
 	final String operandsPackage = "picasso.parser.language.expressions.";
 	String[] operandNames = { operandsPackage + "X", operandsPackage + "Y" };
 	
 	String[][] expressions = { unaryFunctionNames, binaryFunctionNames, operandNames };
-
+	
+	ExpressionTreeNode[] params;
+	
 	private static Random rnd = new Random();
 	
 	Map<String, Constructor<?>> nameToConstructor = new HashMap<>();
 	
 	public RandomExpressionTreeGenerator() {
-		super();
-	}		
-	
-	
-	public ExpressionTreeNode makeOneExpression() {
-		String[] classString = expressions[rnd.nextInt(expressions.length)];
-		
-		if (classString == operandNames) {
-
+		for (String unaryClassName : unaryFunctionNames) {
 			try {
-				String operandString = operandNames[rnd.nextInt(operandNames.length)];
-				Class<?> className = Class.forName(operandString);
-				Constructor<?> constructor = className.getDeclaredConstructor();
-				nameToConstructor.put(operandString, constructor);
-			} catch (ClassNotFoundException e) {
-				e.printStackTrace();
-			} catch (NoSuchMethodException e) {
-				e.printStackTrace();
-			} catch (SecurityException e) {
-				e.printStackTrace();
-			}
-		}
-		
-		if (classString == unaryFunctionNames) {
-			try {
-				String unaryString = unaryFunctionNames[rnd.nextInt(unaryFunctionNames.length)];
-				Class<?> className = Class.forName(unaryString);
-				System.out.println(className);
+				Class<?> className = Class.forName(unaryClassName);
 				Constructor<?> constructor = className.getDeclaredConstructor(picasso.parser.language.ExpressionTreeNode.class);
-				System.out.println(constructor);
-				nameToConstructor.put(unaryString, constructor);
+				nameToConstructor.put(unaryClassName, constructor);
 			} catch (ClassNotFoundException e) {
+				// TODO Auto-generated catch block
 				e.printStackTrace();
 			} catch (NoSuchMethodException e) {
+				// TODO Auto-generated catch block
 				e.printStackTrace();
 			} catch (SecurityException e) {
+				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
 		}
-		
-		if (classString == binaryFunctionNames) {
+
+		for (String binaryClassName : binaryFunctionNames) {
 			try {
-				String binaryString = binaryFunctionNames[rnd.nextInt(binaryFunctionNames.length)];
-				Class<?> className = Class.forName(binaryString);
+				Class<?> className = Class.forName(binaryClassName);
+				System.out.print("test ");
+				System.out.println(className);
 				Constructor<?> constructor = className.getDeclaredConstructor(
 						picasso.parser.language.ExpressionTreeNode.class,
 						picasso.parser.language.ExpressionTreeNode.class);
-				nameToConstructor.put(binaryString, constructor);
+				nameToConstructor.put(binaryClassName, constructor);
 			} catch (ClassNotFoundException e) {
+				// TODO Auto-generated catch block
 				e.printStackTrace();
 			} catch (NoSuchMethodException e) {
+				// TODO Auto-generated catch block
 				e.printStackTrace();
 			} catch (SecurityException e) {
+				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
+			
 		}
-		
+			for (String operandClassName : operandNames) {
+				try {
+					Class<?> className = Class.forName(operandClassName);
+					System.out.print("test ");
+					System.out.println(className);
+					Constructor<?> constructor = className.getDeclaredConstructor();
+					System.out.println(constructor);
+					nameToConstructor.put(operandClassName, constructor);
+				} catch (ClassNotFoundException e) {
+					e.printStackTrace();
+				} catch (NoSuchMethodException e) {
+					e.printStackTrace();
+				} catch (SecurityException e) {
+					e.printStackTrace();
+				}
+			}
+		}
+	
+//	public void makeOneExpression() {
+//		try {
+//			String operandString = operandNames[rnd.nextInt(operandNames.length)];
+//			Class<?> className = Class.forName(operandString);
+//			Constructor<?> constructor = className.getDeclaredConstructor();
+//			nameToConstructor.put(operandString, constructor);
+//		} catch (ClassNotFoundException e) {
+//			e.printStackTrace();
+//		} catch (NoSuchMethodException e) {
+//			e.printStackTrace();
+//		} catch (SecurityException e) {
+//			e.printStackTrace();
+//		}
+//		}
+	
+
+	public ExpressionTreeNode makeOneExpression() {
 		for (Constructor<?> constructor : nameToConstructor.values()) {
+			String[] classString = expressions[rnd.nextInt(expressions.length)];
 			int numParams = constructor.getParameterCount();
-
-			ExpressionTreeNode[] params = new ExpressionTreeNode[numParams];
-
+			params = new ExpressionTreeNode[numParams];
+			
+//			if (numParams == 0)
+//			{
+//				return null;
+//			}
+//
+//			if (numParams == 1) {
+//				params[0] = makeOneExpression();
+//				return params[0];
+//			}
+//			
+//			if (numParams == 2) {
+//				params[0] = makeOneExpression();
+//				params[1] = makeOneExpression();
+//				return params[0];
+//			}
+			
 			for (int i = 0; i < numParams; i++) {
-				params[i] = makeOneExpression();
+					params[i] = makeOneExpression();
 			}
 
 			try {
 				ExpressionTreeNode etn = (ExpressionTreeNode) constructor.newInstance(params);
+				System.out.print("Node: ");
 				System.out.println(etn);
 				return etn;
 			} catch (InstantiationException | IllegalAccessException | IllegalArgumentException
