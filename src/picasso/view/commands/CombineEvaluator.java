@@ -1,7 +1,6 @@
 package picasso.view.commands;
+
 import javax.swing.JOptionPane;
-import java.awt.Color;
-import java.awt.Dimension;
 import java.io.BufferedReader;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
@@ -9,8 +8,7 @@ import java.io.IOException;
 import java.util.Random;
 import picasso.model.Pixmap;
 import picasso.util.Command;
-import picasso.parser.ExpressionTreeGenerator;
-import picasso.parser.language.ExpressionTreeNode;
+import picasso.view.Frame;
 
 /**
  * Allows the user to combine two expressions stored in history, and evaluates the result.
@@ -18,7 +16,6 @@ import picasso.parser.language.ExpressionTreeNode;
  * 
  * @author August Donovan
  */
-
 public class CombineEvaluator implements Command<Pixmap> {
 	
 	private int id1;
@@ -26,11 +23,8 @@ public class CombineEvaluator implements Command<Pixmap> {
 	private String input1;
 	private String input2;
 	private final String[] OPERATIONS = {" + ", " - ", " / ", " % ", " * "}; 
-	private ExpressionTreeNode node;
 	private Random rand = new Random();
-	public static final double DOMAIN_MIN = -1;
-	public static final double DOMAIN_MAX = 1;
-	
+	private Evaluater evaluator = new Evaluater();
 	HistoryWriter hist = new HistoryWriter();
 	
 	private void getIDs() {
@@ -63,7 +57,6 @@ public class CombineEvaluator implements Command<Pixmap> {
 	
 	public String getExpression(int id) {
 		// Helper function to get specified IDs from history file
-		String defaultFileName = "expressions/history.exp";
 		String expression = "";
 		BufferedReader reader;
 		int i = 1;
@@ -94,15 +87,9 @@ public class CombineEvaluator implements Command<Pixmap> {
 		return expression;
 	}
 
-	private double imageToDomainScale(int value, int bounds) {
-		double range = DOMAIN_MAX - DOMAIN_MIN;
-		return ((double) value / bounds) * range + DOMAIN_MIN;
-	}
-	
+	@Override
 	public void execute(Pixmap target) {
 		// combines the functions in an interesting way
-		
-		
 		String exp1;
 		String exp2;
 		int randIndex = rand.nextInt(OPERATIONS.length);
@@ -113,25 +100,11 @@ public class CombineEvaluator implements Command<Pixmap> {
 		exp1 = getExpression(id1);
 		exp2 = getExpression(id2);
 		String combinedExpression = "(" + exp1 + ")" + randOperator + "(" + exp2 + ")";
+				
+		//System.out.println(exp1);
+		//System.out.println(exp2);
+		Frame.expressionField.setText(combinedExpression);
 		
-		Dimension size = target.getSize();
-		
-		System.out.println(exp1);
-		System.out.println(exp2);
-		System.out.println(combinedExpression);
-		
-		ExpressionTreeGenerator expTreeGen = new ExpressionTreeGenerator();
-		node = expTreeGen.makeExpression(combinedExpression);
-		
-		for (int imageY = 0; imageY < size.height; imageY++) {
-			
-			double evalY = imageToDomainScale(imageY, size.height);
-			
-			for (int imageX = 0; imageX < size.width; imageX++) {
-					double evalX = imageToDomainScale(imageX, size.width);
-					Color pixelColor = node.evaluate(evalX, evalY).toJavaColor();
-					target.setColor(imageX, imageY, pixelColor);
-		     		}
-			}
+		evaluator.execute(target);
 	}
 }

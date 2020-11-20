@@ -16,25 +16,22 @@ import java.lang.Class;
  * 
  */
 public class RandomExpressionTreeGenerator {
-	
 
-	
 	final String unaryFunctionsPackage = "picasso.parser.language.expressions.unaryFunctions.";
-	String[] unaryFunctionNames = {unaryFunctionsPackage + "Tan", unaryFunctionsPackage + "Sin",
-			unaryFunctionsPackage + "Floor", unaryFunctionsPackage + "Abs", unaryFunctionsPackage + "Log"};
+	String[] unaryFunctionNames = { unaryFunctionsPackage + "Tan", unaryFunctionsPackage + "Sin",
+			unaryFunctionsPackage + "Floor", unaryFunctionsPackage + "Abs", unaryFunctionsPackage + "Log" };
 
 	final String binaryFunctionsPackage = "picasso.parser.language.expressions.operators.";
 	String[] binaryFunctionNames = { binaryFunctionsPackage + "Addition", binaryFunctionsPackage + "Minus",
 			binaryFunctionsPackage + "Multiply", binaryFunctionsPackage + "Divide",
-			binaryFunctionsPackage + "Exponent"};
-	
+			binaryFunctionsPackage + "Exponent" };
+
 	final String operandsPackage = "picasso.parser.language.expressions.";
 	String[] operandNames = { operandsPackage + "X", operandsPackage + "Y" };
 
-	String[] expressions = {operandsPackage + "X", operandsPackage + "Y", 
-			binaryFunctionsPackage + "Addition",
-			unaryFunctionsPackage + "Sin",
-			binaryFunctionsPackage + "Divide", unaryFunctionsPackage + "Log", unaryFunctionsPackage + "Tan"};
+	String[] expressions = { operandsPackage + "X", operandsPackage + "Y", binaryFunctionsPackage + "Addition",
+			unaryFunctionsPackage + "Sin", binaryFunctionsPackage + "Divide", unaryFunctionsPackage + "Log",
+			unaryFunctionsPackage + "Tan" };
 //			binaryFunctionsPackage + "Multiply", unaryFunctionsPackage + "Floor",};
 //	
 	private static Random rnd = new Random();
@@ -49,16 +46,17 @@ public class RandomExpressionTreeGenerator {
 		for (String unaryClassName : unaryFunctionNames) {
 			try {
 				Class<?> className = Class.forName(unaryClassName);
-				Constructor<?> constructor = className.getDeclaredConstructor(picasso.parser.language.ExpressionTreeNode.class);
+				Constructor<?> constructor = className
+						.getDeclaredConstructor(picasso.parser.language.ExpressionTreeNode.class);
 				nameToConstructor.put(unaryClassName, constructor);
 			} catch (ClassNotFoundException e) {
-				// TODO Auto-generated catch block
+				System.out.println("Class is not found");
 				e.printStackTrace();
 			} catch (NoSuchMethodException e) {
-				// TODO Auto-generated catch block
+				System.out.println("No such method exists");
 				e.printStackTrace();
 			} catch (SecurityException e) {
-				// TODO Auto-generated catch block
+				System.out.println("Security Exception");
 				e.printStackTrace();
 			}
 		}
@@ -71,51 +69,53 @@ public class RandomExpressionTreeGenerator {
 						picasso.parser.language.ExpressionTreeNode.class);
 				nameToConstructor.put(binaryClassName, constructor);
 			} catch (ClassNotFoundException e) {
-				// TODO Auto-generated catch block
+				System.out.println("Class is not found");
 				e.printStackTrace();
 			} catch (NoSuchMethodException e) {
-				// TODO Auto-generated catch block
+				System.out.println("No such method exists");
 				e.printStackTrace();
 			} catch (SecurityException e) {
-				// TODO Auto-generated catch block
+				System.out.println("Security Exception");
 				e.printStackTrace();
 			}
-			
+
 		}
-		
-			for (String operandClassName : operandNames) {
-				try {
-					Class<?> className = Class.forName(operandClassName);
-					Constructor<?> constructor = className.getDeclaredConstructor();
-					nameToConstructor.put(operandClassName, constructor);
-				} catch (ClassNotFoundException e) {
-					e.printStackTrace();
-				} catch (NoSuchMethodException e) {
-					e.printStackTrace();
-				} catch (SecurityException e) {
-					e.printStackTrace();
-				}
+
+		for (String operandClassName : operandNames) {
+			try {
+				Class<?> className = Class.forName(operandClassName);
+				Constructor<?> constructor = className.getDeclaredConstructor();
+				nameToConstructor.put(operandClassName, constructor);
+			} catch (ClassNotFoundException e) {
+				System.out.println("Class is not found");
+				e.printStackTrace();
+			} catch (NoSuchMethodException e) {
+				System.out.println("No such method exists");
+				e.printStackTrace();
+			} catch (SecurityException e) {
+				System.out.println("Security Exception");
+				e.printStackTrace();
 			}
 		}
+	}
 
 	/**
 	 * Makes a single expression tree node.
+	 * 
 	 * @return etn
 	 */
-	
 	public ExpressionTreeNode makeOneExpression() {
-			String classString = expressions[rnd.nextInt(expressions.length)];
-			Constructor<?> constructor = nameToConstructor.get(classString);
-			int numParams = constructor.getParameterCount();
-			ExpressionTreeNode[] params = new ExpressionTreeNode[numParams];
-			
-			for (int i = 0; i < numParams; i++) {
+		String classString = expressions[rnd.nextInt(expressions.length)];
+		Constructor<?> constructor = nameToConstructor.get(classString);
+		int numParams = constructor.getParameterCount();
+		ExpressionTreeNode[] params = new ExpressionTreeNode[numParams];
 
-					params[i] = makeOneExpression();
-			}
-			
-			if (numParams > 0)
-			{
+		for (int i = 0; i < numParams; i++) {
+
+			params[i] = makeOneExpression();
+		}
+
+		if (numParams > 0) {
 
 			try {
 				ExpressionTreeNode etn = (ExpressionTreeNode) constructor.newInstance(params);
@@ -124,20 +124,17 @@ public class RandomExpressionTreeGenerator {
 					| InvocationTargetException e) {
 				e.printStackTrace();
 			}
-			}
-			else
-			{
+		} else {
 			ExpressionTreeNode etn;
 			try {
 				etn = (ExpressionTreeNode) constructor.newInstance();
 				return etn;
 			} catch (InstantiationException | IllegalAccessException | IllegalArgumentException
 					| InvocationTargetException e) {
-				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
-			}
-			return null;
+		}
+		return null;
 	}
-		
+
 }
