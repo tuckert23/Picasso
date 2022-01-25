@@ -1,4 +1,4 @@
-# [Home](https://github.com/tuckert23/tuckert23.github.io)
+# [Home](https://tuckert23.github.io)
 ## Picasso
 
 An application that allows the user to create expressions that
